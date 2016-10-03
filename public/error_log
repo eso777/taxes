@@ -1,0 +1,2 @@
+[09-May-2016 15:42:00 Africa/Cairo] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/curehosp/public_html/config/app.php on line 139
+[09-May-2016 15:42:50 Africa/Cairo] PHP Fatal error:  Call to undefined method Illuminate\Foundation\Bootstrap\ConfigureLogging::configureHandler() in /home/curehosp/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/ConfigureLogging.php on line 54

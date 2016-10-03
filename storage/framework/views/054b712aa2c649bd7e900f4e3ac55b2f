@@ -1,0 +1,22 @@
+<div class="col-lg-12">
+     <?php if(@$type == 'edit'): ?>
+          <img class="" style="height:200px;width: 500px;margin-bottom: 20px" src="<?php echo e(Url('/')); ?>/uploads/back/slider/<?php echo e($image->image); ?>">
+     <?php endif; ?>
+
+     <div class = "form-group<?php echo e($errors->has('img') ? ' has-error' : ''); ?>">
+          <?php echo Form::label('img', 'إرفاق صورة'); ?>
+
+          <?php echo Form::file('img'); ?>
+
+          <p class = "help-block">يرجي اختيار صور مناسبة</p>
+          <small class = "text-danger"><?php echo e($errors->first('img')); ?></small>
+     </div>   
+     <hr> 
+
+     <button class='btn btn-info' type="submit">
+          <i class="fa fa-check-circle"></i>   
+          <?php echo e($btnName); ?>
+
+     </button>
+
+</div>

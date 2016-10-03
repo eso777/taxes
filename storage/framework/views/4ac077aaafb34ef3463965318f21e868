@@ -1,0 +1,21 @@
+ 
+<?php $__env->startSection('title', 'اضافة خبر جديدة'); ?>
+
+<?php $__env->startSection('content'); ?>
+	
+	<div class="col-md-12">
+		<div class="panel panel-primary">
+			<div class="text-center panel-heading">أضافة خبر جديدة</div>	
+			<div class="panel-body">
+			
+				<?php echo Form::open([ 'action'=>'NewsCtrl@store' , 'files'=>true]); ?>	
+					<?php echo $__env->make('admin.news._form',['type'=>'create' , 'btnName'=>'حفظ'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+				<?php echo Form::close(); ?>
+
+			</div>	
+		</div>
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

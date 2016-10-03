@@ -1,0 +1,43 @@
+<?php $__env->startSection('title'); ?>
+		تعديل المدير
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default">
+				<div class="panel-heading">تعديل المدير </div>
+				<div class="panel-body">
+					<?php if(count($errors) > 0): ?>
+						<div class="alert alert-danger">
+							<strong>خطأ!</strong> يوجد بعض المشاكل عند الادخال.<br><br>
+							<ul>
+								<?php foreach($errors->all() as $error): ?>
+									<li><?php echo e($error); ?></li>
+								<?php endforeach; ?>
+							</ul>
+						</div>
+					<?php endif; ?>
+					<?php if(Session::has('msg')): ?>
+					<div class="alert alert-success">
+						تم التعديل بنجاح
+					</div>
+					<?php endif; ?>
+					<?php echo Form::model($admin,['method' => 'PATCH', 'action' => ['AdminsCtrl@update',$admin->id], 'class' => 'form-horizontal','files'=>true]); ?>
+
+			
+
+						<?php echo $__env->make('admin.admins._form',['help'=>'<small class="text-warning">Leave Blank to keep it</small>',
+							'text'=>'تعديل المدير'
+						], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+					<?php echo Form::close(); ?>
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

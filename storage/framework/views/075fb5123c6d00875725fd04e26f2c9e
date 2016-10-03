@@ -1,0 +1,11 @@
+	<?php $__env->startSection('title','admin panel'); ?>
+	<?php $__env->startSection('content'); ?>
+		
+		<!-- <?php echo Session::get('local')."<br />"; ?>
+
+		
+		<?php echo e(Lang::get('menu.home')); ?> -->
+	<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

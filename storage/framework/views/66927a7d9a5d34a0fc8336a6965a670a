@@ -1,0 +1,27 @@
+
+<?php if(@$type == 'all'): ?>
+	<select name="users_id[]" multiple id="id_label_multiple" class='js-example-basic-multiple js-states form-control'>
+		<?php foreach($users as $user): ?> {
+			<option value="<?php echo e($user->id); ?>" selected><?php echo e($user->name); ?></option>
+		<?php endforeach; ?>
+	</select>
+<?php else: ?>
+
+<?php echo Form::select('users_id[]', @$users, null, ['id' => 'id_label_multiple', 'class' => 'js-example-basic-multiple js-states form-control','multiple','selected'=>'selected' ,'placeholder','اختر من هذة القائمة ']); ?>
+
+
+<?php endif; ?>
+
+<div class="form-group<?php echo e($errors->has('msg') ? ' has-error' : ''); ?>">
+    <?php echo Form::label('msg', 'الرسالة'); ?>
+
+    <?php echo Form::textarea('msg', null, ['class' => 'form-control']); ?>
+
+    <small class="text-danger"><?php echo e($errors->first('msg')); ?></small>
+</div>
+
+<button type="submit" class="btn btn-primary">
+    <i class="fa fa-send"></i>
+	<?php echo e($btnName); ?>	
+</button>
+

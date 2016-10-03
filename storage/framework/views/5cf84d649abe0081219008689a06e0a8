@@ -1,0 +1,4 @@
+
+<h1> Welcome . <?php echo e($name); ?> </h1>
+<p> Test P Test P Test P Test P Test P Test P Test P Test P Test P Test P Test P Test P 
+    Test P Test P Test P Test P </p>
