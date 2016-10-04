@@ -35,7 +35,7 @@
 
           </div>
           <!-- youtube video -->
-4          <!--     <a href="http://www.youtube.com/embed/YHWkro9-e9Q?hd=1&wmode=opaque&controls=1&showinfo=0" data-type="video">Youtube video</a>-->
+          4          <!--     <a href="http://www.youtube.com/embed/YHWkro9-e9Q?hd=1&wmode=opaque&controls=1&showinfo=0" data-type="video">Youtube video</a>-->
      </div>
      @endforeach
      @endif

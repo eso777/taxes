@@ -9,21 +9,24 @@ use App\Service;
 use App\AboutCompany;
 use App\Settings;
 use App\News;
+use App\Slider;
 use Session;
-use App\Slider ;
+use Validator;
+use Mail ;
+use Lang ;
 
 class FrontCtrl extends Controller {
+     /* Start Front End Index Page  */
 
      function index() {
           // Services
           $services = Service::latest('created_at')->take(6)->get();
-
           // AboutCompany
           $info = AboutCompany::first();
           // Slider 
-          $slider = Slider::latest('created_at')->take(20)->get() ;    
+          $slider = Slider::latest('created_at')->take(20)->get();
           // Return View Index
-          return view('front.index', compact('services', 'info','slider'));
+          return view('front.index', compact('services', 'info', 'slider'));
      }
 
      public function aboutCompany() {
@@ -31,10 +34,14 @@ class FrontCtrl extends Controller {
           return view('front.aboutCompany.index', compact('info'));
      }
 
-     function ourServies() {
+     function ourServices() {
           $service = Service::latest()->get();
           return view('front.service.index', compact('service'));
      }
+
+     /* Start Front End Index Page  */
+
+     /* Start Page Blog */
 
      function blog() {
 
@@ -47,7 +54,6 @@ class FrontCtrl extends Controller {
           if ($slug !== $blog_one['slug_' . Session::get('local')]) {
                return redirect()->to(Url('blog/' . $blog_one->id . '-' . $blog_one['slug_' . Session::get('local')]));
           }
-
           //dd($blog_related );
           $tags = explode(',', $blog_one['tags_' . Session::get('local')]);
           $i = 0;
@@ -55,6 +61,8 @@ class FrontCtrl extends Controller {
           foreach ($tags as $tag) {
                $related = News::where('tags_ar', 'like', '%' . $tag . '%')
                        ->orwhere('tags_en', 'like', '%' . $tag . '%')
+                       ->latest('created_at')
+                       ->take(5)
                        ->get();
                foreach ($related as $relates) {
                     if ($relates['id'] !== $blog_one->id) {
@@ -66,16 +74,51 @@ class FrontCtrl extends Controller {
                     }
                }
           }
-          //dd($related_art);
-          /*
-            $blog_related = News::where('tags_ar','like','%'.$blog_one->tags_ar.'%')
-            ->orwhere('tags_en','like','%'.$blog_one->tags_en.'%')
-            ->where('id','!==',$id)
-            ->latest('created_at')
-            ->take(5)
-            ->get(); */
 
           return view('front.blog.blog_one', compact('blog_one', 'related_art'));
      }
 
+     /* End Page Blog */
+
+     /* Start Page Contact Us */
+
+     function contactUs() {
+          $settings = Settings::first();
+          return view('front.contactUs.index', compact('settings'));
+     }
+
+     function sendInformation(Request $request) {
+          $rules = [
+              'name' => 'required',
+              'email' => 'required|email',
+              'phone' => 'required|min:11',
+              'about' => 'required',
+              'subject' => 'required',
+          ];
+          $validation = Validator::make($request->all(), $rules);
+          if ($validation->fails()) {
+               return redirect()->back()->withErrors($validation)->withInput();
+          }
+
+          //*****  Mail *****//
+          $data = [
+              'name'=>$request->name ,
+              'email'=>$request->email ,
+              'phone'=>$request->phone ,
+              'about'=>$request->about ,
+              'subject'=>$request->subject ,
+              ];
+          $check = Mail::send('emails.contact', $data, function($message) use($request) {
+               $message->to('eso50408@gmail.com', 'Admin')->from($request->email,$request->name)->subject($request->about);
+          });
+          
+          if($check)
+          {
+               $msg = Lang::get('index.msgSuccess') ;
+               return redirect()->to(Url('/').'/contactUs')->with(['msgSuccess'=>'<script>swal(" ","$msg","success")</script>']);
+          }
+          // Mail // 
+     }
+
+     /* End Page Contact Us */
 }

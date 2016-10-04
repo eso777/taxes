@@ -8,5 +8,5 @@ class Settings extends Model {
 	protected $fillable = ['site_name_ar', 'site_name_en','site_desc_ar','site_desc_en',
 	'site_tags_ar','site_tags_en',
 	'facebook','twitter',
-	'google_Plus','youtube', 'linkedIn','address','site_status','email','email_2','phone','phone_2'];
+	'google_Plus','youtube', 'linkedIn','address_ar','address_en','site_status','email','email_2','phone','phone_2'];
 }

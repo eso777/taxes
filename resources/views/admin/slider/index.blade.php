@@ -9,7 +9,7 @@
 <br>
 
 @if(Session::has('alert'))
-     {!! Session::get('alert') !!}
+{!! Session::get('alert') !!}
 @endif
 @if($slider->count() > 0)
 

@@ -48,8 +48,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'authAdmin'], function() {
      Route::get('aboutComp/delete_img/{img_name}', 'aboutCompCtrl@delete_img');
      // About Company
      // slider
-     Route::resource('slider','SliderCtrl');
-     Route::post('slider/create','SliderCtrl@store');
+     Route::resource('slider', 'SliderCtrl');
+     Route::post('slider/create', 'SliderCtrl@store');
      //Route::get('slider/delete_img/{id}/{img_name}', 'SliderCtrl@delete_img');
      // slider
 
@@ -61,7 +61,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'authAdmin'], function() {
 
        Mail::send('admin.mail', ['name' => Auth::admin()->get()->name ], function($message)
        {
-       $message->to('engyzine@gmail.com' , 'E-Njy')->from('eso50408@gmail.com' , 'Eso')->subject('Welcome! To Try Msg');
+       $message->to('eng.ahmedmgad@gmail.com' , 'Senior Ahmed gad 2r2osha')->from('eso50408@gmail.com' , 'Eso')->subject('Welcome! To Try Msg');
        });
        return redirect()->to(Url('/').'/admin') ;
        });
@@ -76,7 +76,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'authAdmin'], function() {
  */
 
 
-/************************************************************************************************************************/
+/* * ********************************************************************************************************************* */
 
 
 /*
@@ -84,20 +84,27 @@ Route::group(['prefix' => 'admin', 'middleware' => 'authAdmin'], function() {
  * ******* Start Application Route [ Front End ] ********
  * *********************************************************
  */
-
-//Route::get('/','FrontCtrl@index');
-
+// The Index Page 
 Route::get('/', 'FrontCtrl@index');
-
+// The Index Page 
+// About Company
 Route::get('aboutComp', 'FrontCtrl@aboutCompany');
-Route::get('ourServies', 'FrontCtrl@ourServies');
+// About Company
+// Our services
+Route::get('ourServies', 'FrontCtrl@ourServices');
+// Our services
+// Contact Us
+Route::get('contactUs', 'FrontCtrl@contactUs');
+Route::post('contactUs', 'FrontCtrl@sendInformation');
+// Contact Us
+// Blog
 Route::get('blog', 'FrontCtrl@blog');
 Route::get('blog/{id}-{slug}', 'FrontCtrl@blog_one');
+// Blog
 
 
-// Test Route Language 
+// Language Route
 Route::get('lang/{lang}', 'LanguageCtrl@switcher');
-
 
 
 /*

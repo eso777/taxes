@@ -10,6 +10,7 @@
             <word>boott</word>
             <word>cls</word>
             <word>endif</word>
+            <word>endsection</word>
         </spellchecker-wordlist>
     </configuration>
 </project>
