@@ -24,20 +24,20 @@
                 linked slide 
                <a href="#"></a>-->
      <!-- new slide -->
-<?php if($slider->count() > 0): ?>  
-<?php foreach($slider as $slide): ?>
-<div class="ms-slide">
-     <!-- slide background -->
-     <img src="<?php echo e(Url('/')); ?>/uploads/back/slider/<?php echo e($slide->image); ?>" data-src="<?php echo e(Url('/')); ?>/uploads/back/slider/<?php echo e($slide->image); ?>" alt="lorem ipsum dolor sit"/>
-     <!-- slide text layer -->
-     <div class="ms-layer ms-caption" style="top:10px; left:30px;">
+     <?php if($slider->count() > 0): ?>  
+     <?php foreach($slider as $slide): ?>
+     <div class="ms-slide">
+          <!-- slide background -->
+          <img src="<?php echo e(Url('/')); ?>/uploads/back/slider/<?php echo e($slide->image); ?>" data-src="<?php echo e(Url('/')); ?>/uploads/back/slider/<?php echo e($slide->image); ?>" alt="lorem ipsum dolor sit"/>
+          <!-- slide text layer -->
+          <div class="ms-layer ms-caption" style="top:10px; left:30px;">
 
+          </div>
+          <!-- youtube video -->
+          <!--     <a href="http://www.youtube.com/embed/YHWkro9-e9Q?hd=1&wmode=opaque&controls=1&showinfo=0" data-type="video">Youtube video</a>-->
      </div>
-     <!-- youtube video -->
-<!--     <a href="http://www.youtube.com/embed/YHWkro9-e9Q?hd=1&wmode=opaque&controls=1&showinfo=0" data-type="video">Youtube video</a>-->
-</div>
-<?php endforeach; ?>
-<?php endif; ?>
+     <?php endforeach; ?>
+     <?php endif; ?>
 
 
 </div>

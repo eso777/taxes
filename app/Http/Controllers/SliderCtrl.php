@@ -108,7 +108,7 @@ class SliderCtrl extends Controller {
       */
      public function destroy($id) {
           Slider::findOrfail($id)->delete();
-          return redirect()->to(Url('/') . '/admin/slider')->with(['alert' => '<script>swal(" ","تم الحذف التعديلات", "success")</script>']);
+          return redirect()->to(Url('/') . '/admin/slider')->with(['alert' => '<script>swal(" ","تم الحذف بنجاح", "success")</script>']);
      }
 
 }
