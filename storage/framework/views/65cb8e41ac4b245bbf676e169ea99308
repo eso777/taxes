@@ -67,17 +67,12 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
           <?php echo Html::style('back/assets/admin/layout2/css/custom-rtl.css'); ?>
 
           <!-- END THEME STYLES -->
-
+          
           <!-- Start Sweet Alert Library Css File -->
           <?php echo Html::style('back/assets/global/plugins/sweetAlert/sweetalert.css'); ?>
 
           <!-- End Sweet Alert Library Css File -->
 
-
-          <!-- Start Custom Css File -->
-          <?php echo Html::style('back/assets/global/css/custom.css'); ?>
-
-          <!-- End Custom Css File-->
 
           <!-- select2.min.css -->
           <?php echo Html::style('back/assets/global/css/select2.min.css'); ?>
@@ -91,6 +86,10 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
           <?php echo Html::script("back/assets/global/plugins/sweetAlert/sweetalert.min.js"); ?>
 
           <!-- End Sweet Alert Library Js File -->
+          <!-- Start Custom Css File -->
+          <?php echo Html::style('back/assets/global/css/custom.css'); ?>
+
+          <!-- End Custom Css File-->
 
 
           <link rel="shortcut icon" href="favicon.ico"/>
@@ -286,7 +285,7 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
                                         </a>
                                    </li>
                                    <!-- news -->
-
+                                   
                                    <!-- Messages -->
                                    <li class="<?php echo e(Request::is('admin/messages*') ? 'active' : ''); ?>">
                                         <a href="<?php echo Url('/'); ?>/admin/messages">
@@ -322,7 +321,15 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
                                         </a> 
                                    </li>
                                    <!-- Slider -->
-
+                                   
+                                   <!-- consulting -->
+                                   <li class="<?php echo e(Request::is('admin/consulting*') ? 'active' : ''); ?>">
+                                        <a href="<?php echo Url('/'); ?>/admin/consulting">
+                                             <i class="fa fa-building-o" aria-hidden="true"></i>
+                                             <span class="title">إسـتشارات و نصائـح</span>
+                                        </a>
+                                   </li>
+                                   <!-- consulting -->
                               </ul>
                               <!-- END SIDEBAR MENU -->
                          </div>
@@ -510,8 +517,7 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
           <?php echo Html::script("back/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"); ?>
 
           <!-- END CORE PLUGINS -->
-          <?php echo Html::script("ckeditor/ckeditor.js"); ?>
-
+     
           <?php echo Html::script("back/assets/global/plugins/jquery-tags-input/jquery.tagsinput.min.js"); ?>
 
           <?php echo Html::script("back/assets/admin/pages/scripts/components-form-tools.js"); ?>
@@ -543,7 +549,6 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
 
           <?php echo Html::script("back/assets/global/plugins/dropzone/dropzone.js"); ?>
 
-
           <?php echo Html::script("back/assets/global/scripts/metronic.js"); ?>
 
           <?php echo Html::script("back/assets/admin/layout4/scripts/layout.js"); ?>
@@ -557,8 +562,12 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
           <?php echo Html::script("back/assets/global/scripts/jquery.nicescroll.min.js"); ?>
 
           <!-- Nice Scroll Library Js -->
+          
+          <!-- select2 -->
+          <?php echo Html::script("back/assets/global/scripts/select2.full.js"); ?>
 
-
+          <!-- select2 -->
+          
           <!-- jsfiddle JS Library -->
           <?php echo Html::script("back/assets/global/scripts/jsfiddle.js"); ?>
 

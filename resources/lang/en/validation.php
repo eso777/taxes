@@ -103,5 +103,6 @@ return [
 	*/
 
 	'attributes' => [],
-
+       'about'                => 'about',
+       'subject'              =>'Message',
 ];

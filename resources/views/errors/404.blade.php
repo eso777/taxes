@@ -233,7 +233,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <!-----start-search-bar-section--------->
                     <div class="buttom">
                          <div class="seach_bar">
-                              <p>you can go to <span><a href="{{Url('/')}}">Home</a></span> page or search here</p>
+                              <p>you can go to <span><a href="{{Url('/')}}">Home</a></span></p>
                               <!-----start-sear-box--------->
 
                          </div>

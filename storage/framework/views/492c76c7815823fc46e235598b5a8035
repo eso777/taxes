@@ -1,0 +1,45 @@
+<?php $__env->startSection('title',Lang::get('consulting.title')); ?>
+
+<?php $__env->startSection('content'); ?>
+<?php if($consulting->total() > 0): ?>
+<section class="page-content">
+     <div class="page-ttl">
+          <div class="container">
+               <div class="row">
+                    
+                    <div class="col-sm-6">
+                         <h1><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> <?php echo e(Lang::get('consulting.title')); ?></h1>
+                    </div>
+                    <div class="col-sm-6">
+                         <ol class="breadcrumb">
+                              <li><a href="<?php echo e(Url('/')); ?>"><?php echo e(Lang::get('index.title')); ?></a></li>
+                              <li class="active"><?php echo e(Lang::get('consulting.title')); ?></li>
+                         </ol>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <div class="container">
+          <div class="row">
+               <?php foreach($consulting as $one): ?>
+               <div class="col-sm-6">
+                    <div class="blog-post">
+                         <div class="blog-post-content" style="padding: 0;">
+                              <h3><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> <?php echo e($one['title_'.Session::get('local')]); ?></a></h3>
+                              <p> <?php echo str_limit($one['meta_desc_'.Session::get('local')] , 334); ?></p>
+                              <a href="<?php echo e(Url('/')); ?>/consulting/<?php echo e($one->id); ?>-<?php echo e($one['slug_'.Session::get('local')]); ?>" class="more-btn"><?php echo e(Lang::get('consulting.details')); ?></a>
+                         </div>
+                    </div>
+               </div>
+               <?php endforeach; ?>
+          </div>
+          <div class="text-center">
+               <?php echo $consulting->render(); ?>
+
+          </div>
+     </div>
+</section>
+<?php endif; ?>
+<?php $__env->stopSection(); ?> 
+<?php $__env->stopSection(); ?> 
+<?php echo $__env->make('front.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

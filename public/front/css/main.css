@@ -546,6 +546,7 @@ a.load-more{
 }
 .post-info span a{
     color: #888;
+    padding-left: 8px;
 }
 .post-img img{
     max-width: 100%;

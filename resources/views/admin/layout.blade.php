@@ -46,15 +46,11 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
           {!! Html::style('back/assets/admin/layout2/css/themes/grey.css') !!}
           {!! Html::style('back/assets/admin/layout2/css/custom-rtl.css') !!}
           <!-- END THEME STYLES -->
-
+          
           <!-- Start Sweet Alert Library Css File -->
           {!! Html::style('back/assets/global/plugins/sweetAlert/sweetalert.css') !!}
           <!-- End Sweet Alert Library Css File -->
 
-
-          <!-- Start Custom Css File -->
-          {!! Html::style('back/assets/global/css/custom.css') !!}
-          <!-- End Custom Css File-->
 
           <!-- select2.min.css -->
           {!! Html::style('back/assets/global/css/select2.min.css') !!}
@@ -65,6 +61,9 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
           <!-- Start Sweet Alert Library Js File -->
           {!! Html::script("back/assets/global/plugins/sweetAlert/sweetalert.min.js") !!}
           <!-- End Sweet Alert Library Js File -->
+          <!-- Start Custom Css File -->
+          {!! Html::style('back/assets/global/css/custom.css') !!}
+          <!-- End Custom Css File-->
 
 
           <link rel="shortcut icon" href="favicon.ico"/>
@@ -259,7 +258,7 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
                                         </a>
                                    </li>
                                    <!-- news -->
-
+                                   
                                    <!-- Messages -->
                                    <li class="{{Request::is('admin/messages*') ? 'active' : ''}}">
                                         <a href="{!!Url('/')!!}/admin/messages">
@@ -295,7 +294,15 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
                                         </a> 
                                    </li>
                                    <!-- Slider -->
-
+                                   
+                                   <!-- consulting -->
+                                   <li class="{{Request::is('admin/consulting*') ? 'active' : ''}}">
+                                        <a href="{!!Url('/')!!}/admin/consulting">
+                                             <i class="fa fa-building-o" aria-hidden="true"></i>
+                                             <span class="title">إسـتشارات و نصائـح</span>
+                                        </a>
+                                   </li>
+                                   <!-- consulting -->
                               </ul>
                               <!-- END SIDEBAR MENU -->
                          </div>
@@ -474,7 +481,7 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
           {!! Html::script("back/assets/global/plugins/uniform/jquery.uniform.min.js") !!}
           {!! Html::script("back/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js") !!}
           <!-- END CORE PLUGINS -->
-          {!! Html::script("ckeditor/ckeditor.js") !!}
+     
           {!! Html::script("back/assets/global/plugins/jquery-tags-input/jquery.tagsinput.min.js") !!}
           {!! Html::script("back/assets/admin/pages/scripts/components-form-tools.js") !!}
           <!-- END CORE PLUGINS -->
@@ -492,7 +499,6 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
           {!! Html::script("back/assets/global/plugins/ckeditor/ckeditor.js") !!}
 
           {!! Html::script("back/assets/global/plugins/dropzone/dropzone.js") !!}
-
           {!! Html::script("back/assets/global/scripts/metronic.js") !!}
           {!! Html::script("back/assets/admin/layout4/scripts/layout.js") !!}
           {!! Html::script("back/assets/admin/layout4/scripts/demo.js") !!}
@@ -501,8 +507,11 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
           <!-- Nice Scroll Library Js -->
           {!! Html::script("back/assets/global/scripts/jquery.nicescroll.min.js") !!}
           <!-- Nice Scroll Library Js -->
-
-
+          
+          <!-- select2 -->
+          {!! Html::script("back/assets/global/scripts/select2.full.js") !!}
+          <!-- select2 -->
+          
           <!-- jsfiddle JS Library -->
           {!! Html::script("back/assets/global/scripts/jsfiddle.js") !!}
           <!-- jsfiddle JS Library-->

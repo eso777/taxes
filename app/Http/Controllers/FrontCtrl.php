@@ -14,6 +14,7 @@ use Session;
 use Validator;
 use Mail ;
 use Lang ;
+use App\Consulting ;
 
 class FrontCtrl extends Controller {
      /* Start Front End Index Page  */
@@ -45,7 +46,7 @@ class FrontCtrl extends Controller {
 
      function blog() {
 
-          $blog = News::latest()->paginate(8);
+          $blog = News::latest('created_at')->paginate(8);
           return view('front.blog.index', compact('blog'));
      }
 
@@ -102,11 +103,11 @@ class FrontCtrl extends Controller {
 
           //*****  Mail *****//
           $data = [
-              'name'=>$request->name ,
-              'email'=>$request->email ,
-              'phone'=>$request->phone ,
-              'about'=>$request->about ,
-              'subject'=>$request->subject ,
+              'name'    => $request->name ,
+              'email'   => $request->email ,
+              'phone'   => $request->phone ,
+              'about'   => $request->about ,
+              'subject' => $request->subject ,
               ];
           $check = Mail::send('emails.contact', $data, function($message) use($request) {
                $message->to('eso50408@gmail.com', 'Admin')->from($request->email,$request->name)->subject($request->about);
@@ -114,11 +115,34 @@ class FrontCtrl extends Controller {
           
           if($check)
           {
-               $msg = Lang::get('index.msgSuccess') ;
-               return redirect()->to(Url('/').'/contactUs')->with(['msgSuccess'=>'<script>swal(" ","$msg","success")</script>']);
+               if(!Session::get('local') == 'ar')
+               {
+                    return redirect()->to(Url('/').'/contactUs')->with(['msgSuccess'=>'<script>swal(" ","Message Was Send Successfully , And will communicate soon","success")</script>']);
+               }
+               
+               return redirect()->to(Url('/').'/contactUs')->with(['msgSuccess'=>'<script>swal(" ","تم الإرسال بنجاح وسيتم التواصل في اقرب فرصة","success")</script>']);
+
           }
           // Mail // 
      }
 
      /* End Page Contact Us */
+     
+     /* Start Page Consulting */
+     function consulting() {
+          $consulting = Consulting::latest('created_at')->paginate(8) ; 
+          return view('front.consulting.index',  compact('consulting'));
+          
+     }    
+     
+     function consulting_one($id,$slug) {
+          
+          $consulting_one = Consulting::findOrfail($id);
+          if ($slug !== $consulting_one['slug_' . Session::get('local')]) {
+               return redirect()->to(Url('consulting/' . $consulting_one->id . '-' . $consulting_one['slug_' . Session::get('local')]));
+          }
+          
+          return view('front.consulting.consulting_one', compact('consulting_one'));
+     } 
+     /* End Page Consulting */
 }

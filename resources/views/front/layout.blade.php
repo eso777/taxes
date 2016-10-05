@@ -27,7 +27,7 @@ $settings = Settings::first();
           <!-- Start Sweet Alert Library Css File -->
           {!! Html::style('back/assets/global/plugins/sweetAlert/sweetalert.css') !!}
           <!-- End Sweet Alert Library Css File -->
-          
+
           <!-- J-Query Library -->
           {!! Html::script("back/assets/global/plugins/jquery.min.js") !!}
           <!-- Start Sweet Alert Library Js File -->
@@ -57,7 +57,7 @@ $settings = Settings::first();
                                    <li><a href="{{Url('/')}}/aboutComp">{{Lang::get('index.aboutComp')}}</a></li>
                                    <li><a href="{{Url('/')}}/ourServies">{{Lang::get('index.servies')}}</a></li>
                                    <li><a href="{{Url('/')}}/contactUs">{{Lang::get('index.contactUs')}}</a></li>
-                                   <li><a href="#">{{Lang::get('index.consulting')}}</a></li>
+                                   <li><a href="{{Url('/')}}/consulting">{{Lang::get('index.consulting')}}</a></li>
                                    <li><a href="{{Url('/')}}/blog">{{Lang::get('index.news')}}</a></li>
                               </ul>
                               <ul class="nav navbar-nav navbar-left">

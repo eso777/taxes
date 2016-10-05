@@ -1,0 +1,62 @@
+<?php
+
+use Carbon\Carbon; ?>
+
+<?php $__env->startSection('title' , Lang::get('index.title_one')); ?>
+
+<?php $__env->startSection('content'); ?>
+<section class="page-content">
+     <div class="page-ttl">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-sm-6">
+                         <h1><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> <?php echo e(Lang::get('consulting.title')); ?></h1>
+                    </div>
+                    <div class="col-sm-6">
+                         <ol class="breadcrumb">
+                              <li><a href="<?php echo e(Url('/')); ?>"> <?php echo e(Lang::get('index.title')); ?></a></li>
+                              <li class="active"> <?php echo e(Lang::get('consulting.title')); ?></li>
+                         </ol>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <div class="container">
+          <div class="row">
+               <div class="col-md-8 col-md-offset-2">
+                    <div class="post-wrap widget">
+                         <div class="post-img text-center">
+                              <!--<img src="<?php echo e(Url('/')); ?>/front/images/logo.png">-->
+                         </div>
+                         <div class="post-info text-center" style="margin-top: 0;">
+                              <span><i class="glyphicon glyphicon-tags"></i><a href="<?php echo e(Url('/')); ?>/consulting"><?php echo e(Lang::get('consulting.consultancyAndAdvice')); ?></a></span>
+                              <span> <i class="glyphicon glyphicon-calendar"></i> <?php echo e(Carbon::parse($consulting_one->created_at)->diffForHumans()); ?> </span>
+                         </div>
+                         <div class="post-content">
+                              <p><?php echo $consulting_one['content_'.Session::get('local')]; ?></p>
+                         </div>
+                    </div>
+                    <div class="widget">
+                         <h2><?php echo e(Lang::get('consulting.comments')); ?></h2>
+                         <div id="disqus_thread"></div>
+                         <script>
+                              (function () { // DON'T EDIT BELOW THIS LINE
+                                   var d = document, s = d.createElement('script');
+                                   s.src = '//itag-1.disqus.com/embed.js';
+                                   s.setAttribute('data-timestamp', +new Date());
+                                   (d.head || d.body).appendChild(s);
+                              })();
+                         </script>
+                         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+                    </div>
+               </div>
+          </div>
+     </div>
+</section>
+
+
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

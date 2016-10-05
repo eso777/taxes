@@ -146,7 +146,7 @@ class ServicesCtrl extends Controller {
 		$service = Service::find($id);
 		if(!$service)
 		{
-			return redirect()->to(Url('/').'/admin/services')->with(['alert'=>'<script>swal(" ", "تم الحذف من قبل مدير اخر", "success")</script>']);
+                    return redirect()->to(Url('/').'/admin/services')->with(['alert'=>'<script>swal(" ", "تم الحذف من قبل مدير اخر", "success")</script>']);
 		}
 
 		$service->delete() ;

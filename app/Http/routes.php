@@ -50,23 +50,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'authAdmin'], function() {
      // slider
      Route::resource('slider', 'SliderCtrl');
      Route::post('slider/create', 'SliderCtrl@store');
-     //Route::get('slider/delete_img/{id}/{img_name}', 'SliderCtrl@delete_img');
      // slider
-
-
-
-
-     /* // Mail //
-       Route::get('mail',function(){
-
-       Mail::send('admin.mail', ['name' => Auth::admin()->get()->name ], function($message)
-       {
-       $message->to('eng.ahmedmgad@gmail.com' , 'Senior Ahmed gad 2r2osha')->from('eso50408@gmail.com' , 'Eso')->subject('Welcome! To Try Msg');
-       });
-       return redirect()->to(Url('/').'/admin') ;
-       });
-
-       // Mail // */
+     // Consulting
+     Route::resource('consulting', 'ConsultingCtrl');
+     // Consulting
+             
+     
 });
 
 /*
@@ -101,8 +90,10 @@ Route::post('contactUs', 'FrontCtrl@sendInformation');
 Route::get('blog', 'FrontCtrl@blog');
 Route::get('blog/{id}-{slug}', 'FrontCtrl@blog_one');
 // Blog
-
-
+// Consulting
+Route::get('consulting', 'FrontCtrl@consulting');
+Route::get('consulting/{id}-{slug}', 'FrontCtrl@consulting_one');
+// Consulting
 // Language Route
 Route::get('lang/{lang}', 'LanguageCtrl@switcher');
 
@@ -112,3 +103,16 @@ Route::get('lang/{lang}', 'LanguageCtrl@switcher');
   ******** End Application Route [ Front End ] ********
 **********************************************************
 */
+
+
+     /* // Mail *
+       Route::get('mail',function(){
+
+       Mail::send('admin.mail', ['name' => Auth::admin()->get()->name ], function($message)
+       {
+       $message->to('eng.ahmedmgad@gmail.com' , 'Senior Ahmed gad 2r2osha')->from('eso50408@gmail.com' , 'Eso')->subject('Welcome! To Try Msg');
+       });
+       return redirect()->to(Url('/').'/admin') ;
+       });
+
+     /*  Mail  */

@@ -2,19 +2,19 @@
 <?php $__env->startSection('title', 'اضافة خدمة جديدة'); ?>
 
 <?php $__env->startSection('content'); ?>
-	
-	<div class="col-md-12">
-		<div class="panel panel-primary">
-			<div class="text-center panel-heading">أضافة خدمة جديدة</div>	
-			<div class="panel-body">
-			
-				<?php echo Form::open([ 'action'=>'ServicesCtrl@store' , 'files'=>true]); ?>	
-					<?php echo $__env->make('admin.services._form',['type'=>'create' , 'btnName'=>'حفظ'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-				<?php echo Form::close(); ?>
 
-			</div>	
-		</div>
-	</div>
+<div class="col-md-12">
+     <div class="panel panel-primary">
+          <div class="text-center panel-heading">أضافة خدمة جديدة</div>	
+          <div class="panel-body">
+
+               <?php echo Form::open([ 'action'=>'ServicesCtrl@store' , 'files'=>true]); ?>	
+               <?php echo $__env->make('admin.services._form',['type'=>'create' , 'btnName'=>'حفظ'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+               <?php echo Form::close(); ?>
+
+          </div>	
+     </div>
+</div>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->stopSection(); ?>
