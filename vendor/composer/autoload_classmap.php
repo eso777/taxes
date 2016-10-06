@@ -9,6 +9,7 @@ return array(
     'Cpdf' => $vendorDir . '/dompdf/dompdf/lib/Cpdf.php',
     'CreateAboutCompanyTable' => $baseDir . '/database/migrations/2016_09_29_145135_create_about_company_table.php',
     'CreateAdminsTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_admins_table.php',
+    'CreateAdsTable' => $baseDir . '/database/migrations/2016_10_06_131713_create_ads_table.php',
     'CreateConsultingsTable' => $baseDir . '/database/migrations/2016_10_05_090805_create_consultings_table.php',
     'CreateMsgsTable' => $baseDir . '/database/migrations/2016_09_24_103037_create_msgs_table.php',
     'CreateNewsTable' => $baseDir . '/database/migrations/2016_09_20_140458_create_news_table.php',

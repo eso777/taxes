@@ -479,11 +479,37 @@ body {
 }
 /**********************/
 
+/* End User Search Style */
 
+/* Start Ads Style*/ 
+.ads-styles{
+    // min-height: 50px 
+}
+#ads_link,#ads_code,#ads_file
+{
+    display: none ;
+}
+.selectDiv > select {
+     margin :7px 0 100px 0;
+     
+}
+/*.ads-styles .selectDiv
+{    
+     margin-bottom: 35px;
+}
+.ads-styles .selectDiv > select 
+{
+     margin-top: 7px ;
+}
 
-/* Start User Search Style */
-
-
-
+.ads-styles .div_url{
+    display: block ; 
+    margin-bottom: 35px;
+     
+}
+.ads-styles .div_url input {
+     margin-top: 7px ;
+}
+ Start Ads Style */
 
 /* End Messages Style [ plugin & my Style ]*/

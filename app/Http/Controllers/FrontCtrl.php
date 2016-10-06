@@ -115,13 +115,11 @@ class FrontCtrl extends Controller {
           
           if($check)
           {
-               if(!Session::get('local') == 'ar')
+               if(Session::get('local') == 'ar')
                {
-                    return redirect()->to(Url('/').'/contactUs')->with(['msgSuccess'=>'<script>swal(" ","Message Was Send Successfully , And will communicate soon","success")</script>']);
+                    return redirect()->to(Url('/').'/contactUs')->with(['msgSuccess'=>'<script>swal(" ","تم الإرسال بنجاح وسيتم التواصل في اقرب فرصة","success")</script>']);
                }
-               
-               return redirect()->to(Url('/').'/contactUs')->with(['msgSuccess'=>'<script>swal(" ","تم الإرسال بنجاح وسيتم التواصل في اقرب فرصة","success")</script>']);
-
+               return redirect()->to(Url('/').'/contactUs')->with(['msgSuccess'=>'<script>swal(" ","Message Was Send Successfully , And will communicate soon","success")</script>']);
           }
           // Mail // 
      }

@@ -283,6 +283,17 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
                                         </a> 
                                    </li>
                                    <!-- About Company -->
+                                   
+                                   <!-- Ads -->
+                                   <li class="{{Request::is('admin/ads*') ? 'active' : ''}}">
+                                        <a href="{!!Url('/')!!}/admin/ads">
+                                             <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                                             <span class="title">
+                                                  الإعـلانـات
+                                             </span>
+                                        </a> 
+                                   </li>
+                                   <!-- Ads -->
 
                                    <!-- Slider -->
                                    <li class="{{Request::is('admin/slider*') ? 'active' : ''}}">
