@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
@@ -14,3 +15,21 @@
         </group>
     </open-files>
 </project-private>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/resources/views/admin/ads/create.blade.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/resources/views/admin/ads/_form.blade.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/app/Http/routes.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/resources/views/admin/ads/edit.blade.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/app/Ads.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/app/Http/Controllers/AdsCtrl.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/resources/views/admin/slider/index.blade.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/resources/views/admin/ads/index.blade.php</file>
+        </group>
+    </open-files>
+</project-private>
+>>>>>>> 42a847ec244b788e6d68236946fc66c7852a8cf9
