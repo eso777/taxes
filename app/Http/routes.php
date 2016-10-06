@@ -55,7 +55,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'authAdmin'], function() {
      Route::resource('consulting', 'ConsultingCtrl');
      // Consulting
      // AdS
-     Route::resource('ads', 'AdsCtrl');
+     Route::get('ads', 'AdsCtrl@index');
+     Route::post('ads/create', 'AdsCtrl@store');
      // AdS         
      
 });

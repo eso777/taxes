@@ -3,9 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/resources/lang/ar/index.php</file>
-            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/app/Http/Controllers/FrontCtrl.php</file>
-            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/resources/lang/en/index.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/resources/views/admin/ads/create.blade.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/resources/views/admin/ads/_form.blade.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/app/Http/routes.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/resources/views/admin/ads/edit.blade.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/app/Ads.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/app/Http/Controllers/AdsCtrl.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/resources/views/admin/slider/index.blade.php</file>
+            <file>file:/D:/MY%20WORK/xampp/htdocs/taxes/resources/views/admin/ads/index.blade.php</file>
         </group>
     </open-files>
 </project-private>

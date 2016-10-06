@@ -20,7 +20,6 @@
                <small class = "text-danger">{{ $errors->first('img') }}</small>
           </div>   
           <hr> 
-
           <div class="form-group{{ $errors->has('link') ? ' has-error' : '' }}" >
                {!! Form::label('link', 'رابــط الإعــلان') !!}
                {!! Form::text('link', null, ['class' => 'form-control']) !!}

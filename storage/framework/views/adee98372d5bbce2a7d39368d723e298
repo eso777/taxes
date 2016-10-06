@@ -11,9 +11,9 @@
                <option value="2"> كود </option>
           </select> 
      </div>
-     
+
      <div class="col-lg-12" id= "ads_file">
-          <div class = "form-group<?php echo e($errors->has('img') ? ' has-error' : ''); ?>" style="display: ">
+          <div class = "form-group<?php echo e($errors->has('img') ? ' has-error' : ''); ?>" >
                <?php echo Form::label('img', 'إرفاق صورة'); ?>
 
                <?php echo Form::file('img'); ?>
@@ -22,16 +22,15 @@
                <small class = "text-danger"><?php echo e($errors->first('img')); ?></small>
           </div>   
           <hr> 
-
           <div class="form-group<?php echo e($errors->has('link') ? ' has-error' : ''); ?>" >
-              <?php echo Form::label('link', 'رابــط الإعــلان'); ?>
+               <?php echo Form::label('link', 'رابــط الإعــلان'); ?>
 
-              <?php echo Form::text('link', null, ['class' => 'form-control']); ?>
+               <?php echo Form::text('link', null, ['class' => 'form-control']); ?>
 
-              <small class="text-danger"><?php echo e($errors->first('link')); ?></small>
+               <small class="text-danger"><?php echo e($errors->first('link')); ?></small>
           </div>
      </div>
-     
+
      <div class="form-group<?php echo e($errors->has('code_ads') ? ' has-error' : ''); ?>" id= "ads_code">
           <?php echo Form::label('code_ads', 'كــود الإعـلان'); ?>
 
@@ -39,7 +38,7 @@
 
           <small class="text-danger"><?php echo e($errors->first('code_ads')); ?></small>
      </div>
-     
+
      <div class="col-lg-12">
           <button class='btn btn-info ' type="submit">
                <i class="fa fa-check-circle"></i>   
@@ -48,25 +47,23 @@
           </button>
      </div>
      <script>
-          $('#selection').change(function(){
-             console.log($(this).val()) ;  
-             if($(this).val() == 1)
-             {
-                 $('#ads_file').fadeIn(1000);
-                 $('#ads_code').fadeOut(1000);
-             }
-             if($(this).val() == 2)
-             {
-               $('#ads_file').fadeOut(1000);
-               $('#ads_code').fadeIn(1000);
-             }
-             if($(this).val() == 0)
-             {
-                  $('#ads_file').fadeOut(500);
-                  $('#ads_code').fadeOut(500); 
-             }
-            
-             
+          $('#selection').change(function () {
+               console.log($(this).val());
+               if ($(this).val() == 1)
+               {
+                    $('#ads_file').fadeIn(1000);
+                    $('#ads_code').fadeOut(1000);
+               }
+               if ($(this).val() == 2)
+               {
+                    $('#ads_file').fadeOut(1000);
+                    $('#ads_code').fadeIn(1000);
+               }
+               if ($(this).val() == 0)
+               {
+                    $('#ads_file').fadeOut(500);
+                    $('#ads_code').fadeOut(500);
+               }
           });
      </script>
 
