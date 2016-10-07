@@ -2,17 +2,29 @@
 
 <?php $__env->startSection('content'); ?>
 
-<a href="<?php echo Url('/'); ?>/admin/ads/create" class="btn btn-success" title= "إضافة إعلان جديدة">
+     
+
+<a href="<?php echo Url('/'); ?>/admin/ads/create" class="btn btn-success" title= "إضافة إعلان جديد">
      <i class="fa fa-plus"></i> إضافة</a>
 <br>
 <br>
-
 <?php if(Session::has('alert')): ?>
-<?php echo Session::get('alert'); ?>
+          <?php echo Session::get('alert'); ?>
 
-<?php endif; ?>
+     <?php endif; ?>
+
+     <?php if(Session::get('errors')): ?>
+          <div class="alert alert-dismissable alert-warning">
+               <h4>Uwaga!</h4>
+               <ul>
+                    <?php foreach(Session::get('errors')->all() as $error): ?>
+                    <li><?php echo $error; ?></li>
+                    <?php endforeach; ?>
+               </ul>
+          </div>
+     <?php endif; ?>
+
 <?php if($ads->count() > 0): ?>
-
 <div class="panel panel-primary">
      <div class="text-center panel-heading">الإعــلانــات</div>
      <table class="table table-responsive table-striped table-bordered">
@@ -22,14 +34,16 @@
           <th colspan="4">خيارات</th>
           </thead>
           <tbody>
+               
                <?php foreach($ads as $one): ?>
+               
                <tr>
                     <th><?php echo e($one->id); ?></th>
                     <td>
                          <img class="" style="height:60px;width: 150px" src="<?php echo e(Url('/')); ?>/uploads/back/ads/<?php echo e($one->image); ?>">
                     </td>
                     <td>
-                         <?php echo Form::open(['method'=>'DELETE','action' =>['AdsCtrl@destroy',$image->id] , 'id' => 'form-delete-serv']); ?>
+                         <?php echo Form::open(['method'=>'DELETE','action' =>['AdsCtrl@destroy',$one->id] , 'id' => 'form-delete-serv']); ?>
 
                          <a href="<?php echo e(Url('/')); ?>/admin/ads/<?php echo e($one->id); ?>/edit" class="btn btn-warning"> تعديل </a>
                          <?php echo Form::submit('حذف', ['class'=>'btn btn-danger conf', 'data-val-title' => 'حذف الصورة' , 'data-val-text' => 'هل متأكد من حذف الصورة؟ : '] ); ?>

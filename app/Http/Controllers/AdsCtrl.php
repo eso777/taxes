@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Ads ;
+use Validator ;
 class AdsCtrl extends Controller {
 
 	/**
@@ -28,18 +29,27 @@ class AdsCtrl extends Controller {
 	{
           return view('admin.ads.create');
 	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-          $validation = Validator::make($request->all(), ['img' => 'required']);
+       
+       function rules($selection) {
+          
+          if($selection == 1) // This mean  type is photo 
+          {
+               $rules = [ 'img'=>'required', 'link'=>'required' ]; 
+          }elseif($selection == 2) // This mean  type is Code js ; 
+          {
+              $rules = ['code_ads'=>'required']; 
+          }
+          return $rules;
+       }    
+       
+       public function store(Request $request)
+	{  
+                        
+          $validation = Validator::make($request->all(), $this->rules($request->selection) );
           if ($validation->fails()) {
                return redirect()->back()->withErrors($validation)->withInput();
           }
+          
           if ($request->hasFile('img')) {
 
                $dest = 'uploads/back/ads/';
@@ -72,7 +82,8 @@ class AdsCtrl extends Controller {
 	public function edit($id)
 	{
           $ads = Ads::findOrfail($id);
-          return view('admin.slider.edit', compact('ads'));
+          $type = 'edit' ;
+          return view('admin.ads.edit', compact('ads','type'));
 	}
 
 	/**
@@ -81,9 +92,9 @@ class AdsCtrl extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request , $id)
 	{
-          $validation = Validator::make($request->all(), ['img' => 'image']);
+          $validation = Validator::make($request->all(), $this->rules($request->selection) );
           if ($validation->fails()) {
                return redirect()->back()->withErrors($validation)->withInput();
           }
@@ -111,7 +122,7 @@ class AdsCtrl extends Controller {
 	public function destroy($id)
 	{
           Ads::findOrfail($id)->delete();
-          return redirect()->to(Url('/') . '/admin/slider')->with(['alert' => '<script>swal(" ","تم الحذف بنجاح", "success")</script>']); 
+          return redirect()->to(Url('/') . '/admin/ads')->with(['alert' => '<script>swal(" ","تم الحذف بنجاح", "success")</script>']); 
 	}
 
 }

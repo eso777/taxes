@@ -1,5 +1,5 @@
  
-<?php $__env->startSection('title', 'اضافة خبر جديدة'); ?>
+<?php $__env->startSection('title', 'اضافة خبر جديد'); ?>
 
 <?php $__env->startSection('content'); ?>
 	

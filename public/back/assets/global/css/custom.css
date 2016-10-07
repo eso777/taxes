@@ -511,5 +511,18 @@ body {
      margin-top: 7px ;
 }
  Start Ads Style */
+/* Consulting  */
+.main-table tr:first-child td {
+     background-color: #26A69A ;
+     color: #FFF ;
+}
+h1{
+     font-size: 55px ;
+     margin: 40px 0px ;
+     font-weight: bold;
+     color: #666 ;
+          
+}
+/* Consulting  */
 
 /* End Messages Style [ plugin & my Style ]*/
