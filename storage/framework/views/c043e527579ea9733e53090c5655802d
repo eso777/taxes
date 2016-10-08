@@ -1,0 +1,180 @@
+<?php $__env->startSection('content'); ?>
+<div class="col-md-12">
+
+     <?php if(Session::has('alert')): ?>
+     <?php echo Session::get('alert'); ?>
+
+     <?php endif; ?>
+
+     <?php if(Session::get('errors')): ?>
+     <div class="alert alert-dismissable alert-warning">
+          <h4>Uwaga!</h4>
+          <ul>
+               <?php foreach(Session::get('errors')->all() as $error): ?>
+               <li><?php echo $error; ?></li>
+               <?php endforeach; ?>
+          </ul>
+     </div>
+     <?php endif; ?>
+
+     <div class="table panel-primary">
+          <div class="text-center panel-heading">التحكم في أعدادات الموقع </div>
+          <div class="col-md-11 panel-body">
+
+               <?php echo Form::model($settings,['method'=>'PATCH' , 'action' => ['SettingsCtrl@update' , $settings->id ] ]); ?>
+
+
+               <div class="form-group<?php echo e($errors->has('site_name_ar') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('site_name_ar', 'اسم الموقع باللغة العربية'); ?>
+
+                    <?php echo Form::text('site_name_ar', null, ['class' => 'form-control']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('site_name_ar')); ?></small>
+               </div>
+
+               <div class="form-group<?php echo e($errors->has('site_name_en') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('site_name_en', 'اسم الموقع باللغة الأنجليزية'); ?>
+
+                    <?php echo Form::text('site_name_en', null, ['class' => 'form-control']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('site_name_en')); ?></small>
+               </div>
+               <div class="form-group<?php echo e($errors->has('site_desc_ar') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('site_desc_ar', 'وصف الموقع باللغة العربية'); ?>
+
+                    <?php echo Form::textarea('site_desc_ar', null, ['class' => 'form-control']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('site_desc_ar')); ?></small>
+               </div>
+
+               <div class="form-group<?php echo e($errors->has('site_desc_en') ? ' has-error' : 'site_desc_en'); ?>">
+                    <?php echo Form::label('site_desc_en', 'وصف الموقع باللغة الأنجليزية'); ?>
+
+                    <?php echo Form::textarea('site_desc_en', null, ['class' => 'form-control']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('site_desc_en')); ?></small>
+               </div>
+
+               <div class="form-group<?php echo e($errors->has('site_tags_ar') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('site_tags_ar', 'الكلمات الدلالية باللغة العربية'); ?>
+
+                    <?php echo Form::textarea('site_tags_ar', null, ['class' => 'form-control','id'=>'tags_1']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('site_tags_ar')); ?></small>
+               </div>
+               <div class="form-group<?php echo e($errors->has('site_tags_en') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('site_tags_en', 'الكلمات الدلالية باللغة الأنجليزية'); ?>
+
+                    <?php echo Form::textarea('site_tags_en', null, ['class' => 'form-control','id'=>'tags_2']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('site_tags_en')); ?></small>
+               </div>
+
+               <div class="form-group<?php echo e($errors->has('facebook') ? ' has-error' : 'facebook'); ?>">
+                    <?php echo Form::label('facebook', 'فيس بوك'); ?>
+
+                    <?php echo Form::text('facebook', null, ['class' => 'form-control']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('')); ?></small>
+               </div>
+
+               <div class="form-group<?php echo e($errors->has('twitter') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('twitter', 'تويتر'); ?>
+
+                    <?php echo Form::text('twitter', null, ['class' => 'form-control']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('twitter')); ?></small>
+               </div>
+               <div class="form-group<?php echo e($errors->has('google_Plus') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('google_Plus', 'جوجل بلس'); ?>
+
+                    <?php echo Form::text('google_Plus', null, ['class' => 'form-control']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('google_Plus')); ?></small>
+               </div>
+               <div class="form-group<?php echo e($errors->has('youtube') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('youtube', 'يوتيوب'); ?>
+
+                    <?php echo Form::text('youtube', null, ['class' => 'form-control']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('youtube')); ?></small>
+               </div>
+
+               <div class="form-group<?php echo e($errors->has('linkedIn') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('linkedIn', 'لينكد أن'); ?>
+
+                    <?php echo Form::text('linkedIn', null, ['class' => 'form-control']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('linkedIn')); ?></small>
+               </div>
+               
+               <div class="form-group<?php echo e($errors->has('address_ar') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('address_ar', 'العنوان باللغة العربية'); ?>
+
+                    <?php echo Form::textarea('address_ar', null, ['class' => 'form-control']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('address_ar')); ?></small>
+               </div>
+
+               <div class="form-group<?php echo e($errors->has('address_en') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('address_en', 'العنوان باللغة الإنجليزية'); ?>
+
+                    <?php echo Form::textarea('address_en', null, ['class' => 'form-control']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('address_en')); ?></small>
+               </div>
+               <!-- Email -->
+               <div class="form-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('email', 'البريد الإلكتروني'); ?>
+
+                    <?php echo Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'eg: foo@bar.com']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('email')); ?></small>
+               </div>
+               <!-- Email -->
+
+               <!-- Email 2 -->
+               <div class="form-group<?php echo e($errors->has('email_2') ? ' has-error' : ''); ?>">
+                    <?php echo Form::label('email_2', 'البريد الإلكتروني 2'); ?>
+
+                    <?php echo Form::email('email_2', null, ['class' => 'form-control', 'placeholder' => 'eg: foo@bar.com']); ?>
+
+                    <small class="text-danger"><?php echo e($errors->first('email_2')); ?></small>
+               </div>
+               <!-- Email 2-->
+
+               <!-- phone -->
+               <div class="content-phone">
+                    <div class="form-group<?php echo e($errors->has('phone') ? ' has-error' : ''); ?>">
+                         <?php echo Form::label('phone', 'رقم التليفون'); ?>
+
+                         <?php echo Form::text('phone', null, ['class' => 'form-control']); ?>
+
+                         <small class="text-danger"><?php echo e($errors->first('phone')); ?></small>
+                    </div>
+               </div>
+               <!-- phone -->
+
+               <!-- phone 2 -->
+               <div class="content-phone">
+                    <div class="form-group<?php echo e($errors->has('phone_2') ? ' has-error' : ''); ?>">
+                         <?php echo Form::label('phone_2', 'رقم التليفون 2'); ?>
+
+                         <?php echo Form::text('phone_2', null, ['class' => 'form-control']); ?>
+
+                         <small class="text-danger"><?php echo e($errors->first('phone_2')); ?></small>
+                    </div>
+               </div>
+               <!-- phone 2 -->
+
+               <?php echo Form::submit('حفظ التعديلات', array('required', 'class'=>'btn btn-primary')); ?>
+
+
+               <?php echo Form::close(); ?>
+
+
+          </div>
+     </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

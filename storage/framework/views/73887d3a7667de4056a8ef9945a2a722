@@ -1,12 +1,11 @@
-@extends('front.layout')
-@section('title',Lang::get('index.title'))
-@section('content')
+<?php $__env->startSection('title',Lang::get('index.title')); ?>
+<?php $__env->startSection('content'); ?>
 <!-- masterslider -->
 <div class="master-slider ms-skin-default" id="of-home" style="direction: ltr;">
      <!--      new slide 
           <div class="ms-slide">
                 slide background 
-               <img src="{{Url('/')}}/front/js/masterslider/blank.gif" data-src="{{Url('/')}}/front/images/slide-1.jpg" alt="lorem ipsum dolor sit"/>
+               <img src="<?php echo e(Url('/')); ?>/front/js/masterslider/blank.gif" data-src="<?php echo e(Url('/')); ?>/front/images/slide-1.jpg" alt="lorem ipsum dolor sit"/>
                 slide text layer 
                <div class="ms-layer ms-caption" style="top:10px; left:30px;">
      
@@ -17,7 +16,7 @@
      <!--      new slide 
           <div class="ms-slide">
                 slide background 
-               <img src="{{Url('/')}}/front/js/masterslider/blank.gif" data-src="{{Url('/')}}/front/images/slide-2.jpg" alt="lorem ipsum dolor sit"/>
+               <img src="<?php echo e(Url('/')); ?>/front/js/masterslider/blank.gif" data-src="<?php echo e(Url('/')); ?>/front/images/slide-2.jpg" alt="lorem ipsum dolor sit"/>
                 slide text layer 
                <div class="ms-layer ms-caption" style="top:10px; left:30px;">
      
@@ -25,18 +24,18 @@
                 linked slide 
                <a href="#"></a>-->
      <!-- new slide -->
-     @if($slider->count() > 0)  
-     @foreach($slider as $slide)
+     <?php if($slider->count() > 0): ?>  
+     <?php foreach($slider as $slide): ?>
      <div class="ms-slide">
           <!-- slide background -->
-          <img src="{{Url('/')}}/uploads/back/slider/{{$slide->image}}" data-src="{{Url('/')}}/uploads/back/slider/{{$slide->image}}" alt="lorem ipsum dolor sit"/>
+          <img src="<?php echo e(Url('/')); ?>/uploads/back/slider/<?php echo e($slide->image); ?>" data-src="<?php echo e(Url('/')); ?>/uploads/back/slider/<?php echo e($slide->image); ?>" alt="lorem ipsum dolor sit"/>
           <!-- slide text layer -->
           <div class="ms-layer ms-caption" style="top:10px; left:30px;">
 
           </div>
      </div>
-     @endforeach
-     @endif
+     <?php endforeach; ?>
+     <?php endif; ?>
 
 
 </div>
@@ -49,7 +48,7 @@
 
 <section id="about" class="section">
      <div class="container">
-          <h1 class="sec-ttl wow fadeInUp">{{Lang::get('index.about_company')}}</h1>
+          <h1 class="sec-ttl wow fadeInUp"><?php echo e(Lang::get('index.about_company')); ?></h1>
 
           <div class="row">
                <div class="col-sm-5 wow fadeInRight">
@@ -57,76 +56,78 @@
                          <a class="prev"><i class="glyphicon glyphicon-menu-left" aria-hidden="true"></i></a>
                          <a class="next"><i class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></a>
                          <div id="owl-demo" class="owl-carousel owl-theme" style="direction: ltr;">
-                              @if($info->imgs)
+                              <?php if($info->imgs): ?>
                               <?php $images = explode("|", $info->imgs); ?>
-                              @foreach($images as $img )
+                              <?php foreach($images as $img ): ?>
                               <div class="item">
-                                   <a class="#"><img src="{{Url('/')}}/uploads/back/aboutCompany/{{$img}}"></a>
+                                   <a class="#"><img src="<?php echo e(Url('/')); ?>/uploads/back/aboutCompany/<?php echo e($img); ?>"></a>
                               </div>
-                              @endforeach
-                              @endif
+                              <?php endforeach; ?>
+                              <?php endif; ?>
                          </div>
                     </div>
                </div>
                <div class="col-sm-7 about-text wow fadeInLeft">
                     </p>
-                    {{ strip_tags(str_limit($info['Content_'.Session::get('local')], 1500)) }}
+                    <?php echo e(strip_tags(str_limit($info['Content_'.Session::get('local')], 1500))); ?>
+
                     </p>
                </div>
           </div>
      </div>
 </section>
 
-@if($services->count() > 0)
+<?php if($services->count() > 0): ?>
 <section id="services" class="section">
      <div class="container">
-          <h1 class="sec-ttl wow fadeInUp">{{Lang::get('index.our_serv')}}</h1>
+          <h1 class="sec-ttl wow fadeInUp"><?php echo e(Lang::get('index.our_serv')); ?></h1>
 
           <div class="row">
-               @foreach($services as $service)
+               <?php foreach($services as $service): ?>
                <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
                     <div class="service">
                          <figure class="service-thumb">
                               <a href="#">
-                                   <img src="{{Url('/')}}/uploads/back/services/{{$service->img}}">
+                                   <img src="<?php echo e(Url('/')); ?>/uploads/back/services/<?php echo e($service->img); ?>">
                                    <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
                               </a>
                          </figure>
                          <div class="service-content">
-                              <h3><a href="#">{{$service['title_'.Session::get('local')]}}</a></h3>
-                              {{ $service['meta_desc_'.Session::get('local')] }}
+                              <h3><a href="#"><?php echo e($service['title_'.Session::get('local')]); ?></a></h3>
+                              <?php echo e($service['meta_desc_'.Session::get('local')]); ?>
+
                          </div>
                     </div>
                </div>
-               @endforeach
+               <?php endforeach; ?>
           </div>
      </div>
 </section>
-@endif
+<?php endif; ?>
 
 <section id="consulting">
      <div class="container">
           <div class="row">
                <div class="col-sm-9">
-                    <h2>{{Lang::get('index.looking')}}</h2>
-                    <p>{{Lang::get('index.text')}}</p>
+                    <h2><?php echo e(Lang::get('index.looking')); ?></h2>
+                    <p><?php echo e(Lang::get('index.text')); ?></p>
                </div>
                <div class="col-sm-3 text-left">
-                    <a href="#" class="ask-btn">{{ Lang::get('index.AskCounselNow') }}</a>
+                    <a href="#" class="ask-btn"><?php echo e(Lang::get('index.AskCounselNow')); ?></a>
                </div>
           </div>
      </div>
 </section>
 
-@if(" " == "&")
+<?php if(" " == "&"): ?>
 <section id="quotes" class="section">
      <div class="container">
-          <h1 class="sec-ttl wow fadeInUp">{{Lang::get('index.guest')}}</h1>
+          <h1 class="sec-ttl wow fadeInUp"><?php echo e(Lang::get('index.guest')); ?></h1>
           <div class="row">
                <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
                     <div class="quote">
                          <div class="client-img">
-                              <img src="{{Url('/')}}/front/images/client-1.jpg">
+                              <img src="<?php echo e(Url('/')); ?>/front/images/client-1.jpg">
                          </div>
                          <p>هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص. إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة</p>
                          <div class="client-info">
@@ -139,7 +140,7 @@
                <div class="col-sm-4 wow fadeIn" data-wow-delay="1s">
                     <div class="quote">
                          <div class="client-img">
-                              <img src="{{Url('/')}}/front/images/client-2.jpg">
+                              <img src="<?php echo e(Url('/')); ?>/front/images/client-2.jpg">
                          </div>
                          <p>هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص. إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة</p>
                          <div class="client-info">
@@ -152,7 +153,7 @@
                <div class="col-sm-4 wow fadeIn" data-wow-delay="1.5s">
                     <div class="quote">
                          <div class="client-img">
-                              <img src="{{Url('/')}}/front/images/client-3.jpg">
+                              <img src="<?php echo e(Url('/')); ?>/front/images/client-3.jpg">
                          </div>
                          <p>هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص. إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة</p>
                          <div class="client-info">
@@ -164,6 +165,7 @@
           </div>
      </div>
 </section>
-@endif
-@endsection
-@stop
+<?php endif; ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

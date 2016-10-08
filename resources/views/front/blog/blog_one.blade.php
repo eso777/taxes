@@ -1,8 +1,7 @@
 <?php
-
 use Carbon\Carbon; ?>
 @extends('front.layout')
-@section('title' , Lang::get('index.about'))
+@section('title' , Lang::get('index.blog_title'))
 
 @section('content')
 
@@ -11,12 +10,12 @@ use Carbon\Carbon; ?>
           <div class="container">
                <div class="row">
                     <div class="col-sm-8">
-                         <h1 style="font-size: 20px; margin-top: 5px;">{{$blog_one['news_title_'.Session::get('local')]}}<h1>
+                         <h1 style="font-size: 20px; margin-top: 5px;">{{$blog_one['news_title_'.Session::get('local')]}}</h1>
                     </div>
                     <div class="col-sm-4">
                          <ol class="breadcrumb">
                               <li><a href="{{Url('/')}}">{{Lang::get('index.title')}}</a></li>
-                              <li class="active">{{Lang::get('index.aboutComp')}}</li>
+                              <li class="active">{{Lang::get('index.blog_title')}}</li>
                          </ol>
                     </div>
                </div>
@@ -55,10 +54,12 @@ use Carbon\Carbon; ?>
                </div>
 
                <div class="col-sm-4">
+                    @if($ads->count() > 0)
                     <div class="widget">
                          <h2>{{Lang::get('index.adsArea')}}</h2>
+                             <a target="_blank" href="{{$ads->link}}"><img class="img-responsive"  src="{{Url('/')}}/uploads/back/ads/{{$ads->image}}" alt=""></a>
                     </div>
-
+                    @endif
                     <div class="widget">
                          <h2>{{Lang::get('index.relatedNews')}}</h2>
                          <div class="widget-posts">

@@ -12,6 +12,15 @@ return [
     "news" => "Blog",
     "about_company" => "about company",
     "OrderConsultation" => "Order Consultation",
+
+    /*  Section Review Client */
+    "AskCounselNow"     => "Ask counsel now",
+    "OrderConsultation" => "Order Consultation",
+    "looking"           => "Looking for advice ?",
+    "text"              => "We have a team of experts are ready to offer support and guidance for Our Customers",
+    "guest"             => "Guest Customers",
+    /*  Section Review Client */
+
     /* Start About Company */
     "about" => "about company",
     /* End About Company */
@@ -34,10 +43,14 @@ return [
     "phone" => "Phone",
     "about" => "Inquire About",
     "subject" => "Subject",
-    
+
     "companyAddress" => "Company Address",
     "contactInformation" =>"Contact Information",
     "btnSend" =>" Send ",
     "msgSuccess" =>"Message Was Send Successfully , And will communicate soon ",
     /* Start Contact Us  */
+
+    /* blog one */
+    "noAds"=>" There are no ads .",
+    /* blog one */
 ];

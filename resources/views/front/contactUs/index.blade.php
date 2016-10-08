@@ -3,9 +3,7 @@
 @section('content')
 
 @if(Session::has('msgSuccess'))
-     <div class="alert alert-success">
-            {!! Session::get('msgSuccess') !!}
-     </div>
+     {!! Session::get('msgSuccess') !!}
 @endif
 
 <section class="page-content">
@@ -38,8 +36,8 @@
                               </ul>
                          </div>
                          @endif
-                    <!--                         <div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> تم إرسال الطلب بنجاح!</div>-->
-                    <!--                         <div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> من فضلك أكمل الحقول الناقصة!</div>-->
+                    <!--  <div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> تم إرسال الطلب بنجاح!</div>-->
+                    <!--  <div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> من فضلك أكمل الحقول الناقصة!</div>-->
                          {!! Form::open() !!}
                          <div class="form-group"> 
 

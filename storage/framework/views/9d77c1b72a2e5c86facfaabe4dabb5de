@@ -1,0 +1,61 @@
+<?php $__env->startSection('title' , Lang::get('index.blog_title')); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<section class="page-content">
+     <div class="page-ttl">
+          <div class="container">
+               <div class="row">
+                    <div class="col-sm-6">
+                         <h1><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>  <?php echo e(Lang::get('index.blog_title')); ?></h1>
+                    </div>
+                    <div class="col-sm-6">
+                         <ol class="breadcrumb">
+                              <li><a href="<?php echo e(Url('/')); ?>"><?php echo e(Lang::get('index.title')); ?></a></li>
+                              <li class="active"><?php echo e(Lang::get('index.blog_title')); ?></li>
+                         </ol>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <?php if($blog->count() > 0): ?>
+     <div class="container">
+          <div class="row">
+               <?php foreach( $blog as $blog_one ): ?>
+               <div class="col-sm-6">
+                    <div class="blog-post">
+                         <a href="<?php echo e(Url('/')); ?>/blog/<?php echo e($blog_one->id); ?>-<?php echo e($blog_one['slug_'.Session::get('local')]); ?>" class="blog-post-thumb">
+                              <?php if($blog_one->img !== ""): ?>
+                                   <img src="<?php echo e(Url('/')); ?>/uploads/back/news/<?php echo e($blog_one->img); ?>">
+                              <?php else: ?>
+                                   <img src="https://dummyimage.com/600x400/#252536/fff.png&text=No+Image">
+                              <?php endif; ?>
+                         </a>
+                         <div class="blog-post-content">
+                              <h3><a href="<?php echo e(Url('/')); ?>/blog/<?php echo e($blog_one->id); ?>-<?php echo e($blog_one['slug_'.Session::get('local')]); ?>"><?php echo e(str_limit($blog_one['news_title_'.Session::get('local')],30)); ?></a></h3>
+                              <p>
+                                   <?php echo e(strip_tags(str_limit($blog_one['meta_desc_'.Session::get('local')],200))); ?>
+
+                              </p>
+                              <a href="<?php echo e(Url('/')); ?>/blog/<?php echo e($blog_one->id); ?>-<?php echo e($blog_one['slug_'.Session::get('local')]); ?>" class="more-btn"><?php echo e(Lang::get('index.details').'...'); ?></a>
+                         </div>
+                    </div>
+               </div>
+               <?php endforeach; ?>
+
+          </div>
+          <div class="text-center">
+               <!-- <a href="#" class="load-more">تحميل المزيد</a>-->
+               <div class="paginate"><?php echo $blog->render(); ?></div>
+          </div>
+     </div>
+     <?php else: ?> 
+     <div class="well text-center"> <h3><?php echo e(Lang::get('index.noArticles')); ?></h3> </div>
+     <?php endif; ?>
+
+</section>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

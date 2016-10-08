@@ -11,6 +11,14 @@ return [
     "consulting" => "إستشارات ونصائح",
     "news" => "أخبار وفعاليات",
     "OrderConsultation" => "طلب إستشارة",
+
+    /*  Section Review Client */
+    "AskCounselNow" => "أطلب إستشارة الان",
+    "looking" => "تـبحث عن إستشارة او نصيحة ؟",
+    "text" => "لدينا فريق من الخبراء ومستعدون لتقديم الدعم والإرشاد لعملاءنا",
+    "guest" => "آراء الـعمـلاء",
+    /*  Section Review Client */
+
     /* About Company */
     "about" => "عن الشركة",
     /* About Company */
@@ -38,8 +46,9 @@ return [
     "btnSend" =>"إرســال",
     "msgSuccess" =>"تـــم الإرسـال بنجاح ,وسيتم التواصل في اقرب فرصة",
     
-    
-     /* Start Contact Us  */
-    
-    
+     /* End Contact Us  */
+    /*  Blog One*/
+    "noAds"=>"لا تــوجد إعلانـات .",
+    /*  Blog One*/
+
 ];

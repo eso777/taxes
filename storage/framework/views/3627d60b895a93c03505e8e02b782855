@@ -1,0 +1,66 @@
+<?php $__env->startSection('title' , 'الإستشارات'); ?>
+<?php $__env->startSection('content'); ?>
+<a href="<?php echo Url('/'); ?>/admin/consulting/create" class="btn btn-success" title="إضافة إستشارة جديدة">
+     <i class="fa fa-plus"></i></a>
+<br>
+<br>
+
+<?php if(Session::has('alert')): ?>
+<?php echo Session::get('alert'); ?>
+
+<?php endif; ?>
+
+<?php if($consulting->total() > 0 ): ?>
+<div class="panel panel-primary">
+     <div class="text-center panel-heading">الإستشارات</div>
+     <table class="table table-responsive table-striped">
+          <thead>
+          <th>#</th>
+          <th>عنوان الإستشارة العربي</th>
+          <th>عنوان الإستشارة الأنجليزي</th>
+          <th colspan="4">خيارات</th>
+          </thead>
+          <tbody>
+               <?php foreach($consulting as $one): ?>
+               <tr>
+                    <td><?php echo e($one->id); ?></td>
+                    <td><?php echo e($one->title_ar); ?></td>
+                    <td><?php echo e($one->title_en); ?></td>
+
+                    <td>
+                         <a href="<?php echo e(Url('/')); ?>/admin/consulting/<?php echo e($one->id); ?>/edit" class="btn btn-warning"> تعديل </a>
+                    </td>
+
+                    <td>
+                         <?php echo Form::open(['method'=>'DELETE','action' =>['ConsultingCtrl@destroy',$one->id] , 'id' => 'form-delete-serv']); ?>
+
+                         <?php echo Form::submit('حذف', ['class'=>'btn btn-danger conf', 'data-val-title' => 'حذف الإستشارة' , 'data-val-text' => 'هل متأكد من خذف الإستشارة؟ : '. $one->title_ar] ); ?>
+
+                         <?php echo Form::close(); ?> 
+                    </td>
+               </tr>
+               <?php endforeach; ?>
+          </tbody>
+     </table>
+</div>
+<?php echo $consulting->render(); ?>
+
+<?php else: ?>
+<div class="nice-msg">لا توجدإستشارات  للعرض .</div>
+<?php endif; ?>
+
+
+
+<?php $__env->stopSection(); ?>
+
+<script type="text/javascript">
+     /*$('.conf').click(function(event) {
+      
+      event.preventDefault() ;
+      });*/
+
+</script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

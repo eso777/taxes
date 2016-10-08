@@ -26,7 +26,7 @@
                <div class="col-sm-6">
                     <div class="blog-post">
                          <div class="blog-post-content" style="padding: 0;">
-                              <h3><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {{ $one['title_'.Session::get('local')]}}</a></h3>
+                              <h3><a href="{{Url('/')}}/consulting/{{$one->id}}-{{$one['slug_'.Session::get('local')]}}"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {{ $one['title_'.Session::get('local')]}}</a></h3>
                               <p> {!! str_limit($one['meta_desc_'.Session::get('local')] , 334) !!}</p>
                               <a href="{{Url('/')}}/consulting/{{$one->id}}-{{$one['slug_'.Session::get('local')]}}" class="more-btn">{{ Lang::get('consulting.details') }}</a>
                          </div>

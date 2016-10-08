@@ -1,0 +1,56 @@
+<?php $__env->startSection('title' , 'الرسائل'); ?>
+<?php $__env->startSection('content'); ?>
+<a href="<?php echo Url('/'); ?>/admin/messages/create" class="btn btn-success" title="أرسال رسالة جديدة">
+     <i class="fa fa-plus"></i>رسالة جديدة</a>
+<br>
+<br>
+
+
+<?php if(Session::has('msg')): ?>
+<div class="alert alert-success">
+     <?php echo Session::get('msg'); ?>
+
+</div>
+<?php endif; ?>
+<?php if(Session::has('alert')): ?>
+<?php echo Session::get('alert'); ?>
+
+<?php endif; ?>
+
+
+<?php if($messages->total() > 0 ): ?>
+
+<ul class="list-group">
+     <?php foreach($messages as $msg): ?>
+     <li class="list-group-item">
+          <a href="<?php echo Url('/'); ?>/admin/messages/getMsgs/<?php echo $msg->user_id; ?>">
+               <?php echo @$users->find(@$msg->user_id)->name; ?>
+
+          </a>
+          <?php $unread = $msgs->where('user_id', $msg->user_id)->where('status', 0)->where('sender', 1)->count()
+          ?>
+          <?php if($unread > 0 ): ?>
+          <span class="badge badge-warning"><?php echo e($unread); ?> </span>
+          <?php endif; ?>
+     </li>
+     <?php endforeach; ?>
+</ul>
+<?php else: ?>
+<div class="nice-msg">لا توجد محادثات للعرض .</div>
+<?php endif; ?>
+
+
+
+<?php $__env->stopSection(); ?>
+
+<script type="text/javascript">
+     /*$('.conf').click(function(event) {
+      
+      event.preventDefault() ;
+      });*/
+
+</script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

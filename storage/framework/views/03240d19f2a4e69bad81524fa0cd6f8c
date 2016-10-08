@@ -1,6 +1,5 @@
-@extends('admin.layout')
-	@section('title','admin panel')
-	@section('content')
+	<?php $__env->startSection('title','admin panel'); ?>
+	<?php $__env->startSection('content'); ?>
 
 		<div class=" home-stat text-center">
 			<h1 class="text-center"> Dashboard </h1>
@@ -11,7 +10,7 @@
 						<i class="fa fa-users"></i>
 						<div class="info">
 							عدد الاعـضاء
-							<span><a href="{{Url('/')}}/admin/users" title="View Members">{{$countUser}}</a></span>
+							<span><a href="<?php echo e(Url('/')); ?>/admin/users" title="View Members"><?php echo e($countUser); ?></a></span>
 						</div>
 					</div>
 				</div>
@@ -21,8 +20,9 @@
 						<div class="info">
 							الإستشارات
 							<span>
-                                   <a href="{{Url('/')}}/admin/consulting" title="عـرض الإستشارات">
-										{{$countConsulting}}
+                                   <a href="<?php echo e(Url('/')); ?>/admin/consulting" title="عـرض الإستشارات">
+										<?php echo e($countConsulting); ?>
+
                                    </a>
                               </span>
 						</div>
@@ -34,7 +34,7 @@
 						<i class="fa fa-comments"></i>
 						<div class="info">
 							الـخدمات
-							<span><a href="{{Url('/')}}/admin/services" title="عـرض الخـدمات">{{$countService}}</a></span>
+							<span><a href="<?php echo e(Url('/')); ?>/admin/services" title="عـرض الخـدمات"><?php echo e($countService); ?></a></span>
 						</div>
 					</div>
 				</div>
@@ -43,13 +43,14 @@
 						<i class="fa fa-bullhorn"></i>
 						<div class="info">
 							الإعـلانات
-							<span><a href="{{Url('/')}}/admin/ads" title="عـرض الإعلانات">{{$countAds}}</a></span>
+							<span><a href="<?php echo e(Url('/')); ?>/admin/ads" title="عـرض الإعلانات"><?php echo e($countAds); ?></a></span>
 						</div>
-					</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-	@endsection
-@stop
+	<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

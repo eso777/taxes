@@ -1,0 +1,75 @@
+<?php $__env->startSection('title' , 'الخدمات'); ?>
+
+<?php $__env->startSection('content'); ?>
+<a href="<?php echo Url('/'); ?>/admin/services/create" class="btn btn-success" title="أضافة خدمة جديدة">
+	<i class="fa fa-plus"></i></a>
+<br>
+<br>
+
+
+<?php if(Session::has('msg')): ?>
+	<div class="alert alert-success">
+		<?php echo Session::get('msg'); ?>
+
+	</div>
+<?php endif; ?>
+
+<?php if(Session::has('alert')): ?>
+		<?php echo Session::get('alert'); ?>
+
+<?php endif; ?>
+	
+<?php if($services->total() > 0 ): ?>
+	<div class="panel panel-primary">
+		<div class="text-center panel-heading">الخدمات</div>
+		<table class="table table-responsive table-striped">
+		<thead>
+			<th>#</th>
+			<th>اسم الخدمة العربي</th>
+			<th>اسم الخدمة الأنجليزي</th>
+			<th colspan="4">خيارات</th>
+		</thead>
+		<tbody>
+			<?php foreach($services as $service): ?>
+			<tr>
+				<td><?php echo e($service->id); ?></td>
+				<td><?php echo e($service->title_ar); ?></td>
+				<td><?php echo e($service->title_en); ?></td>
+				
+				<td>
+					<a href="<?php echo e(Url('/')); ?>/admin/services/<?php echo e($service->id); ?>/edit" class="btn btn-warning"> تعديل </a>
+				</td>
+				
+				<td>
+					<?php echo Form::open(['method'=>'DELETE','action' =>['ServicesCtrl@destroy',$service->id] , 'id' => 'form-delete-serv']); ?>
+
+						<?php echo Form::submit('حذف', ['class'=>'btn btn-danger conf', 'data-val-title' => 'حذف الخدمة' , 'data-val-text' => 'هل متأكد من خذف خدمة : '. $service->title_ar] ); ?>
+
+					<?php echo Form::close(); ?> 
+				</td>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+		</table>
+	</div>
+	<?php echo $services->render(); ?>
+
+<?php else: ?>
+	<div class="nice-msg">لا توجد خدمات للعرض .</div>
+<?php endif; ?>
+
+
+
+<?php $__env->stopSection(); ?>
+
+<script type="text/javascript">
+	$('.conf').click(function(event) {
+		
+		event.preventDefault() ;
+	});
+	
+</script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

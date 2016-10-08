@@ -15,6 +15,7 @@ use Validator;
 use Mail ;
 use Lang ;
 use App\Consulting ;
+use App\Ads ;
 
 class FrontCtrl extends Controller {
      /* Start Front End Index Page  */
@@ -76,7 +77,8 @@ class FrontCtrl extends Controller {
                }
           }
 
-          return view('front.blog.blog_one', compact('blog_one', 'related_art'));
+          $ads = Ads::all()->random(1) ;
+          return view('front.blog.blog_one', compact('blog_one', 'related_art', 'ads'));
      }
 
      /* End Page Blog */
@@ -87,7 +89,7 @@ class FrontCtrl extends Controller {
           $settings = Settings::first();
           return view('front.contactUs.index', compact('settings'));
      }
-
+     // Send Information [ Contact us page ]
      function sendInformation(Request $request) {
           $rules = [
               'name' => 'required',

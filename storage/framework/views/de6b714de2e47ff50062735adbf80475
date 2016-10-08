@@ -1,0 +1,176 @@
+<?php $__env->startSection('title' , 'الأعضاء'); ?>
+<?php $__env->startSection('content'); ?>
+	<div class="col-md-12">
+		<div class="col-md-2">
+			<a href="<?php echo Url('/'); ?>/admin/users/create" class="btn btn-success btn-icon-only"><i class="fa fa-plus"></i></a>
+		</div>
+		
+
+		<div class="col-md-8">
+	        <div id="imaginary_container"> 
+                <?php echo Form::open(); ?>
+
+	            <div class="input-group stylish-input-group">
+	                <input type="text" value="<?php echo e($request->q); ?>" id="search-input" class="form-control"  placeholder="البحث بـــ البريد الألكتروني او اسم الشركة او اسم العميل .." >
+	                <span class="input-group-addon">
+	                    <button type="submit" id='btnSendSearch'>
+	                        <span class="glyphicon glyphicon-search"></span>
+	                    </button>  
+	                </span>
+	            </div>
+                <?php echo Form::close(); ?>
+
+	    	</div>
+		</div>
+		
+
+	</div> <br /> <br />
+	<br /> <br />
+
+	<?php if($request->has('q')): ?>
+		<div class="lable label-info" style="padding:6px">
+			نتيجة البحث لـــ : <?php echo e($request->q); ?> <a class="pull-right " href="<?php echo e(Url('/')); ?>/admin/users" >رجوع <i class='fa fa-arrow-left'></i></a>
+			<?php if($users->total() > 0): ?> 
+			| عدد نتائج البحث : [ <?php echo e($users->total()); ?> ]
+			<?php endif; ?>
+		</div>
+	<?php endif; ?>
+
+	<?php if(Session::has('alert')): ?>
+		<?php echo Session::get('alert'); ?>
+
+	<?php endif; ?>
+
+	<br>
+
+<?php /* Start Defalut View */ ?>
+<?php if($users->total() > 0): ?>
+	<div class="panel panel-primary">
+		<div class="panel-heading text-center">عدد الأعضاء :( <?php echo e($usersCount); ?> )
+		|   الأعضاء المفعلين : ( <?php echo e($usersActive); ?> ) |   الأعضاء الغير مفعلين : ( <?php echo e($usersDisActive); ?> ) 
+		</div>
+		<div class="panel-body">
+				<table class="table table-bordered">
+					<tr>
+						<th>الأسم</th>								
+						<th>البريد الألكتروني</th>								
+						<th>إسم الشركة</th>								
+						<th>خيارات</th>								
+					</tr>
+				<?php foreach($users as $user): ?>
+				<tr <?php if($user->status == 0): ?> style="background-color:#c1bbbb" <?php endif; ?>>
+						
+							<?php /* <td> <?php echo Form::checkbox('selected[]',$user->id,false,['class'=>'selectedCheckbox']); ?>	 */ ?>
+							
+							<!-- <?php if($user->status !== 0): ?>
+							<input type="checkbox" name="selected[]" value="<?php echo e($user->id); ?>" class="selectedCheckbox md-check" >
+							<?php endif; ?> </td> -->
+						
+						<td><?php echo e($user->name); ?></td>		
+						<td><?php echo e($user->email); ?></td>		
+						<td><?php echo e($user->name_company); ?></td>		
+						<td>					
+							 	
+								<a href="<?php echo Url('/'); ?>/admin/users/<?php echo e($user->id); ?>/edit" class="btn btn-info">
+								<i class='fa fa-edit'></i>تعديل</a>
+								
+								<?php /* <?php echo Form::submit('حذف' , ['class'=>'btn btn-danger conf','data-val-text' =>"سيتم حذف هذا العضو هل انت متأكد من الحذف ؟", 'data-val-title'=>'حذف العضو : ' . $user->name]); ?> */ ?>
+
+								<?php if($user->status == 0): ?>
+									<a href="<?php echo Url('/'); ?>/admin/users/<?php echo e($user->	id); ?>/status" class="btn btn-success">
+									<i class="fa fa-check"></i>
+									تفعيل	
+									</a>									
+								<?php else: ?>
+									<a href="<?php echo Url('/'); ?>/admin/users/<?php echo e($user->id); ?>/status" class="btn btn-danger">
+									<i class="fa fa-times"></i>تعطيل
+									</a>									
+								<?php endif; ?>
+								
+								<?php if($user->status == 1): ?>
+									<a href="<?php echo Url('/'); ?>/admin/messages/getMsgs/<?php echo e($user->id); ?>" class="btn btn-success">
+									<i class='fa fa-paper-plane'></i>رسالة خاصة </a>
+								<?php endif; ?>
+
+							
+						</td>								
+					</tr>
+				<?php endforeach; ?> 
+				</table>
+				<a href="<?php echo Url('/'); ?>/admin/users/send/msg" class="btn btn-success"><i class='fa fa-paper-plane'></i>رسالة جماعية</a>
+			
+			<?php echo $users->appends(['q'=>$request->q])->render(); ?>
+
+			
+		</div>	
+	</div>
+<?php else: ?>
+	<div class="nice-msg">لا توجد بيانات للعرض.</div> 
+<?php endif; ?>
+
+<!-- 
+	***  Start JS CODE  *** 
+ -->
+<script src="//code.jquery.com/jquery.js"></script>
+
+<script>
+
+$(document).ready(function() {
+
+// Count :checked and add attr disabld 
+	/*$(".selectedCheckbox").change(function() {
+	if(!this.checked) 
+	{	
+		$("#selectAll").prop('checked',false);
+	}
+	});
+	$(".selectedCheckbox").change(function() {
+
+		($(".selectedCheckbox:checked").length >= 1) ? $('#sendAll').removeAttr('disabled') :$('#sendAll').attr('disabled', 'disabled');
+ 
+	});
+	
+	$("#selectAll").change(function() {
+		($("#selectAll:checked").length >= 1) ? $('#sendAll').removeAttr('disabled') :$('#sendAll').attr('disabled', 'disabled');
+    
+	});
+
+$("#selectAll").change(function() {
+	if(this.checked) 
+	{	
+		//alert("changed") ;
+
+		$('.selectedCheckbox').prop('checked', this.checked);
+	}else
+	{
+		$('.selectedCheckbox').prop('checked', false);
+		
+	}
+});
+    */	
+});
+// End document Ready
+/********************************************************************/
+ 	/* Start search   */   
+    $('#btnSendSearch').on('click',function(e) {
+		e.preventDefault() ;
+		if($('#search-input').val().trim() !== '')
+		{
+			window.location = '<?php echo e(Url("/")); ?>/admin/users/?q=' + $('#search-input').val().trim();
+		}
+	    });
+    /* Start search   */   
+
+/********************************************************************/
+
+</script> 
+
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+
+
+
+
+
+
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

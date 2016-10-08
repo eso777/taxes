@@ -1,0 +1,93 @@
+<?php
+use Carbon\Carbon; ?>
+
+<?php $__env->startSection('title' , Lang::get('index.blog_title')); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<section class="page-content">
+     <div class="page-ttl">
+          <div class="container">
+               <div class="row">
+                    <div class="col-sm-8">
+                         <h1 style="font-size: 20px; margin-top: 5px;"><?php echo e($blog_one['news_title_'.Session::get('local')]); ?></h1>
+                    </div>
+                    <div class="col-sm-4">
+                         <ol class="breadcrumb">
+                              <li><a href="<?php echo e(Url('/')); ?>"><?php echo e(Lang::get('index.title')); ?></a></li>
+                              <li class="active"><?php echo e(Lang::get('index.blog_title')); ?></li>
+                         </ol>
+                    </div>
+               </div>
+          </div>
+     </div>
+     
+     <div class="container">
+          <div class="row">
+               <div class="col-sm-8">
+                    <div class="post-wrap widget">
+                         <div class="post-img text-center">
+                              <img src="<?php echo e(Url('/')); ?>/uploads/back/news/<?php echo e($blog_one->img); ?>">
+                         </div>
+                         <div class="post-info text-center">
+                              <span><i class="glyphicon glyphicon-tags"></i><a href="<?php echo e(Url('/')); ?>/blog">  <?php echo e(Lang::get('index.news')); ?></a></span>
+                              <span><i class="glyphicon glyphicon-calendar"></i>  <?php echo e(Carbon::parse($blog_one->created_at)->diffForHumans()); ?></span>
+                         </div>
+                         <div class="post-content">
+                              <?php echo $blog_one['news_content_'.Session::get('local')]; ?>
+
+                         </div>
+                    </div>
+                    <div class="widget">
+                         <h2><?php echo e(Lang::get('index.comments')); ?></h2>
+                         <div id="disqus_thread"></div>
+                         <script>
+                              (function () { // DON'T EDIT BELOW THIS LINE
+                                   var d = document, s = d.createElement('script');
+                                   s.src = '//itag-1.disqus.com/embed.js';
+                                   s.setAttribute('data-timestamp', +new Date());
+                                   (d.head || d.body).appendChild(s);
+                              })();
+                         </script>
+                         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+                    </div>
+               </div>
+
+               <div class="col-sm-4">
+                    <?php if($ads->count() > 0): ?>
+                    <div class="widget">
+                         <h2><?php echo e(Lang::get('index.adsArea')); ?></h2>
+                             <a target="_blank" href="<?php echo e($ads->link); ?>"><img class="img-responsive"  src="<?php echo e(Url('/')); ?>/uploads/back/ads/<?php echo e($ads->image); ?>" alt=""></a>
+                    </div>
+                    <?php endif; ?>
+                    <div class="widget">
+                         <h2><?php echo e(Lang::get('index.relatedNews')); ?></h2>
+                         <div class="widget-posts">
+                         <?php if(count($related_art) > 0): ?>
+                         <?php foreach($related_art as $one): ?>
+                              <div class="blog-post">
+                                   <a href="<?php echo e(Url('/')); ?>/blog/<?php echo e($one['id']); ?>-<?php echo e($one['slug']); ?>" class="blog-post-thumb">
+                                        <img src="<?php echo e(Url('/')); ?>/uploads/back/news/<?php echo e($one['image']); ?>">
+                                   </a>
+                                   <div class="blog-post-content">
+                                        <h3><a href="<?php echo e(Url('/')); ?>/blog/<?php echo e($one['id']); ?>-<?php echo e($one['slug']); ?>"> <?php echo e(str_limit($one['name'] , 50)); ?> </a></h3>
+                                   </div>
+                              </div>
+                         <?php endforeach; ?>
+                         <?php else: ?>
+                         <div class="blog-post">
+                              <h4><?php echo e(Lang::get('index.noRelated')); ?></h4>
+                         </div> 
+                         <?php endif; ?>
+                         </div>
+                    </div>
+               </div>
+                                          
+          </div>
+     </div>
+</section>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
