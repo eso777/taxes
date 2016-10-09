@@ -87,14 +87,14 @@
                <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
                     <div class="service">
                          <figure class="service-thumb">
-                              <a href="#">
+                              <a href="<?php echo e(Url('/')); ?>/servies/<?php echo e($service->id); ?>-<?php echo e($service['slug_'.Session::get('local')]); ?>">
                                    <img src="<?php echo e(Url('/')); ?>/uploads/back/services/<?php echo e($service->img); ?>">
                                    <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
                               </a>
                          </figure>
                          <div class="service-content">
-                              <h3><a href="#"><?php echo e($service['title_'.Session::get('local')]); ?></a></h3>
-                              <?php echo e($service['meta_desc_'.Session::get('local')]); ?>
+                              <h3><a href="<?php echo e(Url('/')); ?>/servies/<?php echo e($service->id); ?>-<?php echo e($service['slug_'.Session::get('local')]); ?>"><?php echo e($service['title_'.Session::get('local')]); ?></a></h3>
+                              <?php echo e(str_limit($service['meta_desc_'.Session::get('local')], 150)); ?>
 
                          </div>
                     </div>
@@ -119,7 +119,7 @@
      </div>
 </section>
 
-<?php if(" " == "&"): ?>
+<?php if(" " == "&"): ?> <!-- This line just to disable this section  -->
 <section id="quotes" class="section">
      <div class="container">
           <h1 class="sec-ttl wow fadeInUp"><?php echo e(Lang::get('index.guest')); ?></h1>

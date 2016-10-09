@@ -1,0 +1,87 @@
+<div class="form-group<?php echo e($errors->has('title_ar') ? ' has-error' : ''); ?>">
+    <?php echo Form::label('title_ar', 'العنوان باللغة العربية'); ?>
+
+    <?php echo Form::text('title_ar', null, ['class' => 'form-control']); ?>
+
+    <small class="text-danger"><?php echo e($errors->first('title_ar')); ?></small>
+</div>
+
+<div class="form-group<?php echo e($errors->has('title_en') ? ' has-error' : ''); ?>">
+    <?php echo Form::label('title_en', 'العنوان باللغة الأنجليزية'); ?>
+
+    <?php echo Form::text('title_en', null, ['class' => 'form-control']); ?>
+
+    <small class="text-danger"><?php echo e($errors->first('title_en')); ?></small>
+</div>
+
+<div class="form-group<?php echo e($errors->has('content_ar') ? ' has-error' : ''); ?>">
+    <?php echo Form::label('content_ar', 'المحتوي باللغة العربية'); ?>
+
+    <?php echo Form::textarea('content_ar', null, ['class' => 'ckeditor form-control']); ?>
+
+    <small class="text-danger"><?php echo e($errors->first('content_ar')); ?></small>
+</div>
+
+<div class="form-group<?php echo e($errors->has('content_en') ? ' has-error' : ''); ?>">
+    <?php echo Form::label('content_en', 'المحتوي باللغة الأنجليزية'); ?>
+
+    <?php echo Form::textarea('content_en', null, ['class' => 'ckeditor form-control']); ?>
+
+    <small class="text-danger"><?php echo e($errors->first('content_en')); ?></small>
+</div>
+
+<?php if(@$type == 'edit'): ?>
+    <?php if($service->img !== ''): ?>
+        <a href="<?php echo Url('/'); ?>/admin/serv-img-delete/<?php echo e($service->id); ?>/<?php echo e($service->img); ?>"><i class='fa fa-close' title='حذف الصورة' style='position:absolute; cursor:pointer'></i>
+        </a>
+        <img src="<?php echo Url('/'); ?>/uploads/back/services/<?php echo e($service->img); ?>" class="img-responsive img-thumbnail custom-img" >
+    <?php else: ?> 
+        <div class="nice-msg ">لا توجد صورة للعرض .</div>
+    <?php endif; ?>
+<?php endif; ?>
+
+
+<div class="form-group<?php echo e($errors->has('image') ? ' has-error' : ''); ?>">
+    <?php echo Form::label('image', 'أرفاق صورة'); ?>
+
+    <?php echo Form::file('image'); ?>
+
+    <p class="help-block">يرجي تحديد صورة مناسبة للخدمة</p>
+    <small class="text-danger"><?php echo e($errors->first('image')); ?></small>
+</div>
+
+<div class="form-group<?php echo e($errors->has('meta_desc_ar') ? ' has-error' : ''); ?>">
+    <?php echo Form::label('meta_desc_ar', 'النص المختصر باللغة العربية'); ?>
+
+    <?php echo Form::textarea('meta_desc_ar', null, ['class' => 'form-control', 'required' => 'required']); ?>
+
+    <small class="text-danger"><?php echo e($errors->first('meta_desc_ar')); ?></small>
+</div>
+
+<div class="form-group<?php echo e($errors->has('meta_desc_en') ? ' has-error' : ''); ?>">
+    <?php echo Form::label('meta_desc_en', 'النص المختصر باللغة الأنجليزية'); ?>
+
+    <?php echo Form::textarea('meta_desc_en', null, ['class' => 'form-control', 'required' => 'required']); ?>
+
+    <small class="text-danger"><?php echo e($errors->first('meta_desc_en')); ?></small>
+</div>  
+
+<div class="form-group<?php echo e($errors->has('tags_ar') ? ' has-error' : ''); ?>">
+    <?php echo Form::label('tags_ar', 'الكلمات الدلالية باللغة العربية'); ?>
+
+    <?php echo Form::text('tags_ar', null, ['class' => 'form-control', 'required' => 'required','id'=> 'tags_1' ]); ?>
+
+    <small class="text-danger"><?php echo e($errors->first('tags_ar')); ?></small>
+</div>
+
+<div class="form-group<?php echo e($errors->has('tags_en') ? ' has-error' : ''); ?>">
+    <?php echo Form::label('tags_en', 'الكلمات الدلالية باللغة الأنجليزية'); ?>
+
+    <?php echo Form::text('tags_en', null, ['class' => 'form-control', 'required' => 'required','id'=> 'tags_2']); ?>
+
+    <small class="text-danger"><?php echo e($errors->first('tags_en')); ?></small>
+</div>
+
+<button type="submit" class="btn btn-primary">
+	<?php echo e($btnName); ?>	
+</button>

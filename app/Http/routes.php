@@ -83,6 +83,7 @@ Route::get('aboutComp', 'FrontCtrl@aboutCompany');
 // About Company
 // Our services
 Route::get('ourServies', 'FrontCtrl@ourServices');
+Route::get('servies/{id}-{slug}', 'FrontCtrl@service_one');
 // Our services
 // Contact Us
 Route::get('contactUs', 'FrontCtrl@contactUs');

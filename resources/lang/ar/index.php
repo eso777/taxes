@@ -29,7 +29,7 @@ return [
     "details" => "تفاصيل الخبر",
     "relatedNews" => "اخبار متعلقة",
     "adsArea" => "مساحة إعلانية",
-    "noRelated" => "لأ توجد اخبار ذات صلة.",
+    "noRelated" => "لا توجد اخبار ذات صلة.",
     "comments" => "تعليقات",
     /*  Blog */
 

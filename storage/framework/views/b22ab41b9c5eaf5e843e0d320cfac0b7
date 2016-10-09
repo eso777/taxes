@@ -1,8 +1,60 @@
-<?php $__env->startSection('title' , Lang::get('index.about')); ?>
+<?php $__env->startSection('title' , Lang::get('services.title')); ?>
 
 <?php $__env->startSection('content'); ?>
 
+     <section class="page-content">
+        <div class="page-ttl">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>  <?php echo e(Lang::get('services.title')); ?></h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb">
+                            <li><a href="<?php echo e(Url('/')); ?>"><?php echo e(Lang::get('index.title')); ?></a></li>
+                            <li class="active"><?php echo e(Lang::get('services.title')); ?></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <?php if($service->total() > 0): ?>
+            <div class="container">
+                <div class="row">
+                    <?php foreach( $service as $service_one ): ?>
+                        <div class="col-sm-6">
+                            <div class="blog-post">
+                                <a href="<?php echo e(Url('/')); ?>/servies/<?php echo e($service_one->id); ?>-<?php echo e($service_one['slug_'.Session::get('local')]); ?>" class="blog-post-thumb">
+                                    <?php if($service_one->img !== ""): ?>
+                                        <img src="<?php echo e(Url('/')); ?>/uploads/back/services/<?php echo e($service_one->img); ?>">
+                                    <?php else: ?>
+                                        <img src="https://dummyimage.com/600x400/#252536/fff.png&text=No+Image">
+                                    <?php endif; ?>
+                                </a>
+                                <div class="blog-post-content">
+                                    <h3><a href="<?php echo e(Url('/')); ?>/servies/<?php echo e($service_one->id); ?>-<?php echo e($service_one['slug_'.Session::get('local')]); ?>"><?php echo e(str_limit($service_one['title_'.Session::get('local')],30)); ?></a></h3>
+                                    <p>
+                                        <?php echo e(strip_tags(str_limit($service_one['meta_desc_'.Session::get('local')],200))); ?>
+
+                                    </p>
+                                    <a href="<?php echo e(Url('/')); ?>/servies/<?php echo e($service_one->id); ?>-<?php echo e($service_one['slug_'.Session::get('local')]); ?>" class="more-btn"><?php echo e(Lang::get('services.details').'...'); ?></a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+
+                </div>
+                <div class="text-center">
+                    <!-- <a href="#" class="load-more">تحميل المزيد</a>-->
+                    <div class="paginate"><?php echo $service->render(); ?></div>
+                </div>
+            </div>
+        <?php else: ?>
+            <div class="well text-center"> <h3><?php echo e(Lang::get('index.noArticles')); ?></h3> </div>
+        <?php endif; ?>
+
+    </section>
 
 
 <?php $__env->stopSection(); ?>

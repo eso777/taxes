@@ -37,10 +37,40 @@ class FrontCtrl extends Controller {
      }
 
      function ourServices() {
-          $service = Service::latest()->get();
+          $service = Service::latest()->paginate(8);
           return view('front.service.index', compact('service'));
      }
+     function service_one($id , $slug){
 
+         $service = Service::findOrfail($id);
+         if ($slug !== $service['slug_' . Session::get('local')]) {
+             return redirect()->to(Url('servies/' . $service->id . '-' . $service['slug_' . Session::get('local')]));
+         }
+         //dd($blog_related );
+         $tags = explode(',', $service['tags_' . Session::get('local')]);
+         $i = 0;
+         $related_art = [];
+         foreach ($tags as $tag) {
+             $related = Service::where('tags_ar', 'like', '%' . $tag . '%')
+                 ->orwhere('tags_en', 'like', '%' . $tag . '%')
+                 ->latest('created_at')
+                 ->take(5)
+                 ->get();
+             foreach ($related as $relates) {
+                 if ($relates['id'] !== $service->id) {
+                     $related_art[$i]['id'] = $relates['id'];
+                     $related_art[$i]['name'] = $relates['title_' . Session::get('local')];
+                     $related_art[$i]['slug'] = $relates['slug_' . Session::get('local')];
+                     $related_art[$i]['image'] = $relates['img'];
+                     $i++;
+                 }
+             }
+         }
+
+         $ads = Ads::all()->random(1) ;
+         return view('front.service.service_one', compact('service', 'related_art', 'ads'));
+
+     }
      /* Start Front End Index Page  */
 
      /* Start Page Blog */

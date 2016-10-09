@@ -87,14 +87,14 @@
                <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
                     <div class="service">
                          <figure class="service-thumb">
-                              <a href="#">
+                              <a href="{{ Url('/') }}/servies/{{ $service->id }}-{{$service['slug_'.Session::get('local')]}}">
                                    <img src="{{Url('/')}}/uploads/back/services/{{$service->img}}">
                                    <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
                               </a>
                          </figure>
                          <div class="service-content">
-                              <h3><a href="#">{{$service['title_'.Session::get('local')]}}</a></h3>
-                              {{ $service['meta_desc_'.Session::get('local')] }}
+                              <h3><a href="{{ Url('/') }}/servies/{{ $service->id }}-{{$service['slug_'.Session::get('local')]}}">{{$service['title_'.Session::get('local')]}}</a></h3>
+                              {{ str_limit($service['meta_desc_'.Session::get('local')], 150) }}
                          </div>
                     </div>
                </div>
@@ -118,7 +118,7 @@
      </div>
 </section>
 
-@if(" " == "&")
+@if(" " == "&") <!-- This line just to disable this section  -->
 <section id="quotes" class="section">
      <div class="container">
           <h1 class="sec-ttl wow fadeInUp">{{Lang::get('index.guest')}}</h1>
