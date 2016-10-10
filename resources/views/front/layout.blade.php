@@ -53,12 +53,12 @@ $settings = Settings::first();
                          <!-- Collect the nav links, forms, and other content for toggling -->
                          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                               <ul class="nav navbar-nav">
-                                   <li class="active"><a href="{{Url('/')}}">{{Lang::get('index.home')}}</a></li>
-                                   <li><a href="{{Url('/')}}/aboutComp">{{Lang::get('index.aboutComp')}}</a></li>
-                                   <li><a href="{{Url('/')}}/ourServies">{{Lang::get('index.servies')}}</a></li>
-                                   <li><a href="{{Url('/')}}/contactUs">{{Lang::get('index.contactUs')}}</a></li>
-                                   <li><a href="{{Url('/')}}/consulting">{{Lang::get('index.consulting')}}</a></li>
-                                   <li><a href="{{Url('/')}}/blog">{{Lang::get('index.news')}}</a></li>
+                                   <li class="{{(Request::is('/'))?'active':''}}"><a href="{{Url('/')}}">{{Lang::get('index.home')}}</a></li>
+                                   <li class="{{(Request::is('aboutComp*'))?'active':''}}" ><a href="{{Url('/')}}/aboutComp">{{Lang::get('index.aboutComp')}}</a></li>
+                                   <li class="{{(Request::is('ourServies*'))?'active':''}}" ><a href="{{Url('/')}}/ourServies">{{Lang::get('index.servies')}}</a></li>
+                                   <li class="{{(Request::is('contactUs*'))?'active':''}}" ><a href="{{Url('/')}}/contactUs">{{Lang::get('index.contactUs')}}</a></li>
+                                   <li class="{{(Request::is('consulting*'))?'active':''}}" ><a href="{{Url('/')}}/consulting">{{Lang::get('index.consulting')}}</a></li>
+                                   <li class="{{(Request::is('blog*'))?'active':''}}" ><a href="{{Url('/')}}/blog">{{Lang::get('index.news')}}</a></li>
                               </ul>
                               <ul class="nav navbar-nav navbar-left">
                                    <li class="nav-btn"><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {{ Lang::get('index.OrderConsultation') }}</a></li>

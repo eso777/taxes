@@ -2,7 +2,7 @@
 
 use Carbon\Carbon; ?>
 @extends('front.layout')
-@section('title' , Lang::get('index.title_one'))
+@section('title' , Lang::get('consulting.title'))
 
 @section('content')
 <section class="page-content">
@@ -27,7 +27,8 @@ use Carbon\Carbon; ?>
                <div class="col-md-8 col-md-offset-2">
                     <div class="post-wrap widget">
                          <div class="post-img text-center">
-                              <!--<img src="{{Url('/')}}/front/images/logo.png">-->
+                              {{--<img src="{{Url('/')}}/front/images/logo.png">--}}
+                             <h3> {{$consulting_one['title_'.Session::get('local')]}} </h3>
                          </div>
                          <div class="post-info text-center" style="margin-top: 0;">
                               <span><i class="glyphicon glyphicon-tags"></i><a href="{{Url('/')}}/consulting">{{Lang::get('consulting.consultancyAndAdvice')}}</a></span>

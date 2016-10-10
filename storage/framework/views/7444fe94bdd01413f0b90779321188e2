@@ -2,7 +2,7 @@
 
 use Carbon\Carbon; ?>
 
-<?php $__env->startSection('title' , Lang::get('index.title_one')); ?>
+<?php $__env->startSection('title' , Lang::get('consulting.title')); ?>
 
 <?php $__env->startSection('content'); ?>
 <section class="page-content">
@@ -27,7 +27,8 @@ use Carbon\Carbon; ?>
                <div class="col-md-8 col-md-offset-2">
                     <div class="post-wrap widget">
                          <div class="post-img text-center">
-                              <!--<img src="<?php echo e(Url('/')); ?>/front/images/logo.png">-->
+                              <?php /*<img src="<?php echo e(Url('/')); ?>/front/images/logo.png">*/ ?>
+                             <h3> <?php echo e($consulting_one['title_'.Session::get('local')]); ?> </h3>
                          </div>
                          <div class="post-info text-center" style="margin-top: 0;">
                               <span><i class="glyphicon glyphicon-tags"></i><a href="<?php echo e(Url('/')); ?>/consulting"><?php echo e(Lang::get('consulting.consultancyAndAdvice')); ?></a></span>
