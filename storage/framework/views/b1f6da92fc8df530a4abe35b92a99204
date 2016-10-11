@@ -56,12 +56,12 @@ $settings = Settings::first();
                          <!-- Collect the nav links, forms, and other content for toggling -->
                          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                               <ul class="nav navbar-nav">
-                                   <li class="active"><a href="<?php echo e(Url('/')); ?>"><?php echo e(Lang::get('index.home')); ?></a></li>
-                                   <li><a href="<?php echo e(Url('/')); ?>/aboutComp"><?php echo e(Lang::get('index.aboutComp')); ?></a></li>
-                                   <li><a href="<?php echo e(Url('/')); ?>/ourServies"><?php echo e(Lang::get('index.servies')); ?></a></li>
-                                   <li><a href="<?php echo e(Url('/')); ?>/contactUs"><?php echo e(Lang::get('index.contactUs')); ?></a></li>
-                                   <li><a href="<?php echo e(Url('/')); ?>/consulting"><?php echo e(Lang::get('index.consulting')); ?></a></li>
-                                   <li><a href="<?php echo e(Url('/')); ?>/blog"><?php echo e(Lang::get('index.news')); ?></a></li>
+                                   <li class="<?php echo e((Request::is('/'))?'active':''); ?>"><a href="<?php echo e(Url('/')); ?>"><?php echo e(Lang::get('index.home')); ?></a></li>
+                                   <li class="<?php echo e((Request::is('aboutComp*'))?'active':''); ?>" ><a href="<?php echo e(Url('/')); ?>/aboutComp"><?php echo e(Lang::get('index.aboutComp')); ?></a></li>
+                                   <li class="<?php echo e((Request::is('ourServies*'))?'active':''); ?>" ><a href="<?php echo e(Url('/')); ?>/ourServies"><?php echo e(Lang::get('index.servies')); ?></a></li>
+                                   <li class="<?php echo e((Request::is('contactUs*'))?'active':''); ?>" ><a href="<?php echo e(Url('/')); ?>/contactUs"><?php echo e(Lang::get('index.contactUs')); ?></a></li>
+                                   <li class="<?php echo e((Request::is('consulting*'))?'active':''); ?>" ><a href="<?php echo e(Url('/')); ?>/consulting"><?php echo e(Lang::get('index.consulting')); ?></a></li>
+                                   <li class="<?php echo e((Request::is('blog*'))?'active':''); ?>" ><a href="<?php echo e(Url('/')); ?>/blog"><?php echo e(Lang::get('index.news')); ?></a></li>
                               </ul>
                               <ul class="nav navbar-nav navbar-left">
                                    <li class="nav-btn"><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> <?php echo e(Lang::get('index.OrderConsultation')); ?></a></li>

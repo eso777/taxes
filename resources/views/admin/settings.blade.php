@@ -2,6 +2,7 @@
 @section('content')
 <div class="col-md-12">
 
+     {{-- IF SESSION HAS ALERT --}}
      @if(Session::has('alert'))
      {!! Session::get('alert') !!}
      @endif
