@@ -1,6 +1,7 @@
 <?php $__env->startSection('content'); ?>
 <div class="col-md-12">
 
+     <?php /* IF SESSION HAS ALERT */ ?>
      <?php if(Session::has('alert')): ?>
      <?php echo Session::get('alert'); ?>
 

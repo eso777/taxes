@@ -1,0 +1,83 @@
+<?php $__env->startSection('title','send Consulting'); ?>
+
+<?php $__env->startSection('content'); ?>
+
+    <?php if(Session::has('msgSuccess')): ?>
+        <?php echo Session::get('msgSuccess'); ?>
+
+    <?php endif; ?>
+
+    <section class="page-content">
+        <div class="page-ttl">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> طلب استشارة</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb">
+                            <li><a href="#">الرئيسية</a></li>
+                            <li class="active">طلب استشارة</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="form-wrap">
+                        <?php if(Session::get('errors')): ?>
+                            <div class="alert alert-dismissable alert-warning">
+                                <h4>Oopse!</h4>
+                                <ul>
+                                    <?php foreach(Session::get('errors')->all() as $error): ?>
+                                        <li><?php echo $error; ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+                        <!--  <div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> تم إرسال الطلب بنجاح!</div>-->
+                        <!--  <div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> من فضلك أكمل الحقول الناقصة!</div>-->
+                        <?php echo Form::open(); ?>
+
+
+                            <div class="form-group<?php echo e($errors->has('name') ? ' has-error' : ''); ?>">
+                                <?php echo Form::text('name', null, ['class' => 'form-control' , 'placeholder'=>Lang::get('index.name')]); ?>
+
+                            </div>
+
+                            <div class="form-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
+                                <?php echo Form::text('email', null, ['class' => 'form-control' , 'placeholder'=>Lang::get('index.email')]); ?>
+
+                            </div>
+
+                            <div class="form-group<?php echo e($errors->has('phone') ? ' has-error' : ''); ?>">
+                                <?php echo Form::text('phone', null, ['class' => 'form-control' , 'placeholder'=>Lang::get('index.phone')]); ?>
+
+                            </div>
+
+                            <div class="form-group<?php echo e($errors->has('about') ? ' has-error' : ''); ?>">
+                                <?php echo Form::text('about', null, ['class' => 'form-control' , 'placeholder'=>Lang::get('index.about')]); ?>
+
+                            </div>
+
+                            <div class="form-group<?php echo e($errors->has('subject') ? ' has-error' : ''); ?>">
+                                <?php echo Form::textarea('subject', null, ['class' => 'form-control' , 'placeholder'=>Lang::get('index.subject')]); ?>
+
+                            </div>
+
+                            <button type="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> <?php echo e(Lang::get('index.btnSend')); ?></button>
+
+                        <?php echo Form::close(); ?>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

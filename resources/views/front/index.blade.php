@@ -112,7 +112,7 @@
                     <p>{{Lang::get('index.text')}}</p>
                </div>
                <div class="col-sm-3 text-left">
-                    <a href="#" class="ask-btn">{{ Lang::get('index.AskCounselNow') }}</a>
+                    <a href="{{Url('/')}}/send/consulting" class="ask-btn">{{ Lang::get('index.AskCounselNow') }}</a>
                </div>
           </div>
      </div>

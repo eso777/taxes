@@ -96,6 +96,8 @@ Route::get('blog/{id}-{slug}', 'FrontCtrl@blog_one');
 // Consulting
 Route::get('consulting', 'FrontCtrl@consulting');
 Route::get('consulting/{id}-{slug}', 'FrontCtrl@consulting_one');
+Route::get('send/consulting', 'FrontCtrl@send_consulting_view');
+Route::post('send/consulting', 'FrontCtrl@send_consulting');
 // Consulting
 // Language Route
 Route::get('lang/{lang}', 'LanguageCtrl@switcher');

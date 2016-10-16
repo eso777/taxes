@@ -141,8 +141,9 @@ class FrontCtrl extends Controller {
               'about'   => $request->about ,
               'subject' => $request->subject ,
               ];
-          $check = Mail::send('emails.contact', $data, function($message) use($request) {
-               $message->to('eso50408@gmail.com', 'Admin')->from($request->email,$request->name)->subject($request->about);
+          $settings = Settings::first();
+          $check = Mail::send('emails.contact', $data, function($message) use($request,$settings) {
+               $message->to($settings->email , 'Admin')->from($request->email,$request->name)->subject($request->about);
           });
           
           if($check)
@@ -173,6 +174,49 @@ class FrontCtrl extends Controller {
           }
           
           return view('front.consulting.consulting_one', compact('consulting_one'));
-     } 
+     }
+
+     function send_consulting_view(){
+         return view('front.consulting.send_consulting');
+     }
+
+     function send_consulting(Request $request){
+         $rules = [
+             'name' => 'required',
+             'email' => 'required|email',
+             'phone' => 'required|min:11',
+             'about' => 'required',
+             'subject' => 'required',
+         ];
+         $validation = Validator::make($request->all(), $rules);
+         if ($validation->fails()) {
+             return redirect()->back()->withInput()->withErrors($validation);
+
+         }
+
+         //*****  Mail *****//
+         $data = [
+             'name'    => $request->name ,
+             'email'   => $request->email ,
+             'phone'   => $request->phone ,
+             'about'   => $request->about ,
+             'subject' => $request->subject ,
+         ];
+
+         $settings = Settings::first();
+         $check = Mail::send('emails.contact', $data, function($message) use($request,$settings) {
+             $message->to($settings->email , 'Admin')->from($request->email,$request->name)->subject($request->about);
+         });
+
+         if($check)
+         {
+             if(Session::get('local') == 'ar')
+             {
+                 return redirect()->to(Url('/').'/send/consulting')->with(['msgSuccess'=>'<script>swal(" ","تم الإرسال بنجاح وسيتم التواصل في اقرب فرصة","success")</script>']);
+             }
+             return redirect()->to(Url('/').'/send/consulting')->with(['msgSuccess'=>'<script>swal(" ","Message Was Send Successfully , And will communicate soon","success")</script>']);
+         }
+
+     }
      /* End Page Consulting */
 }

@@ -113,7 +113,7 @@
                     <p><?php echo e(Lang::get('index.text')); ?></p>
                </div>
                <div class="col-sm-3 text-left">
-                    <a href="#" class="ask-btn"><?php echo e(Lang::get('index.AskCounselNow')); ?></a>
+                    <a href="<?php echo e(Url('/')); ?>/send/consulting" class="ask-btn"><?php echo e(Lang::get('index.AskCounselNow')); ?></a>
                </div>
           </div>
      </div>

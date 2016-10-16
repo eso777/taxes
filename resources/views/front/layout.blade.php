@@ -61,7 +61,7 @@ $settings = Settings::first();
                                    <li class="{{(Request::is('blog*'))?'active':''}}" ><a href="{{Url('/')}}/blog">{{Lang::get('index.news')}}</a></li>
                               </ul>
                               <ul class="nav navbar-nav navbar-left">
-                                   <li class="nav-btn"><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {{ Lang::get('index.OrderConsultation') }}</a></li>
+                                   <li class="nav-btn"><a href="{{ Url('/') }}/send/consulting"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {{ Lang::get('index.OrderConsultation') }}</a></li>
                                    <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                              <img src="{!! Url('/') !!}/back/assets/global/img/flags/{{Lang::get('assets.flag')}}" alt=""> {{Lang::get('assets.lang')}}
