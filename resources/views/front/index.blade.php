@@ -118,49 +118,29 @@
      </div>
 </section>
 
-@if(" " == "&") <!-- This line just to disable this section  -->
+@if($testimonials->count() > 0)
 <section id="quotes" class="section">
      <div class="container">
           <h1 class="sec-ttl wow fadeInUp">{{Lang::get('index.guest')}}</h1>
           <div class="row">
-               <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="quote">
-                         <div class="client-img">
-                              <img src="{{Url('/')}}/front/images/client-1.jpg">
-                         </div>
-                         <p>هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص. إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة</p>
-                         <div class="client-info">
-                              <h3>محمد جابر</h3>
-                              <span>مصمم مواقع - مؤسسة سوافور</span>
-                         </div>
-                    </div>
-               </div>
 
-               <div class="col-sm-4 wow fadeIn" data-wow-delay="1s">
-                    <div class="quote">
-                         <div class="client-img">
-                              <img src="{{Url('/')}}/front/images/client-2.jpg">
-                         </div>
-                         <p>هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص. إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة</p>
-                         <div class="client-info">
-                              <h3>محمود خليل</h3>
-                              <span>مهندس مدنى</span>
-                         </div>
-                    </div>
-               </div>
 
-               <div class="col-sm-4 wow fadeIn" data-wow-delay="1.5s">
-                    <div class="quote">
-                         <div class="client-img">
-                              <img src="{{Url('/')}}/front/images/client-3.jpg">
-                         </div>
-                         <p>هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص. إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة</p>
-                         <div class="client-info">
-                              <h3>على محفوظ</h3>
-                              <span>مبرمج مواقع</span>
+               @foreach($testimonials as $one)
+                    <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+                         <div class="quote">
+                              <div class="client-img">
+                                   <img src="{{Url('/')}}/uploads/users/{{$users->find($one->user_id)['image']}}">
+                              </div>
+                              <p>
+                                   {{ $one->text  }}
+                              </p>
+                              <div class="client-info">
+                                   <h3>{{$users->find($one->user_id)['name']}}</h3>
+                                   <span>{{$users->find($one->user_id)['name_company']}}</span>
+                              </div>
                          </div>
                     </div>
-               </div>
+               @endforeach
           </div>
      </div>
 </section>

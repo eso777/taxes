@@ -11,6 +11,12 @@
     <small class="text-danger">{{ $errors->first('name_company') }}</small>
 </div>
 
+<div class="form-group {{ $errors->has('img') ? ' has-error' : '' }}">
+    <label for="">{{Lang::get('loginReg.image')}}</label>
+    {!!Form::file('img')!!}
+    <small class="text-danger">{{ $errors->first('img') }}</small>
+</div>
+
 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
     {!! Form::label('email', 'البريد الألكتروني') !!}
     {!! Form::email('email', null, ['class' => 'form-control']) !!}

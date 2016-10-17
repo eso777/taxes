@@ -1,0 +1,49 @@
+<?php
+use App\Msg;
+// this line to count all Messages unread .
+$new_messages_count = Msg::where('user_id',Auth::client()->get()->id)->where('status', 0)->where('sender', 0)->count();
+?>
+
+     <?php $__env->startSection('title',Lang::get('dashboard.dashboard')); ?>
+     <?php $__env->startSection('content'); ?>
+         <section class="page-content">
+             <div class="container">
+                 <div class="row usr-dashboard">
+                     <div class="col-sm-3">
+                         <div class="dashboard-links">
+                             <ul>
+                                 <li class="<?php echo e((Request::is('dashboard'))?'active':''); ?> "><a href="<?php echo e(Url('/')); ?>/dashboard"><i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i> <?php echo e(Lang::get('dashboard.index')); ?></a></li>
+                                 <li class="<?php echo e((Request::is('dashboard/messages*'))?'active':''); ?>"><a href="<?php echo e(Url('/')); ?>/dashboard/messages"><i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i> <?php echo e(Lang::get('dashboard.messages')); ?> <span class="badge"><?php if($new_messages_count > 0 ): ?><?php echo e($new_messages_count); ?><?php endif; ?></span></a></li>
+                                 <li><a href="#"><i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i><?php echo e(Lang::get('dashboard.sendNewTikets')); ?></a></li>
+                                 <li><a href="#"><i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i><?php echo e(Lang::get('dashboard.All_previous_tickets')); ?></a></li>
+                                 <li class="<?php echo e((Request::is('dashboard/edit_personal*'))?'active':''); ?>"><a href="<?php echo e(Url('/')); ?>/dashboard/edit_personal"><i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i>  <?php echo e(Lang::get('dashboard.edit_personal')); ?></a></li>
+                                 <li class="<?php echo e((Request::is('dashboard/new_testimonial*'))?'active':''); ?>"><a href="<?php echo e(Url('/')); ?>/dashboard/new_testimonial"><i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i> <?php echo e(Lang::get('dashboard.openion')); ?></a></li>
+                                 <li class="<?php echo e((Request::is('dashboard/logout*'))?'active':''); ?>"><a href="<?php echo e(Url('/')); ?>/logout"><i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i> <?php echo e(Lang::get('dashboard.logout')); ?></a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="col-md-9">
+                         <div class="dashboard-content">
+                             <div class="page-bar">
+                                 <ul class="page-breadcrumb">
+                                     <li>
+                                         <a href="<?php echo e(Url('/')); ?>"><?php echo e(Lang::get('dashboard.index')); ?></a>
+                                         <i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i>
+                                     </li>
+                                     <li>
+                                         <a href="<?php echo e(Url('/')); ?>/dashboard"><?php echo e(Lang::get('dashboard.dashboard')); ?></a>
+                                     </li>
+                                     <li>
+                                         <span><?php echo $__env->yieldContent('breadcrumbs'); ?></span>
+                                     </li>
+                                 </ul>
+                             </div>
+                             <?php echo $__env->yieldContent('dashboard'); ?>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+     <?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

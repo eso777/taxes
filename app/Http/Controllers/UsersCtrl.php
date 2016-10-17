@@ -57,6 +57,8 @@ class UsersCtrl extends Controller {
 		/* Make rules inputs by type parameter with ID */
 		return [
 					'name'     => ($type == 'add')?'required|unique:users':"required|unique:users,name,$id",
+                    'name_company'     => 'required',
+					'img'     => 'required',
 					'email'    => ($type == 'add')?'required|email|unique:users':"required|email|unique:users,email,$id",
 					'mobile'   => 'required|min:11|numeric',
 					'password' => ($type == 'add')?'required':'',
@@ -73,6 +75,15 @@ class UsersCtrl extends Controller {
 		{
 			return redirect()->back()->withErrors($validation)->withInput() ;
 		}
+
+        if($request->hasFile('img')){
+            $time = time();
+            $dest = 'uploads/users/';
+            $file_name = $time.'.'.$request->file('img')->getClientOriginalExtension();
+            $request->file('img')->move($dest,$file_name);
+            $request->merge(['image'=>$file_name]);
+        }
+
 		/*dd($request->all()) ;*/
 		$request->merge(['password'=>bcrypt($request->password)]);
 		$request->merge(['status'=> 1 ]);
@@ -117,7 +128,15 @@ class UsersCtrl extends Controller {
 		}
 
 		$user = User::findOrFail($id);
-		if($request->password !== "")
+        if($request->hasFile('img')){
+            $time = time();
+            $dest = 'uploads/users/';
+            $file_name = $time.'.'.$request->file('img')->getClientOriginalExtension();
+            $request->file('img')->move($dest,$file_name);
+            $request->merge(['image'=>$file_name]);
+        }
+
+        if($request->password !== "")
 		{
 			$request->merge(['password'=>bcrypt($request->password)]);
 		}else{

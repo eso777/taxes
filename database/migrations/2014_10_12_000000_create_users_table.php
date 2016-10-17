@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('name_company');
+			$table->string('image');
 			$table->string('email')->unique();
 			$table->string('mobile');
 			$table->string('ground-tel');

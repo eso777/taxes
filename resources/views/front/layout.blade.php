@@ -19,6 +19,8 @@ $settings = Settings::first();
           @if(Session::get('local') !== 'en')
           <link href="{{Url('/')}}/front/css/bootstrap-rtl.min.css" rel="stylesheet">
           @endif
+          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+          <link href="{{Url('/')}}/front/js/masterslider/style/masterslider.css" rel="stylesheet">
           <link href="{{Url('/')}}/front/js/masterslider/style/masterslider.css" rel="stylesheet">
           <link href="{{Url('/')}}/front/js/masterslider/skins/default/style.css" rel="stylesheet">
           <link href="{{Url('/')}}/front/css/owl.carousel.css" rel="stylesheet">
@@ -33,6 +35,7 @@ $settings = Settings::first();
           <!-- Start Sweet Alert Library Js File -->
           {!! Html::script("back/assets/global/plugins/sweetAlert/sweetalert.min.js") !!}
           <!-- End Sweet Alert Library Js File -->
+
      </head>
      <body>
 
@@ -61,7 +64,28 @@ $settings = Settings::first();
                                    <li class="{{(Request::is('blog*'))?'active':''}}" ><a href="{{Url('/')}}/blog">{{Lang::get('index.news')}}</a></li>
                               </ul>
                               <ul class="nav navbar-nav navbar-left">
-                                   <li class="nav-btn"><a href="{{ Url('/') }}/send/consulting"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {{ Lang::get('index.OrderConsultation') }}</a></li>
+                                   @if(Auth::client()->check() !== false)
+                                        <li class="dropdown">
+                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
+                                                 {{-- <img src="{{Url('/')}}/uploads/users/{{Auth::client()->get()->image}}">--}}
+                                                  <span>{{Auth::client()->get()->name}}</span>
+                                                  <i class="glyphicon glyphicon-menu-down"></i>
+                                             </a>
+                                             <ul class="dropdown-menu">
+                                                  <li>
+                                                       <a href="{{Url('/')}}/dashboard">{{Lang::get('dashboard.dashboard')}}</a>
+                                                  </li>
+                                                  <li>
+                                                     <a href="{{Url('/')}}/logout">{{Lang::get('dashboard.logout')}}</a>
+                                                  </li>
+                                             </ul>
+                                        </li>
+                                        @else
+                                               <li class="nav-btn"><a href="{{ Url('/') }}/login"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{Lang::get('menu.login')}}</a></li>
+
+                                   @endif
+
                                    <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                              <img src="{!! Url('/') !!}/back/assets/global/img/flags/{{Lang::get('assets.flag')}}" alt=""> {{Lang::get('assets.lang')}}
@@ -72,6 +96,11 @@ $settings = Settings::first();
                                         </ul>
                                    </li>
                               </ul>
+                            {{---
+                               <a href="{{Url('/')}}/login">login</a>
+                              <a href="{{Url('/')}}/register">register</a>
+                              <a href="{{Url('/')}}/logout">logout</a>
+                              --}}
                          </div><!-- /.navbar-collapse -->
                     </div><!-- /.container -->
                </nav>
@@ -128,5 +157,9 @@ $settings = Settings::first();
           <script src="{{Url('/')}}/front/js/gmaps.js"></script>
           <script src="{{Url('/')}}/front/js/bootstrap.min.js"></script>
           <script src="{{Url('/')}}/front/js/main.js"></script>
+          <!-- Nice Scroll Library Js -->
+          {!! Html::script("back/assets/global/scripts/jquery.nicescroll.min.js") !!}
+          <!-- Nice Scroll Library Js -->
+          @yield('inlineJS')
      </body>
 </html>

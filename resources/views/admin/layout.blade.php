@@ -1,9 +1,12 @@
 <?php
 
 use App\Msg;
+use App\Testimonials;
 
 // this line to count all Messages unread .
 $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
+$testimonals = Testimonials::where('status', 0)->count();
+
 ?>
 <!DOCTYPE html>
 
@@ -314,6 +317,18 @@ $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
                                         </a>
                                    </li>
                                    <!-- consulting -->
+
+                                   <li class="{{Request::is('admin/testimonials*') ? 'active' : ''}}">
+                                        <a href="{!!Url('/')!!}/admin/testimonials">
+                                             <i class="fa fa-envelope"></i>
+                                             <span class="title">
+          اراء العملاء
+                                                  @if($testimonals > 0)
+                                                       <span class="badge badge-danger">{{ $testimonals }}</span>
+                                                  @endif
+                                             </span>
+                                        </a>
+                                   </li>
                               </ul>
                               <!-- END SIDEBAR MENU -->
                          </div>

@@ -1,0 +1,55 @@
+<?php $__env->startSection('content'); ?>
+    <section class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="form-wrap" style="margin-top: 50px;">
+                        <h1 class="form-ttl"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo e(Lang::get('menu.login')); ?></h1>
+                       <?php echo Form::open(); ?>
+
+                        <?php if(Session::has('error')): ?>
+                            <div class="alert alert-danger"> <?php echo Session::get('error'); ?> </div>
+                        <?php endif; ?>
+
+                        <?php /* If Session Has Session  */ ?>
+                            <?php if(count($errors) > 0): ?>
+                                <div class="alert alert-danger">
+                                    <?php echo Lang::get('assets.whoops'); ?>
+
+                                    <br><br>
+                                    <ul>
+                                        <?php foreach($errors->all() as $error): ?>
+                                            <li><?php echo e($error); ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
+
+                            <div class="form-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
+                                <?php echo Form::label('email', Lang::get('menu.email')); ?>
+
+                                <?php echo Form::email('email', null, ['class' => 'form-control','id'=>"email" ,'autocomplete'=>"off"]); ?>
+
+                                <small class="text-danger"><?php echo e($errors->first('email')); ?></small>
+                            </div>
+
+                            <div class="form-group<?php echo e($errors->has('password') ? ' has-error' : ''); ?>">
+                                <label for="password"> <?php echo e(Lang::get('menu.password')); ?> <span class="require">*</span></label>
+                                <input type="password" class="form-control" name="password" id="password" autocomplete="new-password">
+                                <small class="text-danger"><?php echo e($errors->first('password')); ?></small><br />
+                            </div>
+                        <div class="col-md-6"><span class="text-left"><a href="#">نسيت كلمة المرور؟</a></span></div>
+                        <div class="col-md-6"><span class="text-right"><a href="<?php echo e(Url('/')); ?>/register"><?php echo e(Lang::get('loginReg.registerNewAccount')); ?></a> </span> </div>
+
+                        <button type="submit"><?php echo e(Lang::get('menu.login-btn')); ?></button>
+                        <?php echo Form::close(); ?>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

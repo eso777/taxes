@@ -38,7 +38,7 @@ a {
     position: relative;
     color: #cbcbcf;
     font-size: 14px;
-    padding: 12px 17px;
+    padding: 12px 19px;
 }
 .navbar-default .navbar-nav>li>a:before{
     content: "";
@@ -94,17 +94,19 @@ a {
     font-size: 12px;
 }
 
-.language .dropdown-menu{
+.navbar-nav>li>.dropdown-menu{
     left: 0;
     right: auto;
-    min-width: 120px;
     border: none;
     padding: 0;
     border-radius: 0;
 }
-.language .dropdown-menu>li>a{
+.navbar-nav>li>.dropdown-menu>li>a{
     padding: 8px 15px;
     border-bottom: 1px solid #f0f0f0;
+}
+.language .dropdown-menu{
+    min-width: 120px;
 }
 
 .section{
@@ -370,7 +372,6 @@ footer{
 }
 .page-ttl h1 span{
     font-size: 20px;
-    padding: 5px;
 }
 .page-ttl .breadcrumb{
     margin: 0;
@@ -385,12 +386,38 @@ footer{
 .page-ttl .breadcrumb>li>a:hover{
     color: #333;
 }
-.form-wrap .form-control{
+.form-wrap{
     background-color: rgba(249, 249, 249, 1);
+    padding: 20px;
+}
+.form-ttl{
+    font-size: 24px;
+    color: #222;
+    margin: 0 0 25px;
+    border-bottom: 1px solid rgba(235, 235, 235, 1);
+    padding-bottom: 15px;
+}
+.form-wrap label{
+    font-weight: normal;
+    font-size: 13px;
+    color: #222;
+}
+.form-wrap a{
+    display: inline-block;
+    margin-top: 10px;
+    color: #767F88;
+    text-decoration: none;
+    font-size: 13px;
+}
+.form-wrap a:hover{
+    color: #f6c606;
+}
+.form-wrap .form-control{
+    background-color: #fff;
     border-color: rgba(235, 235, 235, 1);
     color: #898989;
     box-shadow: none;
-    height: 45px;
+    height: 40px;
     border-radius: 0;
 }
 .form-wrap textarea.form-control{
@@ -398,15 +425,15 @@ footer{
     max-width: 100%;
 }
 .form-wrap .form-control:focus{
-    background: #fff;
+    border-color: #ccc;
 }
 .form-wrap button[type="submit"]{
     background: #f6c606;
     color: #393939;
     border: none;
     outline: none;
-    font-size: 15px;
-    padding: 12px 30px;
+    font-size: 14px;
+    padding: 10px 30px;
 }
 
 .text-wrap{
@@ -546,7 +573,6 @@ a.load-more{
 }
 .post-info span a{
     color: #888;
-    padding-left: 8px;
 }
 .post-img img{
     max-width: 100%;
@@ -582,6 +608,87 @@ a.load-more{
     line-height: 23px;
     font-size: 14px;
 }
+.require {
+    color: #f6c606;
+}
+
+.usr-dashboard{
+    margin: 50px 0 0;
+}
+.dashboard-links ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.dashboard-links ul li a{
+    color: #3E4D5C;
+    background-color: rgba(249, 249, 249, 1);
+    border: none;
+    display: block;
+    margin-bottom: 2px;
+    padding: 10px 15px;
+    font-size: 13px;
+    text-decoration: none;
+}
+.dashboard-links ul li a:hover{
+    color: #f6c606;
+}
+.dashboard-links ul li a i{
+    font-size: 10px;
+    margin-left: 8px;
+}
+.dashboard-links ul li a .badge{
+    float: left;
+    background-color: #d9534f;
+}
+.dashboard-content .table{
+    color: #767F88;
+    font-size: 12px;
+}
+.dashboard-content .table a{
+    color: #767F88;
+    text-decoration: none;
+}
+.dashboard-content .table a:hover{
+    color: #f6c606;
+}
+.dashboard-content .table a.btn{
+    color: #fff;
+    padding: 1px 7px 2px;
+    border-radius: 0;
+}
+.dashboard-content .table thead tr{
+    background: #252536;
+    color: #fff;
+}
+.dashboard-content .table>tbody>tr>td, 
+.dashboard-content .table>tbody>tr>th, 
+.dashboard-content .table>tfoot>tr>td, 
+.dashboard-content .table>tfoot>tr>th, 
+.dashboard-content .table>thead>tr>td, 
+.dashboard-content .table>thead>tr>th{
+    vertical-align: middle;
+}
+
+.usr-nav{
+    padding: 23px 0;
+}
+.usr-nav .dropdown-toggle img{
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
+    display: inline;
+    margin-left: 2px;
+}
+.usr-nav .dropdown-toggle .glyphicon{
+    font-size: 10px;
+    top: -1px;
+}
+.usr-nav .dropdown-toggle span{
+    display: inline-block;
+    vertical-align: middle;
+}
+
 
 /*Media Queries*/
 @media (max-width: 992px){
@@ -633,4 +740,32 @@ a.load-more{
     .about-carousel .item a img{
         height: auto;
     }
+}
+
+.page-bar {
+    padding: 0px;
+    background-color: #f7f7f7;
+    margin-bottom: 25px;
+}
+.page-bar .page-breadcrumb {
+    display: inline-block;
+    padding: 8px 10px;
+    margin: 0;
+    list-style: none;
+}
+.page-bar .page-breadcrumb > li {
+    display: inline-block;
+}
+.page-bar .page-breadcrumb > li > i {
+    display: inline-block;
+    width: 1.25em;
+    text-align: center;
+    color: #aaa;
+    font-size: 14px;
+}
+.page-bar .page-breadcrumb > li > a,
+.page-bar .page-breadcrumb > li > span {
+    color: #888;
+    font-size: 14px;
+    text-shadow: none;
 }

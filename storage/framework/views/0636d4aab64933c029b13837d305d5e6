@@ -1,0 +1,81 @@
+ 
+ 	<?php $__env->startSection('breadcrumbs'); ?>
+ 		<i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i>
+ 		<?php echo e(Lang::get('dashboard.edit_personal')); ?>
+
+ 	<?php $__env->stopSection(); ?>
+
+ 	<?php $__env->startSection('title',Lang::get('dashboard.edit_personal')); ?>
+    <?php $__env->startSection('dashboard'); ?>
+    <h1 class="dashboard-ttl"><?php echo e(Lang::get('dashboard.edit_personal')); ?></h1>
+    <?php echo Form::model($user,['files'=>true]); ?>
+
+        <?php if(count($errors) > 0): ?>
+            <div class="alert alert-danger">
+                <?php echo Lang::get('assets.whoops'); ?>
+
+                <br>
+            </div>
+        <?php endif; ?>
+        <?php if(Session::has('msg')): ?>
+            <div class="alert alert-success">
+                <?php echo e(Session::get('msg')); ?>
+
+            </div>
+        <?php endif; ?>
+        <div class="form-group <?php echo e($errors->has('username') ? ' has-error' : ''); ?>">
+            <label for=""><?php echo e(Lang::get('loginReg.username')); ?></label>
+            <?php echo Form::text('username',null,['class'=>'form-control','disabled'=>'disabled']); ?>
+
+            <small class="text-danger"><?php echo e($errors->first('username')); ?></small>
+        </div>
+        <div class="form-group <?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
+            <label for=""><?php echo e(Lang::get('loginReg.email')); ?></label>
+             <?php echo Form::email('email',null,['class'=>'form-control','disabled'=>'disabled']); ?>
+
+            <small class="text-danger"><?php echo e($errors->first('email')); ?></small>
+        </div>
+       
+        <div class="form-group <?php echo e($errors->has('name') ? ' has-error' : ''); ?>">
+            <label for=""><?php echo e(Lang::get('loginReg.name')); ?></label>
+            <?php echo Form::text('name',null,['class'=>'form-control']); ?>
+
+            <small class="text-danger"><?php echo e($errors->first('name')); ?></small>
+        </div>
+        <div class="form-group <?php echo e($errors->has('img') ? ' has-error' : ''); ?>">
+            <label for=""><?php echo e(Lang::get('loginReg.image')); ?></label>
+            <?php echo Form::file('img'); ?>
+
+            <small class="text-danger"><?php echo e($errors->first('img')); ?></small>
+        </div>
+        <div class="form-group <?php echo e($errors->has('pwd') ? ' has-error' : ''); ?>">
+            <label for=""><?php echo e(Lang::get('loginReg.password')); ?></label>
+            <?php echo Form::password('pwd',['class'=>'form-control']); ?>
+
+            <small class="text-danger"><?php echo e($errors->first('pwd')); ?></small>
+        </div>
+        <div class="form-group <?php echo e($errors->has('pwd_confirmation') ? ' has-error' : ''); ?>">
+            <label for=""><?php echo e(Lang::get('loginReg.passwordConf')); ?></label>
+            <?php echo Form::password('pwd_confirmation',['class'=>'form-control']); ?>
+
+            <small class="text-danger"><?php echo e($errors->first('pwd_confirmation')); ?></small>
+        </div>
+        <div class="form-group <?php echo e($errors->has('city') ? ' has-error' : ''); ?>">
+            <label for=""><?php echo e(Lang::get('loginReg.city')); ?></label>
+            <?php echo Form::select('city',$regions,null,['class'=>'form-control']); ?>
+
+            <small class="text-danger"><?php echo e($errors->first('city')); ?></small>
+        </div>
+        
+        <div class="form-group <?php echo e($errors->has('details ') ? ' has-error' : ''); ?>">
+            <label for=""><?php echo e(Lang::get('loginReg.details')); ?></label>
+            <?php echo Form::textarea('details',null,['class'=>'form-control','style'=>"height: 200px;"]); ?>
+
+            <small class="text-danger"><?php echo e($errors->first('details ')); ?></small>
+        </div>
+        <button type="submit" class="btn btn-info"><?php echo e(Lang::get('dashboard.save')); ?></button>
+    <?php echo Form::close(); ?>
+
+    <?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.dashboard.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

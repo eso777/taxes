@@ -1,0 +1,12 @@
+ 
+     <?php $__env->startSection('dashboard'); ?>
+        <?php if(Session::has('msg')): ?>
+         <div class="alert alert-success alert-dismissible fade in">
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+             </button>
+             <?php echo Session::get('msg'); ?></div>
+         <?php endif; ?>
+     <?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.dashboard.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

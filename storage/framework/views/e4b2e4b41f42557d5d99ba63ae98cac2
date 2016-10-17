@@ -1,0 +1,22 @@
+	<?php $__env->startSection('title',Lang::get('dashboard.openion')); ?>
+	<?php $__env->startSection('dashboard'); ?>
+		<?php if(Session::has('msg')): ?>
+			<div class="alert alert-success">
+				<?php echo e(Session::get('msg')); ?>
+
+			</div>
+		<?php endif; ?>
+		<?php echo Form::open(); ?>
+
+			<div class="form-group <?php echo e($errors->has('text') ? ' has-error' : ''); ?>">
+		        <label for=""><?php echo e(Lang::get('dashboard.openion')); ?></label>
+		        <?php echo Form::textarea('text',null,['class'=>'form-control']); ?>
+
+		        <small class="text-danger"><?php echo e($errors->first('text')); ?></small>
+		    </div>
+			<button type="submit" class="btn btn-info"><?php echo e(Lang::get('dashboard.save')); ?></button>
+		<?php echo Form::close(); ?>
+
+	<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.dashboard.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

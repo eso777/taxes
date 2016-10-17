@@ -2,10 +2,15 @@
 
 return [
 	"lang" 				=> "العربية",
-	"home" 				=> "Home",
-	"service" 			=> "Services",
-	"about" 			=> "About",
-	"images_gallery" 	=> "Images Gallery",
-	"videos_gallery" 	=> "Videos Gallery",
+
 	"contact" 			=> "Contact",
+    "login" 			=> "Login",
+    "email" 			=> "E-mail",
+
+    "password" 			=> "Password",
+    "login-btn" 		=> "Login",
+
+
+
+
 ];

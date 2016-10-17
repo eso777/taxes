@@ -1,0 +1,76 @@
+	<?php $__env->startSection('breadcrumbs'); ?>
+ 		<i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i>
+ 		<?php echo e(Lang::get('dashboard.messages')); ?>
+
+ 	<?php $__env->stopSection(); ?>
+ 	<?php $__env->startSection('title',Lang::get('dashboard.messages')); ?>
+	<?php $__env->startSection('dashboard'); ?>
+		<!-- Start Custom Css File -->
+		<link href="<?php echo e(Url('/')); ?>/front/css/msg.css" rel="stylesheet">
+		<!-- End Custom Css File-->
+
+		<div class="row col-md-10 col-md-offset-1">
+			<div class="messages">
+				<div class="msgs-wrap" style="overflow: hidden; outline: none;" tabindex="0">
+					<ul class="messages form-gourp">
+						<?php foreach($msgs as $msg): ?>
+							<li class="message <?php echo e(($msg->sender == 1)?'right':'left'); ?> appeared">
+								<?php /* <div class="avatar"><img class="img-circle" src="<?php if($msg->sender == 1): ?> <?php echo e(Url('/')); ?>/uploads/users/<?php echo e(Auth::client()->get()->image); ?> <?php else: ?> <?php echo e(Url('/')); ?>/front/images/logo.png <?php endif; ?>" style="width: 50px;height: 50px;"></div> */ ?>
+								<div class="text_wrapper">
+									<div class="message right appeared"><?php echo e($msg->msg); ?></div>
+								</div>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+				<?php echo Form::open(); ?>
+
+				<div class="new-msg ">
+					<div class="input-group">
+						<textarea id="message" class="form-control" placeholder="<?php echo e(Lang::get('dashboard.writeMsgHere')); ?>" style="" name="msg" ></textarea>
+						<button class="btn btn-success" id="send" type="submit"><i class="fa fa-send"></i> <?php echo e(Lang::get('dashboard.send')); ?></button>
+					</div>
+				</div>
+				<?php echo Form::close(); ?>
+
+			</div>
+		</div>
+	<?php $__env->stopSection(); ?>
+	<?php $__env->startSection('inlineJS'); ?>
+		<script type="text/javascript">
+		    /* Start Messages page */
+		    // To scroll to last msg in chat after relode ( after send and redirect back )  
+		    $('.msgs-wrap').animate({ scrollTop: $('.msgs-wrap').prop("scrollHeight")},1000);
+		        
+		        $('#message').keydown(function (event) {
+		            var msg = $('#message').val();
+		            if(msg.trim() !== ''){
+		                if(event.shiftKey && event.keyCode == 13 ) {
+		                  
+		                }else if(event.keyCode == 13){
+		                    event.preventDefault();
+		                    $('#message').val(msg.trim());
+		                    $('#message').attr( 'disabled' );
+		                    $('form').submit();
+		                }
+		            }
+		        });
+
+		        $('#send').click(function(event) {
+		            var msg = $('#message').val();
+		            $('#message').val(msg.trim());
+		            if(msg.trim() == ''){
+		               event.preventDefault();
+		            }
+		        });
+
+		        $(".msgs-wrap").niceScroll({
+		         
+		        });
+
+		    /* End Messages page */
+
+		</script>
+	<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.dashboard.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

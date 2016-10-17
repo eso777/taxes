@@ -67,7 +67,7 @@ class MsgCtrl extends Controller {
      public function getMsgs($id) {
           //dd("SS") ;
           $user = User::findOrFail($id);
-          $messages = Msg::where('user_id', $id)->where('admin_id', Auth::admin()->get()->id)->take(100)->get();
+          $messages = Msg::where('user_id', $id)->take(100)->get();
            foreach ($messages as $msg) {
             if($msg->sender !== 0){
                      $msg->update(['status'=>1]);

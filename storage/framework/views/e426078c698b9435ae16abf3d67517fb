@@ -1,0 +1,12 @@
+	<?php $__env->startSection('title' , 'رأي العميل'); ?>
+	<?php $__env->startSection('content'); ?>
+
+	<div class="thumbnail">
+		<?php echo e($testimonials->text); ?>
+
+	</div>
+	<a href="<?php echo Url('/'); ?>/admin/testimonials/<?php echo e($testimonials->id); ?>/toggle" class="btn btn-success"><?php echo e(($testimonials->status == 0)?'تفعيل':'إلغاء التفعيل'); ?></a>
+	<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

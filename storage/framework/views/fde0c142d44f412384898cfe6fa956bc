@@ -1,0 +1,46 @@
+<?php $__env->startSection('title' , 'أراء العملاء'); ?>
+<?php $__env->startSection('content'); ?>
+	
+	<?php if(Session::has('msg')): ?>
+		<div class="alert alert-success">
+			<?php echo e(Session::get('msg')); ?>
+
+		</div>
+	<?php endif; ?>
+	<br>
+	<div class="panel panel-primary">
+		<div class="panel-heading text-center">كل الأراء</div>
+		<div class="panel-body">
+			<?php if($testimonials->total() > 0): ?>
+				<table class="table table-bordered">
+					<tr>
+						<th>الأسم</th>								
+						<th>خيارات</th>								
+								
+					</tr>
+					<?php foreach($testimonials as $test): ?>
+					<tr>
+						<td><a href="<?php echo Url('/'); ?>/admin/testimonials/<?php echo e($test->id); ?>" class="btn btn-success"><?php echo e(@$user->find($test->user_id)->name); ?></a></td>		
+						<td>					
+							<?php echo Form::open(['method' => 'DELETE' ,'action'=>['TestimonialsCtrl@destroy',$test->id]]); ?>
+
+								<a href="<?php echo Url('/'); ?>/admin/testimonials/<?php echo e($test->id); ?>/toggle" class="btn btn-success"><?php echo e(($test->status == 0)?'تفعيل':'إلغاء التفعيل'); ?></a>
+								<?php echo Form::submit('حذف' , ['class'=>'btn btn-danger','onClick' =>'return confirm("سيتم الحذف هل انت متأكد ؟")']); ?>
+
+							<?php echo Form::close(); ?>
+
+						</td>								
+					</tr>
+					<?php endforeach; ?>
+				</table>
+				<?php echo $testimonials->render(); ?>
+
+			<?php else: ?>
+				<div class="alert alert-info">لا توجد بيانات لعرضها.</div> 
+			<?php endif; ?>
+		</div>	
+	</div>
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

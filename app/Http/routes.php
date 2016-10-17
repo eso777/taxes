@@ -75,32 +75,32 @@ Route::group(['prefix' => 'admin', 'middleware' => 'authAdmin'], function() {
  * ******* Start Application Route [ Front End ] ********
  * *********************************************************
  */
-// The Index Page 
-Route::get('/', 'FrontCtrl@index');
-// The Index Page 
-// About Company
-Route::get('aboutComp', 'FrontCtrl@aboutCompany');
-// About Company
-// Our services
-Route::get('ourServies', 'FrontCtrl@ourServices');
-Route::get('servies/{id}-{slug}', 'FrontCtrl@service_one');
-// Our services
-// Contact Us
-Route::get('contactUs', 'FrontCtrl@contactUs');
-Route::post('contactUs', 'FrontCtrl@sendInformation');
-// Contact Us
-// Blog
-Route::get('blog', 'FrontCtrl@blog');
-Route::get('blog/{id}-{slug}', 'FrontCtrl@blog_one');
-// Blog
-// Consulting
-Route::get('consulting', 'FrontCtrl@consulting');
-Route::get('consulting/{id}-{slug}', 'FrontCtrl@consulting_one');
-Route::get('send/consulting', 'FrontCtrl@send_consulting_view');
-Route::post('send/consulting', 'FrontCtrl@send_consulting');
-// Consulting
-// Language Route
-Route::get('lang/{lang}', 'LanguageCtrl@switcher');
+    // The Index Page
+    Route::get('/', 'FrontCtrl@index');
+    // The Index Page
+    // About Company
+    Route::get('aboutComp', 'FrontCtrl@aboutCompany');
+    // About Company
+    // Our services
+    Route::get('ourServies', 'FrontCtrl@ourServices');
+    Route::get('servies/{id}-{slug}', 'FrontCtrl@service_one');
+    // Our services
+    // Contact Us
+    Route::get('contactUs', 'FrontCtrl@contactUs');
+    Route::post('contactUs', 'FrontCtrl@sendInformation');
+    // Contact Us
+    // Blog
+    Route::get('blog', 'FrontCtrl@blog');
+    Route::get('blog/{id}-{slug}', 'FrontCtrl@blog_one');
+    // Blog
+    // Consulting
+    Route::get('consulting', 'FrontCtrl@consulting');
+    Route::get('consulting/{id}-{slug}', 'FrontCtrl@consulting_one');
+    Route::get('send/consulting', 'FrontCtrl@send_consulting_view');
+    Route::post('send/consulting', 'FrontCtrl@send_consulting');
+    // Consulting
+    // Language Route
+    Route::get('lang/{lang}', 'LanguageCtrl@switcher');
 
 
 /*
@@ -110,17 +110,7 @@ Route::get('lang/{lang}', 'LanguageCtrl@switcher');
 */
 
 
-     /* // Mail *
-       Route::get('mail',function(){
 
-       Mail::send('admin.mail', ['name' => Auth::admin()->get()->name ], function($message)
-       {
-       $message->to('eng.ahmedmgad@gmail.com' , 'Senior Ahmed gad 2r2osha')->from('eso50408@gmail.com' , 'Eso')->subject('Welcome! To Try Msg');
-       });
-       return redirect()->to(Url('/').'/admin') ;
-       });
-
-     /*  Mail  */
 
 /*
  * *********************************************************
@@ -180,7 +170,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'authAdmin'], function() {
      Route::get('ads', 'AdsCtrl@index');
      Route::post('ads/create', 'AdsCtrl@store');
      // AdS         
-     
+
+    //testimonials
+    Route::resource('testimonials','TestimonialsCtrl');
+    Route::get('testimonials/{pid}/toggle','TestimonialsCtrl@toggle');
+    //testimonials
 });
 
 /*
@@ -198,29 +192,29 @@ Route::group(['prefix' => 'admin', 'middleware' => 'authAdmin'], function() {
  * ******* Start Application Route [ Front End ] ********
  * *********************************************************
  */
-// The Index Page 
-Route::get('/', 'FrontCtrl@index');
-// The Index Page 
-// About Company
-Route::get('aboutComp', 'FrontCtrl@aboutCompany');
-// About Company
-// Our services
-Route::get('ourServies', 'FrontCtrl@ourServices');
-// Our services
-// Contact Us
-Route::get('contactUs', 'FrontCtrl@contactUs');
-Route::post('contactUs', 'FrontCtrl@sendInformation');
-// Contact Us
-// Blog
-Route::get('blog', 'FrontCtrl@blog');
-Route::get('blog/{id}-{slug}', 'FrontCtrl@blog_one');
-// Blog
-// Consulting
-Route::get('consulting', 'FrontCtrl@consulting');
-Route::get('consulting/{id}-{slug}', 'FrontCtrl@consulting_one');
-// Consulting
-// Language Route
-Route::get('lang/{lang}', 'LanguageCtrl@switcher');
+    // The Index Page
+    Route::get('/', 'FrontCtrl@index');
+    // The Index Page
+    // About Company
+    Route::get('aboutComp', 'FrontCtrl@aboutCompany');
+    // About Company
+    // Our services
+    Route::get('ourServies', 'FrontCtrl@ourServices');
+    // Our services
+    // Contact Us
+    Route::get('contactUs', 'FrontCtrl@contactUs');
+    Route::post('contactUs', 'FrontCtrl@sendInformation');
+    // Contact Us
+    // Blog
+    Route::get('blog', 'FrontCtrl@blog');
+    Route::get('blog/{id}-{slug}', 'FrontCtrl@blog_one');
+    // Blog
+    // Consulting
+    Route::get('consulting', 'FrontCtrl@consulting');
+    Route::get('consulting/{id}-{slug}', 'FrontCtrl@consulting_one');
+    // Consulting
+    // Language Route
+    Route::get('lang/{lang}', 'LanguageCtrl@switcher');
 
 
 /*
@@ -230,15 +224,33 @@ Route::get('lang/{lang}', 'LanguageCtrl@switcher');
 */
 
 
-     /* // Mail *
-       Route::get('mail',function(){
+/*
+**********************************************************
+  ******** Start Application Route [ Dashboard ] ********
+**********************************************************
+*/
 
-       Mail::send('admin.mail', ['name' => Auth::admin()->get()->name ], function($message)
-       {
-       $message->to('eng.ahmedmgad@gmail.com' , 'Senior Ahmed gad 2r2osha')->from('eso50408@gmail.com' , 'Eso')->subject('Welcome! To Try Msg');
-       });
-       return redirect()->to(Url('/').'/admin') ;
-       });
+Route::get('login','LoginCtrl@showClientLogin');
+Route::post('login','LoginCtrl@postClientLogin');
+Route::get('register','LoginCtrl@showClientReg');
+Route::post('register','LoginCtrl@postClientReg');
 
-     /*  Mail  */
+Route::get('logout','LoginCtrl@ClientLogout');
 
+Route::group(['prefix'=>'dashboard','middleware'=>'auth'],function(){
+
+    Route::get('/','DashboardCtrl@index');
+
+
+    Route::get('messages','DashboardCtrl@msgs');
+    Route::post('messages','DashboardCtrl@msgsSend');
+
+    Route::get('edit_personal','DashboardCtrl@editProfile');
+    Route::post('edit_personal','DashboardCtrl@postProfile');
+
+    Route::get('new_testimonial','DashboardCtrl@new_testimonial');
+    Route::post('new_testimonial','DashboardCtrl@post_testimonial');
+
+
+
+});

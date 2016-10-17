@@ -12,12 +12,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h1><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> طلب استشارة</h1>
+                        <h1><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {{ Lang::get('index.OrderConsultation') }} </h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb">
-                            <li><a href="#">الرئيسية</a></li>
-                            <li class="active">طلب استشارة</li>
+                            <li><a href="{{Url('/')}}">{{Lang::get('index.title')}}</a></li>
+                            <li class="active">{{ Lang::get('index.OrderConsultation') }}</li>
                         </ol>
                     </div>
                 </div>

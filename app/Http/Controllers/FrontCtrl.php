@@ -16,7 +16,8 @@ use Mail ;
 use Lang ;
 use App\Consulting ;
 use App\Ads ;
-
+use App\testimonials ;
+use App\User ;
 class FrontCtrl extends Controller {
      /* Start Front End Index Page  */
 
@@ -27,8 +28,13 @@ class FrontCtrl extends Controller {
           $info = AboutCompany::first();
           // Slider 
           $slider = Slider::latest('created_at')->take(20)->get();
+
+          // Testimonials
+          $testimonials = testimonials::where('status',1)->latest('created_at')->take(3)->get() ;
+
+          $users = User::select('id','name_company','field','image')->get() ;
           // Return View Index
-          return view('front.index', compact('services', 'info', 'slider'));
+          return view('front.index', compact('services', 'info', 'slider', 'testimonials','users'));
      }
 
      public function aboutCompany() {
