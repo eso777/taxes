@@ -23,57 +23,93 @@
 
             </div>
         <?php endif; ?>
-        <div class="form-group <?php echo e($errors->has('username') ? ' has-error' : ''); ?>">
-            <label for=""><?php echo e(Lang::get('loginReg.username')); ?></label>
-            <?php echo Form::text('username',null,['class'=>'form-control','disabled'=>'disabled']); ?>
 
-            <small class="text-danger"><?php echo e($errors->first('username')); ?></small>
+        <div class="form-group<?php echo e($errors->has('name') ? ' has-error' : ''); ?>">
+            <?php echo Form::label('name', Lang::get('loginReg.username')); ?>
+
+            <input type="text"  class="form-control" disabled="" value="<?php echo e($user->name); ?>">
+            <small class="text-danger"><?php echo e($errors->first('name')); ?></small>
         </div>
-        <div class="form-group <?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
-            <label for=""><?php echo e(Lang::get('loginReg.email')); ?></label>
-             <?php echo Form::email('email',null,['class'=>'form-control','disabled'=>'disabled']); ?>
+
+        <div class="form-group<?php echo e($errors->has('name_company') ? ' has-error' : ''); ?>">
+            <?php echo Form::label('name_company', Lang::get('loginReg.name_company')); ?>
+
+            <input type="text"  class="form-control" disabled="" value="<?php echo e($user->name_company); ?>">
+            <small class="text-danger"><?php echo e($errors->first('name_company')); ?></small>
+        </div>
+
+
+        <div class="col-md-12">
+            <div class="row">
+                <?php if($type == 'edit'): ?>
+                    <div class=""><img class="img-circle" src="<?php echo e(Url('/')); ?>/uploads/users/<?php echo e($user->image); ?>" alt="" style="width: 100px;height: 100px">  </div>
+                <?php endif; ?>
+            </div>
+        </div>
+         <div class="col-md-12">
+            <div class="row form-group <?php echo e($errors->has('img') ? ' has-error' : ''); ?>">
+                <label for=""><?php echo e(Lang::get('loginReg.image')); ?></label>
+                <?php echo Form::file('img'); ?>
+
+                <small class="text-danger"><?php echo e($errors->first('img')); ?></small>
+                <?php if($type == 'edit'): ?><?php echo '<small class="text-danger"> leave blank to keep it </small>'; ?><?php endif; ?>
+            </div>
+        </div>
+
+        <div class="form-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
+            <?php echo Form::label('email', Lang::get('loginReg.email')); ?>
+
+            <?php echo Form::email('email', null, ['class' => 'form-control' , 'autocomplate'=>'off']); ?>
 
             <small class="text-danger"><?php echo e($errors->first('email')); ?></small>
         </div>
-       
-        <div class="form-group <?php echo e($errors->has('name') ? ' has-error' : ''); ?>">
-            <label for=""><?php echo e(Lang::get('loginReg.name')); ?></label>
-            <?php echo Form::text('name',null,['class'=>'form-control']); ?>
 
-            <small class="text-danger"><?php echo e($errors->first('name')); ?></small>
-        </div>
-        <div class="form-group <?php echo e($errors->has('img') ? ' has-error' : ''); ?>">
-            <label for=""><?php echo e(Lang::get('loginReg.image')); ?></label>
-            <?php echo Form::file('img'); ?>
+        <div class="form-group<?php echo e($errors->has('mobile') ? ' has-error' : ''); ?>">
+            <?php echo Form::label('mobile', Lang::get('loginReg.mobile')); ?>
 
-            <small class="text-danger"><?php echo e($errors->first('img')); ?></small>
+            <?php echo Form::text('mobile', null, ['class' => 'form-control']); ?>
+
+            <small class="text-danger"><?php echo e($errors->first('mobile')); ?></small>
         </div>
-        <div class="form-group <?php echo e($errors->has('pwd') ? ' has-error' : ''); ?>">
-            <label for=""><?php echo e(Lang::get('loginReg.password')); ?></label>
-            <?php echo Form::password('pwd',['class'=>'form-control']); ?>
+
+        <div class="form-group<?php echo e($errors->has('ground-tel') ? ' has-error' : ''); ?>">
+            <?php echo Form::label('ground-tel', Lang::get('loginReg.ground-tel')); ?>
+
+            <?php echo Form::text('ground-tel', null, ['class' => 'form-control']); ?>
+
+            <small class="text-danger"><?php echo e($errors->first('ground-tel')); ?></small>
+        </div>
+
+        <div class="form-group<?php echo e($errors->has('field') ? ' has-error' : ''); ?>">
+            <?php echo Form::label('field', Lang::get('loginReg.field')); ?>
+
+            <?php echo Form::textarea('field', null, ['class' => 'form-control']); ?>
+
+            <small class="text-danger"><?php echo e($errors->first('field')); ?></small>
+        </div>
+
+        <div class="form-group<?php echo e($errors->has('pwd') ? ' has-error' : ''); ?>">
+            <?php echo Form::label('pwd', Lang::get('loginReg.password')); ?>
+
+            <?php echo Form::password('pwd',  ['class' => 'form-control','autocomplete'=>'new-password']); ?>
 
             <small class="text-danger"><?php echo e($errors->first('pwd')); ?></small>
+            <?php if($type == 'edit'): ?><?php echo '<small class="text-danger"> leave blank to keep it </small>'; ?><?php endif; ?>
         </div>
-        <div class="form-group <?php echo e($errors->has('pwd_confirmation') ? ' has-error' : ''); ?>">
-            <label for=""><?php echo e(Lang::get('loginReg.passwordConf')); ?></label>
-            <?php echo Form::password('pwd_confirmation',['class'=>'form-control']); ?>
 
-            <small class="text-danger"><?php echo e($errors->first('pwd_confirmation')); ?></small>
-        </div>
-        <div class="form-group <?php echo e($errors->has('city') ? ' has-error' : ''); ?>">
-            <label for=""><?php echo e(Lang::get('loginReg.city')); ?></label>
-            <?php echo Form::select('city',$regions,null,['class'=>'form-control']); ?>
+        <?php /*<div class="form-group<?php echo e($errors->has('password_confirmation') ? ' has-error' : ''); ?>">
+            <?php echo Form::label('password_confirmation', Lang::get('loginReg.passwordConf')); ?>
 
-            <small class="text-danger"><?php echo e($errors->first('city')); ?></small>
-        </div>
-        
-        <div class="form-group <?php echo e($errors->has('details ') ? ' has-error' : ''); ?>">
-            <label for=""><?php echo e(Lang::get('loginReg.details')); ?></label>
-            <?php echo Form::textarea('details',null,['class'=>'form-control','style'=>"height: 200px;"]); ?>
+            <?php echo Form::password('password_confirmation',  ['class' => 'form-control']); ?>
 
-            <small class="text-danger"><?php echo e($errors->first('details ')); ?></small>
-        </div>
-        <button type="submit" class="btn btn-info"><?php echo e(Lang::get('dashboard.save')); ?></button>
+            <small class="text-danger"><?php echo e($errors->first('password_confirmation')); ?></small>
+        </div>*/ ?>
+
+        <button type="submit" class="btn btn-success"><?php echo e(Lang::get('loginReg.save')); ?> <i class="fa fa-check"></i></button>
+
+
+
+
     <?php echo Form::close(); ?>
 
     <?php $__env->stopSection(); ?>

@@ -47,16 +47,19 @@ class DashboardCtrl extends Controller {
     public function editProfile()
     {
         $user = User::findOrFail(Auth::client()->get()->id);
-        return View('front.dashboard.profile.index',compact('user'));
+        $type = 'edit' ;
+        return View('front.dashboard.profile.index',compact('user','type'));
     }
 
     public function postProfile(Request $request)
     {
         $user = User::findOrFail(Auth::client()->get()->id);
         $validator =  Validator::make($request->all(), [
-            'img'      => 'image',
-            'pwd' => 'min:5|confirmed',
+            'email'  => 'required|email',
+            'mobile' => 'required|numeric',
+            'field'  => 'required',
         ]);
+
         if ($validator->fails()) {
             return redirect()
                 ->back()
@@ -75,6 +78,7 @@ class DashboardCtrl extends Controller {
                 $request->merge(['password'=>bcrypt($request->password)]);
             }
 
+       //     dd($request->all()) ;
             $user->update($request->all());
             return redirect()->back()->with(['msg'=>Lang::get('dashboard.saved_success')]);
         }
