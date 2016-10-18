@@ -17,7 +17,7 @@ abstract class Controller extends BaseController {
 	{	
 		if(!Session::has('local'))
 		{
-			Session::set('local','ar');
+            Session::set('local','ar');
 		}
 		Carbon::setLocale(Session::get('local'));
 		App::setlocale(Session::get('local')) ;

@@ -7,5 +7,12 @@
              </button>
              {!! Session::get('msg') !!}</div>
          @endif
+
+
+        @if(Session::has('msg_succ'))
+            <div class="alert alert-success">
+                {{Session::get('msg_succ')}}
+            </div>
+        @endif
      @endsection
 @stop

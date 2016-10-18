@@ -8,7 +8,6 @@
 		<!-- Start Custom Css File -->
 		<link href="{{Url('/')}}/front/css/msg.css" rel="stylesheet">
 		<!-- End Custom Css File-->
-
 		<div class="row col-md-10 col-md-offset-1">
 			<div class="messages">
 				<div class="msgs-wrap" style="overflow: hidden; outline: none;" tabindex="0">

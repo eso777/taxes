@@ -11,6 +11,8 @@ use App\User ;
 use App\Testimonials ;
 use Lang ;
 use Validator ;
+use App\Ticket ;
+use App\Ticket_replay ;
 class DashboardCtrl extends Controller {
 
 	/**
@@ -107,6 +109,83 @@ class DashboardCtrl extends Controller {
         return redirect()->back()->with(['msg'=>Lang::get('dashboard.submit_success')]);
 
     }
+
+    /*  Tickets */
+    function new_ticket()
+    {
+       $max_size =  ini_get('upload_max_filesize');
+       return view('front.dashboard.tickets.index',compact('max_size')) ;
+    }
+
+    function post_ticket(Request $request)
+    {
+        //dd($request->all());
+        $rules = [
+            'name' 	   => 'required',
+            'content'  => 'required',
+        ] ;
+
+        $validation = Validator::make($request->all(),$rules) ;
+        if($validation->fails())
+        {
+            return redirect()->back()->withErrors($validation)->withInput() ;
+        }
+        $msg = null;
+        $files = [];
+
+       
+        if($request->hasFile('attached'))
+        {
+
+            $max_size =  ini_get('upload_max_filesize');
+            $time = time();
+            $dest = 'uploads/attachments/';
+            $data = "";
+            $accepted_files = ['png','gif','jpeg','jpg','txt','pdf','doc','docx','zip'];
+            $i    = 0 ;
+
+            foreach ($request->File('attached') as $one)
+            {
+                dd($one->error());
+                if(in_array($one->getClientOriginalExtension(),$accepted_files) && $one->error !== UPLOAD_ERR_OK){
+                    if($one->getSize() >= $max_size ){
+                        $file_name = $time.'_'.$i.'.'.$one->getClientOriginalExtension();
+                        $one->move($dest,$file_name);
+                        $data = ($data === "") ? $data .= $file_name : $data .= '|'. $file_name  ;
+                    }else{
+                         // Size
+                        $msg = Lang::get('dashboard.errorMsgUploads');
+                        $files[$i] = $one->getClientOriginalName();
+                    }
+                }else{
+                    // File Not allawed .
+                    $msg = Lang::get('dashboard.fileNotAllowed') ;
+                    $files[$i] = $one->getClientOriginalName();
+                }
+                $i++ ;
+            }
+            $request->merge(['attach' => $data]);
+        }
+
+        if($msg !== null){
+            return redirect()->back()->with(['msg'=>$msg,'files'=>$files]);
+        }
+
+        $request->merge(['name'    => $request->name]);
+        $request->merge(['user_id' => Auth::client()->get()->id]);
+        $request->merge(['status'  => 1]);
+        $request->merge(['ip_user' => $request->ip()]);
+
+
+        $ticket = Ticket::create($request->all()) ;
+        $request->merge(['ticket_id' => $ticket->id]);
+        $request->merge(['status'    => 0 ]);
+       // dd($request->all()) ;
+        Ticket_replay::create($request->all()) ;
+
+        return redirect()->to(Url('/').'/dashboard/')->with(['msg_succ'=>Lang::get('dashboard.msg_succ')]) ;
+    }
+    /*  Tickets */
 
 }
 

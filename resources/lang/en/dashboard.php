@@ -28,15 +28,19 @@ return [
 	'reserv_canceled'		=> 'Sorry !! Reservation hasn been Canceled Please Contact us for information . ',
 	/**************** reservations ****************/
 
-	/**************** wishlist ****************/
-	'name'					=> 'Name',
-	'type'					=> 'Type',
-	'options'				=> 'Options',
-	'visit'					=> 'Visit',
-	'delete'				=> 'Delete',
-	'hotel'					=> 'Hotel',
-	'travel'				=> 'Travel',
-	/**************** wishlist ****************/
+    /**************** Tickets ****************/
+    'tickets'               => 'Tickets',
+        /* Send New Tickets */
+            'sendNewTic'     => 'Send New Ticket',
+            'ticName'        => 'Ticket Name',
+            'TicDetals'      =>  'Ticket Details',
+            'attachFile'     => 'Attach File',
+            'errorMsgUploads'=> "Not uploaded of all attachments due to exceeding the limit, rejected files :",
+            "fileNotAllowed" => 'File extension not supported, rejected files :',
+            "maxFileSize"    => "Max File Size ",
+            'msg_succ'       => "The ticket has been opened successfully",
+        /* Send New Tickets */
+    /**************** Tickets ****************/
 
 	/**************** messages ****************/
 	'writeMsgHere'			=> 'Write Your Message Here',

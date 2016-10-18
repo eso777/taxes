@@ -14,15 +14,15 @@ $new_messages_count = Msg::where('user_id',Auth::client()->get()->id)->where('st
                              <ul>
                                  <li class="{{(Request::is('dashboard'))?'active':''}} "><a href="{{Url('/')}}/dashboard"><i class="{{Lang::get('dashboard.arrow')}}"></i> {{Lang::get('dashboard.index')}}</a></li>
                                  <li class="{{(Request::is('dashboard/messages*'))?'active':''}}"><a href="{{Url('/')}}/dashboard/messages"><i class="{{Lang::get('dashboard.arrow')}}"></i> {{Lang::get('dashboard.messages')}} <span class="badge">@if($new_messages_count > 0 ){{$new_messages_count}}@endif</span></a></li>
-                                 <li><a href="#"><i class="{{Lang::get('dashboard.arrow')}}"></i>{{Lang::get('dashboard.sendNewTikets')}}</a></li>
-                                 <li><a href="#"><i class="{{Lang::get('dashboard.arrow')}}"></i>{{Lang::get('dashboard.All_previous_tickets')}}</a></li>
+                                 <li class="{{(Request::is('dashboard/tickets'))?'active':''}} "><a href="{{Url('/')}}/dashboard/tickets"><i class="{{Lang::get('dashboard.arrow')}}"></i>{{Lang::get('dashboard.sendNewTikets')}}</a></li>
+                                 <li class="{{(Request::is('dashboard'))?'active':''}} "><a href="#"><i class="{{Lang::get('dashboard.arrow')}}"></i>{{Lang::get('dashboard.All_previous_tickets')}}</a></li>
                                  <li class="{{(Request::is('dashboard/edit_personal*'))?'active':''}}"><a href="{{Url('/')}}/dashboard/edit_personal"><i class="{{Lang::get('dashboard.arrow')}}"></i>  {{Lang::get('dashboard.edit_personal')}}</a></li>
                                  <li class="{{(Request::is('dashboard/new_testimonial*'))?'active':''}}"><a href="{{Url('/')}}/dashboard/new_testimonial"><i class="{{Lang::get('dashboard.arrow')}}"></i> {{Lang::get('dashboard.openion')}}</a></li>
                                  <li class="{{(Request::is('dashboard/logout*'))?'active':''}}"><a href="{{Url('/')}}/logout"><i class="{{Lang::get('dashboard.arrow')}}"></i> {{Lang::get('dashboard.logout')}}</a></li>
                              </ul>
                          </div>
                      </div>
-                     <div class="col-md-9">
+                     <div class="col-sm-9">
                          <div class="dashboard-content">
                              <div class="page-bar">
                                  <ul class="page-breadcrumb">
