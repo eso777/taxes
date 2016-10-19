@@ -80,7 +80,6 @@ class DashboardCtrl extends Controller {
                 $request->merge(['password'=>bcrypt($request->password)]);
             }
 
-       //     dd($request->all()) ;
             $user->update($request->all());
             return redirect()->back()->with(['msg'=>Lang::get('dashboard.saved_success')]);
         }
@@ -123,6 +122,7 @@ class DashboardCtrl extends Controller {
         $rules = [
             'name' 	   => 'required',
             'content'  => 'required',
+
         ] ;
 
         $validation = Validator::make($request->all(),$rules) ;
@@ -130,44 +130,46 @@ class DashboardCtrl extends Controller {
         {
             return redirect()->back()->withErrors($validation)->withInput() ;
         }
-        $msg = null;
+        $msg = "";
         $files = [];
 
 
-        if($request->hasFile('attached'))
-        {
-
-            $max_size =  ini_get('upload_max_filesize');
+        if($request->hasFile('attached')) {
+           /* $rules['attached'] = 'required|mimes:jpeg,bmp,png,gif,jpg,txt,pdf,doc,docx,zip' ;*/
+            $max_size = ini_get('upload_max_filesize');
             $time = time();
             $dest = 'uploads/attachments/';
             $data = "";
-            $accepted_files = ['png','gif','jpeg','jpg','txt','pdf','doc','docx','zip'];
-            $i    = 0 ;
+            $accepted_files = ['png', 'gif', 'jpeg', 'jpg', 'txt', 'pdf', 'doc', 'docx', 'zip'];
 
-            foreach ($request->File('attached') as $one)
-            {
-                dd($one->error());
-                if(in_array($one->getClientOriginalExtension(),$accepted_files) && $one->error !== UPLOAD_ERR_OK){
-                    if($one->getSize() >= $max_size ){
+            $i = 0;
+
+            foreach ($request->File('attached') as $one) {
+
+                if(!in_array($one->getClientOriginalExtension(),$accepted_files)){
+
+                    // File Not Allawed .
+                    $msg = Lang::get('dashboard.fileNotAllowed') ;
+                    $files[$i] = $one->getClientOriginalName();
+
+                }else{
+                    if($one->getSize() >= $max_size )
+                    {
                         $file_name = $time.'_'.$i.'.'.$one->getClientOriginalExtension();
                         $one->move($dest,$file_name);
                         $data = ($data === "") ? $data .= $file_name : $data .= '|'. $file_name  ;
-                    }else{
-                         // Size
+                    }else {
+                        // Size
                         $msg = Lang::get('dashboard.errorMsgUploads');
                         $files[$i] = $one->getClientOriginalName();
                     }
-                }else{
-                    // File Not allawed .
-                    $msg = Lang::get('dashboard.fileNotAllowed') ;
-                    $files[$i] = $one->getClientOriginalName();
                 }
                 $i++ ;
-            }
-            $request->merge(['attach' => $data]);
-        }
+            } // End Foreach
+              $request->merge(['attach' => $data ]);
+        } // End if Has File
 
-        if($msg !== null){
+        if($msg !== ""){
             return redirect()->back()->with(['msg'=>$msg,'files'=>$files]);
         }
 
@@ -179,13 +181,37 @@ class DashboardCtrl extends Controller {
 
         $ticket = Ticket::create($request->all()) ;
         $request->merge(['ticket_id' => $ticket->id]);
+        $request->merge(['sender' => 1]);
         $request->merge(['status'    => 0 ]);
-       // dd($request->all()) ;
+        //dd($request->all()) ;
         Ticket_replay::create($request->all()) ;
 
         return redirect()->to(Url('/').'/dashboard/')->with(['msg_succ'=>Lang::get('dashboard.msg_succ')]) ;
     }
+
+    /*******************************************************************/
+
+    function getTickets()
+    {
+        $tickets = Ticket::where('user_id',Auth::client()->get()->id)->get();
+
+        return view('front.dashboard.tickets.all' , compact('tickets')) ;
+    }
+
+    function show_ticket($id)
+    {
+
+        $tickets = Ticket::findOrFail($id);
+        if($tickets->user_id !== Auth::client()->get()->id)
+        {
+            return redirect()->to(Url('/').'/dashboard/tickets') ;
+        }
+        $ticketDetails = Ticket_replay::where('ticket_id',$tickets->id)->get();
+        return view('front.dashboard.tickets.ticket_replay' , compact('ticketDetails','tickets')) ;
+
+    }
     /*  Tickets */
+
 
 }
 

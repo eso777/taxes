@@ -1,0 +1,18 @@
+<?php $__env->startSection('breadcrumbs'); ?>
+    <i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i>
+    <?php echo e($tickets->name); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('title',Lang::get('dashboard.all_tickets')); ?>
+<?php $__env->startSection('dashboard'); ?>
+    <div class="dashboard-content">
+
+
+    </div>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('inlineJS'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.dashboard.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

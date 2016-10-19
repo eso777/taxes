@@ -107,6 +107,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'authAdmin'], function() {
     Route::resource('testimonials','TestimonialsCtrl');
     Route::get('testimonials/{pid}/toggle','TestimonialsCtrl@toggle');
     //testimonials
+
+    // ticktes
+    Route::resource('ticktes', 'TicktesCtrl');
+    Route::get('ticktes/{id}/switch', 'TicktesCtrl@switchCase');
+    Route::post('ticktes/{id}', 'TicktesCtrl@post_ticketReplay');
+
+    //Route::get('ticktes/getTickets/{pid}', 'MsgCtrl@getMsgs');
+   // Route::post('ticktes/getMsgs/{pid}', 'MsgCtrl@store');
+    // ticktes
 });
 
 /*
@@ -145,9 +154,12 @@ Route::group(['prefix'=>'dashboard','middleware'=>'auth'],function(){
 
     Route::get('new_testimonial','DashboardCtrl@new_testimonial');
     Route::post('new_testimonial','DashboardCtrl@post_testimonial');
-    
-    Route::get('tickets','DashboardCtrl@new_ticket');
-    Route::post('tickets','DashboardCtrl@post_ticket');
+
+    Route::get('tickets/create','DashboardCtrl@new_ticket');
+    Route::get('tickets','DashboardCtrl@getTickets');
+    Route::get('ticket/{id}','DashboardCtrl@show_ticket');
+    Route::post('tickets/create','DashboardCtrl@post_ticket');
+
 
     
 

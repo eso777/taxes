@@ -39,7 +39,14 @@ return [
             "fileNotAllowed" => 'File extension not supported, rejected files :',
             "maxFileSize"    => "Max File Size ",
             'msg_succ'       => "The ticket has been opened successfully",
+            "all_tickets"=> " All Tickets ",
         /* Send New Tickets */
+        "ticketName"    => "Ticket Name",
+        "ticketStatus"  => "Status",
+        "ticketOptions" => "Options",
+        "ticketStatusNumTrue" => "Open",
+        "ticketStatusNumFlase" => "Closed",
+        "ticketShow" => "Show",
     /**************** Tickets ****************/
 
 	/**************** messages ****************/

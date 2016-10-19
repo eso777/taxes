@@ -1,0 +1,118 @@
+<?php  use Carbon\Carbon ?>
+
+<?php $__env->startSection('title' , 'التذاكر'); ?>
+<?php $__env->startSection('content'); ?>
+
+    <?php if(Session::has('msg')): ?>
+        <div class="alert alert-success">
+            <?php echo Session::get('msg'); ?>
+
+        </div>
+    <?php endif; ?>
+    <?php if(Session::has('alert')): ?>
+        <?php echo Session::get('alert'); ?>
+
+    <?php endif; ?>
+
+    <div class="form-wrap">
+        <div col-md-12>
+            <h1 class="form-ttl"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <?php echo e($ticket->name); ?></h1>
+        </div>
+       <?php echo Form::open(); ?>
+
+            <div class="form-group">
+                <label>إرسال رد جديد </label>
+                <textarea class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>أرفق ملف</label>
+                <input type="file" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-success" >إرسال</button>
+        <?php echo Form::close(); ?>
+
+    </div>
+    <br>
+    <br>
+
+    <?php if(count($ticket_replay) > 0 ): ?>
+
+        <?php foreach($ticket_replay as $one): ?>
+            <?php $files = explode('|', $one->attach) ?>
+            <?php if($one->sender == 0): ?> <?php /* Sender 0 => User */ ?>
+
+            <div class="thumbnail client_replay">
+                <div class="row">
+
+                    <div class="col-md-3 replay_details">
+                        <p class="text-center">رد العميل</p>
+                        <p class="text-center"> <?php echo e(Carbon::parse($one->created_at)->diffForHumans()); ?></p>
+                    </div>
+
+                    <div class="col-md-9 replay_text">
+                        <p>
+                            <?php echo e($one->content); ?>
+
+                        </p>
+
+                        <?php if($one->attach !== ""): ?>
+                            <ul class="attachments thumbnail">
+                               <?php foreach($files as $file): ?>
+                                    <li><a href="<?php echo e(Url('/')); ?>/uploads/attachments/<?php echo e($file); ?>"><i class="fa fa-file-o"></i> <?php echo e($file); ?></a></li>
+                               <?php endforeach; ?>
+
+                            </ul>
+                        <?php endif; ?>
+
+                    </div>
+                </div>
+            </div>
+
+            <?php else: ?> <?php /* Sender 1 => Admin */ ?>
+
+                <div class="thumbnail ">
+                    <div class="row">
+
+                        <div class="col-md-3 replay_details">
+                            <p class="text-center">رد الإدارة</p>
+                            <p class="text-center">10-5-2016 02:30 PM</p>
+                        </div>
+
+                        <div class="col-md-9 replay_text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto culpa cumque dolor nobis unde! Aliquid, autem commodi consequuntur distinctio dolore dolorem esse laborum odit possimus quae quis totam unde vel.
+                            </p>
+
+                            <ul class="attachments thumbnail">
+                                <li><a href="#"><i class="fa fa-file-o"></i> image</a></li>
+                                <li><a href="#"><i class="fa fa-file-o"></i> pdf</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            <?php endif; ?>
+
+        <?php endforeach; ?>
+    <?php else: ?>
+
+    <?php endif; ?>
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+<script type="text/javascript">
+    /*$('.conf').click(function(event) {
+
+     event.preventDefault() ;
+     });*/
+
+</script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

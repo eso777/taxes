@@ -39,8 +39,16 @@ return [
         'fileNotAllowed'  => ' صيغة الملف غير مدعومة ، الملفات المرفوضه :',
         "maxFileSize"  => "اقصي حد للمــلف ",
         'msg_succ'   =>  "تم فتح التذكرة بنجاح",
-
         /* Send New Tickets */
+        "all_tickets"=>"كــل التـذاكر",
+
+        "ticketName"    => "عـنوان التـذكــرة",
+        "ticketStatus"  => "الــحالة",
+        "ticketOptions" => "خـــيارات",
+        "ticketStatusNumTrue" => "مفتوحة",
+        "ticketStatusNumFlase" => "مغلقة",
+        "ticketShow" => "عــرض",
+
     /**************** Tickets ****************/
 
 	/**************** messages ****************/

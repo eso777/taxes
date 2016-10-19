@@ -1,0 +1,54 @@
+<?php $__env->startSection('title' , 'التذاكر'); ?>
+<?php $__env->startSection('content'); ?>
+
+    <?php if(Session::has('msg')): ?>
+        <div class="alert alert-success">
+            <?php echo Session::get('msg'); ?>
+
+        </div>
+    <?php endif; ?>
+    <?php if(Session::has('alert')): ?>
+        <?php echo Session::get('alert'); ?>
+
+    <?php endif; ?>
+
+
+    <?php if($ticket->total() > 0 ): ?>
+        <ul class="list-group">
+            <?php foreach($ticket as $one): ?>
+                <li class="list-group-item">
+                        <a href="<?php echo Url('/'); ?>/admin/ticktes/<?php echo e($one->id); ?>">
+                            <?php echo $one->name; ?>
+
+                        </a>
+                    <?php if($one->status == 1): ?>
+
+                        <a class="pull-right btn btn-danger btn-sm" style=" font-size: 12px; padding: 5px 18px 6px 18px;
+                        margin: -4px;" href="<?php echo Url('/'); ?>/admin/ticktes/<?php echo e($one->id); ?>/switch">اغلاق التذكرة</a>
+                    <?php else: ?>
+                        <a class="pull-right btn btn-success btn-sm" style="font-size: 12px;padding: 6px 28px 5px 20px;margin: -7px -7px -4px -4px;" href="<?php echo Url('/'); ?>/admin/ticktes/<?php echo e($one->id); ?>/switch">فتح التذكرة</a>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+
+        <?php echo e($ticket->render()); ?>
+
+    <?php else: ?>
+        <div class="nice-msg">لا توجد تذاكر للعرض .</div>
+    <?php endif; ?>
+
+
+<?php $__env->stopSection(); ?>
+
+<script type="text/javascript">
+    /*$('.conf').click(function(event) {
+
+     event.preventDefault() ;
+     });*/
+
+</script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('admin.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -288,3 +288,87 @@ h1{
 
 
 /* End Messages Style [ plugin & my Style ]*/
+
+
+
+
+
+.form-wrap{
+    background-color: rgba(249, 249, 249, 1);
+    padding: 20px;
+}
+.form-ttl{
+    font-size: 24px;
+    color: #222;
+    margin: 0 0 25px;
+    border-bottom: 1px solid rgba(235, 235, 235, 1);
+    padding-bottom: 15px;
+}
+.form-wrap label{
+    font-weight: normal;
+    font-size: 13px;
+    color: #222;
+}
+.form-wrap a{
+    display: inline-block;
+    margin-top: 10px;
+    color: #767F88;
+    text-decoration: none;
+    font-size: 13px;
+}
+.form-wrap a:hover{
+    color: #f6c606;
+}
+.form-wrap .form-control{
+    background-color: #fff;
+    border-color: rgba(235, 235, 235, 1);
+    color: #898989;
+    box-shadow: none;
+    height: 40px;
+    border-radius: 0;
+}
+.form-wrap textarea.form-control{
+    height: 200px;
+    max-width: 100%;
+}
+.form-wrap .form-control:focus{
+    border-color: #ccc;
+}
+.form-wrap button[type="submit"]{
+    background: #f6c606;
+    color: #393939;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 10px 30px;
+}
+
+.text-wrap{
+    background-color: rgba(249, 249, 249, 1);
+    padding: 25px;
+    color: #777;
+    font-size: 14px;
+    line-height: 28px;
+    border: 1px solid #f0f0f0;
+}
+.replay_details
+{
+    border-left: 2px solid #ccc;
+    padding : 40px;
+    min-height: 135px;
+}
+
+.replay_text
+{
+    padding : 10px;
+}
+.client_replay {
+    background-color: #ffe7f5;
+}
+.attachments{
+    bottom: -88px;
+    position: absolute;
+    right: 5px;
+    list-style-type: none;
+    width: 40%;
+}

@@ -1,0 +1,43 @@
+<?php $__env->startSection('breadcrumbs'); ?>
+    <i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i>
+    <?php echo e(Lang::get('dashboard.all_tickets')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('title',Lang::get('dashboard.all_tickets')); ?>
+<?php $__env->startSection('dashboard'); ?>
+    <div class="dashboard-content">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th><?php echo e(Lang::get('dashboard.ticketName')); ?></th>
+                        <th><?php echo e(Lang::get('dashboard.ticketStatus')); ?></th>
+                        <th><?php echo e(Lang::get('dashboard.ticketOptions')); ?></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php echo Form::open(); ?>
+
+                    <?php foreach($tickets as $ticket): ?>
+                        <tr>
+
+                            <td><a href="<?php echo e(Url('/')); ?>/dashboard/ticket/<?php echo e($ticket->id); ?>"><?php echo e($ticket->name); ?></a></td>
+                            <td><?php echo e(($ticket->status == 1 ) ? Lang::get('dashboard.ticketStatusNumTrue') : Lang::get('dashboard.ticketStatusNumFlase')); ?></td>
+                            <td colspan="10">
+                                <a href="<?php echo e(Url('/')); ?>/dashboard/ticket/<?php echo e($ticket->id); ?>" class="btn btn-xs btn-warning"><?php echo e(Lang::get('dashboard.ticketShow')); ?></a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                    <?php echo Form::close(); ?>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('inlineJS'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.dashboard.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

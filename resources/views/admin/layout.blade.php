@@ -2,10 +2,12 @@
 
 use App\Msg;
 use App\Testimonials;
+use App\Ticket_replay;
 
 // this line to count all Messages unread .
 $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
 $testimonals = Testimonials::where('status', 0)->count();
+$tickets = Ticket_replay::where('status', 0)->count();
 
 ?>
 <!DOCTYPE html>
@@ -325,6 +327,18 @@ $testimonals = Testimonials::where('status', 0)->count();
           اراء العملاء
                                                   @if($testimonals > 0)
                                                        <span class="badge badge-danger">{{ $testimonals }}</span>
+                                                  @endif
+                                             </span>
+                                        </a>
+                                   </li>
+
+                                   <li class="{{Request::is('admin/ticktes*') ? 'active' : ''}}">
+                                        <a href="{!!Url('/')!!}/admin/ticktes">
+                                             <i class="fa fa-envelope"></i>
+                                             <span class="title">
+                                                  التــذاكر
+                                                  @if($tickets > 0)
+                                                       <span class="badge badge-danger">{{ $tickets }}</span>
                                                   @endif
                                              </span>
                                         </a>
