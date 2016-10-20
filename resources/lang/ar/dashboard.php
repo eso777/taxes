@@ -48,6 +48,11 @@ return [
         "ticketStatusNumTrue" => "مفتوحة",
         "ticketStatusNumFlase" => "مغلقة",
         "ticketShow" => "عــرض",
+         "closeTicket" => "عفوا تم اغلاق التذكرة من قـٍبل الإدارة.  ",
+        "NoTicketsYet" => "لا تــوجد تذاكر للعرض .",
+        "ticketLastReplay" => 'اخــر رد',
+        "unreadMsgFoundReplay" => "رد الإدارة ",
+        "unreadMsgFoundReplayNo" => "لا يوجد رد جديد",
 
     /**************** Tickets ****************/
 

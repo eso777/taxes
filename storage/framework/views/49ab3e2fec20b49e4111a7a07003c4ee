@@ -1,0 +1,53 @@
+
+<td align="center" valign="top" id="m_-4172052036040825163bodyCell">
+    <table border="0" cellpadding="0" cellspacing="0" id="m_-4172052036040825163templateContainer">
+        <tbody><tr>
+            <td align="center" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="m_-4172052036040825163templateHeader">
+                    <tbody><tr>
+                        <td valign="top" class="m_-4172052036040825163headerContent">
+                            <img src="<?php echo e(Url('/')); ?>/front/images/logo.png" style="max-width:600px;padding:20px 20px 0 20px" id="m_-4172052036040825163headerImage" alt="مؤسسة سوا فور" class="CToWUd">
+                        </td>
+                    </tr>
+                    </tbody></table>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="m_-4172052036040825163templateBody">
+                    <tbody><tr>
+                        <td valign="top" class="m_-4172052036040825163bodyContent">
+                            <p>Ticket #<a href="<?php echo e(Url('/')); ?>//admin/ticktes/<?php echo e($ticket_id); ?>" target="_blank" ><strong><?php echo e($ticket_id); ?></strong></a> has had a new reply posted by <strong><?php echo e($name); ?></strong>.</p>
+                            <table class="m_-4172052036040825163keyvalue-table" style="border-collapse:collapse">
+                                <tbody>
+                                <tr>
+                                   
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="m_-4172052036040825163quoted-content">
+                                <p>
+                                    <?php echo e($replay); ?>
+
+                                </p>
+                            </div>
+                            <p>You can respond to this ticket by simply replying to this email or through the admin area at the url below.</p>
+                            <p><a href="<?php echo e(Url('/')); ?>//admin/ticktes/<?php echo e($ticket_id); ?>" target="_blank" > <?php echo e(Url('/')); ?>//admin/ticktes/<?php echo e($ticket_id); ?> </a></p>
+                        </td>
+                    </tr>
+                    </tbody></table>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="m_-4172052036040825163templateFooter">
+                    <tbody>
+                            <a href="<?php echo e(Url('/')); ?>/" target="_blank" > <?php echo e(Url('/')); ?> </a>&nbsp;
+                            <a href="<?php echo e(Url('/')); ?>/admin/" target="_blank" >log in to the admin area</a>&nbsp;
+                        </td>
+                    </tr>
+                    </tbody></table>
+            </td>
+        </tr>
+        </tbody></table>
+</td>

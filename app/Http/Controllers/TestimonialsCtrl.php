@@ -91,7 +91,7 @@ class TestimonialsCtrl extends Controller {
 	public function destroy($id)
 	{
 		$testimonials = Testimonials::findOrFail($id);
-		$testimonials->delet();
+		$testimonials->delete();
 		return redirect()->back();
 		
 	}

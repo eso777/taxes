@@ -33,8 +33,8 @@
                                 <label for="password"> {{Lang::get('menu.password')}} <span class="require">*</span></label>
                                 <input type="password" class="form-control" name="password" id="password" autocomplete="new-password">
                             </div>
-                        <div class="col-md-6"><span class="text-left"><a href="#">نسيت كلمة المرور؟</a></span></div>
-                        <div class="col-md-6"><span class="text-right"><a href="{{Url('/')}}/register">{{Lang::get('loginReg.registerNewAccount')}}</a> </span> </div>
+                        {{-- <div class="col-md-6"><span class="text-left"><a href="#">نسيت كلمة المرور؟</a></span></div> --}}
+                        <div class="col-md-6"><span class="text-right"><a href="{{Url('/')}}/register"><i class="fa fa-registered" aria-hidden="true"></i> {{Lang::get('loginReg.registerNewAccount')}}</a> </span> </div>
 
                         <button type="submit">{{Lang::get('menu.login-btn')}}</button>
                         {!! Form::close() !!}

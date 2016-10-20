@@ -158,7 +158,10 @@ Route::group(['prefix'=>'dashboard','middleware'=>'auth'],function(){
     Route::get('tickets/create','DashboardCtrl@new_ticket');
     Route::get('tickets','DashboardCtrl@getTickets');
     Route::get('ticket/{id}','DashboardCtrl@show_ticket');
-    Route::post('tickets/create','DashboardCtrl@post_ticket');
+    Route::post('ticket/{id}','DashboardCtrl@ticket_replay');// replay Ticket already existe
+    Route::post('tickets/create','DashboardCtrl@post_ticket'); // New Ticket
+
+    Route::get('files/{file}','DashboardCtrl@downloadFiles');
 
 
     

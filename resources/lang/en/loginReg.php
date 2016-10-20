@@ -15,7 +15,7 @@ return [
     'name_company'      =>  'Company or organization name',
     'mobile'            =>  'phone',
     'ground-tel'        =>  'Home phone',
-    'field'             =>  'Field',
+    'field'             =>  'Work Field',
     'MSG_reg'           =>  'Registertaion has been successfully , we will redirect you to your dashboard .  ',
     'login_inactiveUser'=>  'Sorry, your account is inactive please contact administration ',
     'registerNewAccount'=>  'Open New Account .',

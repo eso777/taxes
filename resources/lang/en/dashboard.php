@@ -47,6 +47,12 @@ return [
         "ticketStatusNumTrue" => "Open",
         "ticketStatusNumFlase" => "Closed",
         "ticketShow" => "Show",
+    "closeTicket" => "Sorry ticket was closed by management ",
+    "NoTicketsYet" => "There are no tickets for the show .",
+    "ticketLastReplay" => 'Last Replay',
+    "unreadMsgFoundReplay" => "Management reply",
+    "unreadMsgFoundReplayNo" => "No new reply ",
+
     /**************** Tickets ****************/
 
 	/**************** messages ****************/

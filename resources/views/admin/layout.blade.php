@@ -7,7 +7,7 @@ use App\Ticket_replay;
 // this line to count all Messages unread .
 $new_messages_count = Msg::where('status', 0)->where('sender', 1)->count();
 $testimonals = Testimonials::where('status', 0)->count();
-$tickets = Ticket_replay::where('status', 0)->count();
+$tickets = Ticket_replay::where('status', 0)->where('sender', 1)->count();
 
 ?>
 <!DOCTYPE html>
@@ -577,6 +577,7 @@ $tickets = Ticket_replay::where('status', 0)->count();
                     $("#id_label_multiple").select2();
                });
           </script>
+          @yield('inlineJS')
 
      </body>
 </html>

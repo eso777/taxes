@@ -1,3 +1,5 @@
+<?php use App\Ticket_replay ;?>
+
 <?php $__env->startSection('breadcrumbs'); ?>
     <i class="<?php echo e(Lang::get('dashboard.arrow')); ?>"></i>
     <?php echo e(Lang::get('dashboard.all_tickets')); ?>
@@ -5,6 +7,7 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('title',Lang::get('dashboard.all_tickets')); ?>
 <?php $__env->startSection('dashboard'); ?>
+    <?php if($tickets->total() > 0): ?>
     <div class="dashboard-content">
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -12,6 +15,7 @@
                     <tr>
                         <th><?php echo e(Lang::get('dashboard.ticketName')); ?></th>
                         <th><?php echo e(Lang::get('dashboard.ticketStatus')); ?></th>
+                        <th><?php echo e(Lang::get('dashboard.ticketLastReplay')); ?></th>
                         <th><?php echo e(Lang::get('dashboard.ticketOptions')); ?></th>
                     </tr>
                     </thead>
@@ -23,8 +27,13 @@
 
                             <td><a href="<?php echo e(Url('/')); ?>/dashboard/ticket/<?php echo e($ticket->id); ?>"><?php echo e($ticket->name); ?></a></td>
                             <td><?php echo e(($ticket->status == 1 ) ? Lang::get('dashboard.ticketStatusNumTrue') : Lang::get('dashboard.ticketStatusNumFlase')); ?></td>
+                            <td>
+                            <?php   $unread = Ticket_replay::where('ticket_id',$ticket->id)->where('status',0)->where('sender',0)->count() ?>
+                                <?php echo ($unread > 0 ) ? '<span class="text-danger">'.Lang::get('dashboard.unreadMsgFoundReplay').'</span>':  Lang::get('dashboard.unreadMsgFoundReplayNo'); ?>
+
+                            </td>
                             <td colspan="10">
-                                <a href="<?php echo e(Url('/')); ?>/dashboard/ticket/<?php echo e($ticket->id); ?>" class="btn btn-xs btn-warning"><?php echo e(Lang::get('dashboard.ticketShow')); ?></a>
+                            <a href="<?php echo e(Url('/')); ?>/dashboard/ticket/<?php echo e($ticket->id); ?>" class="btn btn-xs btn-warning"><?php echo e(Lang::get('dashboard.ticketShow')); ?></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -34,7 +43,11 @@
                 </table>
             </div>
         </div>
+        <?php else: ?>
+            <div class="alert alert-info"> <?php echo e(Lang::get('dashboard.NoTicketsYet')); ?></div>
+    <?php endif; ?>
 
+    <div><?php echo e($tickets->render()); ?></div>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('inlineJS'); ?>
 

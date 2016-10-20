@@ -2,34 +2,216 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa32f7e5-0a0a-413d-9f9a-1d66e70252f9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476802658_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476803492_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476803514_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476804206_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476804231_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476804725_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476804766_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476804814_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476804814_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476804814_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476804814_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/00ab4909062bff7b903de14c138f6e16e66896d7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/1561c5065aef96f7dd7604428b96df01a2a2681c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/2907dcaaf7e8eb4a2310e40f019383a64258b5da" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/45981237a3e46fa63870020bf4514d335d31b849" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/a508479e6a362ade844b4bde7ed111b387995eca" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476866966_0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476867064_0.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/attachments/1476867219_0.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/00863555637e872ab2f0fd808a5e27d9db86509d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/00e7a20a5175d4af8539e103b9a6fba0839c77f7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/05009c569ccbf6b191f19bdde40e7a3176678790" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/062e7c34a43a52dbf73c75dc3e667a9ebbf64ebb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/064db3979bbcb086bb5f5f4b62a27a2b7008a799" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/06e9cafe9cc976920e2d26800132c6faa45333e8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/072e160f99c04e70e8a8a5d0aa0828593873c6eb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/0a8039a9f96cfdac0af79f6b9ab70eec78cfd34d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/0b30257885869d56a27394d6268ca4aa467f5cfe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/0c3a708043b714af10d5e671cc74bf7fab49afab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/0ee3c1003b4836da8085098d3d97ced7c1126960" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/10c9ec0af3dfedb465ec016b9d32bcb556c3305e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/123b7ae3220d55c0466d9b08c804561c3bb2dfac" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/143d3b7c1fc921c3ab03fdd4991fe7e332b742d7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/14c0426e7e5af512f5011bde2f6b0edd203f2ec7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/14d3b9cc1aea5769d0035d9edf7ec10b0da3b384" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/15126d075de96c08410c2945fcf37483fd2328e7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/16caddfef12cb45dcf247127f91fac1e9fa92140" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/16e7385238db5f66eb27bbcf70e765f7a8e26a5e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/19a97938185e80ceda8766ecdd0ad68d04958de4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/19c9d95b07c528048c6867090031ce3f81942a10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/1aca6eb4afb3f6675bf068cf9a21cec0d06bab97" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/1b0ffaaa6c0fa81c06d5cfdd7fe9872b13492321" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/1b644303b96b2ba21080aec2ea51cb5ca1d5b1b5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/1ddbe2c3e98dc8c423dc7aed38bc4aeb05f5a05d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/1e55348eaef2627c608cc9c6aec64646af0f1fda" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/2101730b0d4755a164fbf5e3346ffa229f9b38a4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/24854dcc1cd5b401ae7f7ea79f57908ef73ef858" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/24dd841cf5540fc39e62bd23baa6d43e9f18ceb5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/27ad83f80d6faa25c034135356d0e85c576199a4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/287e36e8b6cfaf7f55cb59ca7baff8590b862501" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/28e5580f6cb19577dc63c718cb341a8801fa7ae2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/293acdda6d97ef57f2c5509261021e4fd16c0ff4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/2b37a4bcdaf1bddeee766d176c132171f32527db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/2e9d6047713da23967807454660a3a36f0dbcab6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/2f601ce3c16194631791e3380b64fdd80561be20" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/2f677911a9f940aa87433461f8d1ba61fd2a8242" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/315cc2a30f83feeb848115a853fb02940ca80a47" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/32d0576ba8322dec5f527d10ac69a50f19ec7e28" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/38103c2674e0d822576caea0a918c8292c92a321" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/381fcffc216c009a67a5db10deced4709543d5ca" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/38f8abe54a6d7ce77ba4437cbe93e1ef50529894" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/397efd0ce1e6250d75d735d93bf7dc67c98536ef" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/398a2c24ca1bced9bf725099454b461d1f3460af" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/39921c7cf5186e5c79b2db4af927193d4c8a72d2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/3a33a8daa7eae54eea8594cc9d66bf587613d438" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/3e005fc814604245ef3980a7b01939d3d197be68" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/3e5db9114f2d99e2b5a9aac7216d9deab0f45fe6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/3e70bfafc20092c5039a6da9b615e5904c9a4fed" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/4167eda1c421b1efe8a574fa58561c33bdc947b8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/418357ec8fa67912298977278be4ce9c15efb808" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/41e5cb92c2142673a518ead0ed1d991ade0e42d6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/431caa35e6480224482d816109926d36ccc655b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/4387b7fc550998c058b7d42478352bd353ff9769" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/43c45c3ba45ba6c321ef06cd4e3d15e535132611" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/45f53bd24bfa18c15dc1f26cfbd2e41202526ef1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/460103f84146755755a42d05557dbb2769837deb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/4602a2ee42e399dc8adcf663a2f2b61bac17c58b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/4a27da42589d04f015736fb95ec76b5c55230971" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/4b6f333b59266950b5c35aeb7cf652b22bd2e548" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/4da06084e40f4776009ee147c28decd1d8abad1e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/4f90d3a501fb098873d7a85d66d3fa7444c06013" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/522cb15d6e861dce6079a6cdb5e095f97dd3c921" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/527406c677e9417c3039ded88811e9c589710349" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/52fe8e4f1cc3d836d6a82cc8f1af501360e84c11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/54020320d98f55a0142a07599d9d4213b4e08cfd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/54c85510899a1394b6cda88b24a04914c8525db9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/566e35153616f25c48b1af14ae716a427cd2dcd9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/57bfed99444e3cdbbbfd26d18666fecd5a536f12" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/58a38c090e1a0777be0ee3bba8cadb5476dd34f2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/59dd007dcfeafef3dfd17ee3c295677c831d523c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/5bc0baa50e9071a7ff69d2e0ba1a6bf7728fc396" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/5bc2a4faf61fe63f84eabaf1582ac589d52a6f1d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/5cbc5d2a8c57f0ea5e8efbfc46e054803dcca0e2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/5e021c8d2923d5bdfc0ee9a4ab3d2edac48bfd51" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/61c6cce7d9455b344f8c53f0317812c8b617d701" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/62a8a6a40a40390c8466fe737b8f935e011cf299" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/635bd19744488afc554de4d1ecdf40b0a3be0218" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/66bf9931ad91e9b5d14a4151cff19cd5929c1486" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/66f1afc363a85b058662009410edc84660044212" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/6821fb532aecb22ecd63e1b0b5a8dee8db942e6e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/6a5d135b76bef8fa016830c71fa831ca704bb546" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/6cd0a024cabe004d6ea3aad59437bf20b9e3cf5b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/6defe3a3fb39af19f89ab851bf29ebac0d1f6a48" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/6ebc66bd9911c34299c6cc6c7e874a5d305de46b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/6f58c49799551f7c107e2d4239617c0033719495" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/700fe2d5bea9c3f9057998d991cc81ca3b3954e3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/7266fe73629c1935b048ac568a3b1b02c25602a1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/72f09b6191b3a702c588e81ea5e6f478d7f6206e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/749ee3c844fbd250db4dafdfb567e679753627b2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/76daef6c8c94732e72d75c6412e63a36dbb7f96c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/770185a472e5600f4d71f9a9253e4b611433e231" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/771910e03061fac9a0ef719215bd00dccc8c9789" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/78a13ca66072bbc8a2fd715bbc43a2314890011c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/78c72f7f4b84d93923d398011b3b946059e42515" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/7b997d2fbaac5df630dea9ead69ebaa76f6cf3f8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/7f864b165d28f0e1f034023eb4e51f56a9847da5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/819cbd6f8e5319fe62307dadbee29e027946e8a0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/826e2970c51e3ab8c40f913ebd6323e3b1d3496f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/852539d05bd14c69c5d321db8fd0c48fbde7a6e9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/860472ce636fcb383226958f04951525c8eb3cc9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/875940eeb8c92d88abbaf98f95b7a1fbf2a431c1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/87ef5be0f535a0f3307820213f1e43edd312a443" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/8cf1589d74eef59ec521583a4d5fec4ec1d610fd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/90bb40227a2650abdaf8787bf4ec66d7e3651735" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/96ba669799ed51df66ec71099899c2c0ca791625" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/9750c71f27953fd4fa4be23cdeab6dc97130fb42" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/978800ddf38219f8eeed959e3b39509b034db11a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/9a628ac00479fc57641cd1659f4598adc6f371f5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/9ad2385981b862e18facc2f3696f62648caf239c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/9b332e067760efb9364ee07ff537ede870504bb6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/9c9c50748e32324307ce8d76101179424a441450" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/9ed2c8b1467ca871f922de19e4f8625491cdfd18" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/a0e4263ccc14b0a4ead369133c8464a5bd39d046" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/a111fb4b7a5eb857e0778a60390487abfbb480b0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/a14184af804a23aaf769a9f9670bdabd2250e48d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/a3696a2a7bf543f1a49200d33d1df5b157787f95" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/a3b3cda342ae073793f56cc241310ec953e638cf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/a46800a9a4e27e82e09296e114dd96835ab506a7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/a8397b3a0fe76defddff268d9c220140a7aa49b0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/abf3a38c0bbe6aa8bc0b7b2f8b9b92e1d806eaab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/acfd64fbf6b88b391552a6e33f40b852dac5f97c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/ae2fedff2267e8a1a2a0d16e0f238d4004adfa58" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/aee64b1489f148ce8d5c0fe585cd492d8bc47d5a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/af1c2cbfc6ec846019b6abaf0400c2cac96ace6d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/b0066f870d87f4218310f8d48833f3212e4a46fa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/b02721f6c87881ef0c00475fc285758566788093" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/b1cee502d69ca6338a288b6d383390a3d148c0bd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/b1f96826cd7aee1876f1cf14995b2a6cf06ed2a4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/b427c4a1a63334b1a0a738bfa9028fc74ac8c785" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/b453018b244649062f8d0b3c0722659a46c721c4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/b5a10034ec645c42a27832b3acb692b9f844018b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/b6c1f9c15b56e570aacb268a63b73dab09825a1e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/ba73663fea1c055ada1ac9a344aa02390fc46b3a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/bba5e970080b4fda579f2f4f6c10d413f6cba75d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/bcb3647ffaceb4760af60380d87455b05582fd88" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/c01e2ef7150e8a30dd7fb3024d941c1f6a093596" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/c0576b29590691c1f6698389e375588596206df2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/c06bffce630e7c5c2694b93355ed8b95e4fc7184" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/c1c3f1f177aac6dfbc01d6f41e42f32990408373" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/c2adb367826cd0a0255229a48288a1d34475a668" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/c5f494d0037b31c00b62b49c4847f78af9294785" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/c7a302e26ee356c11cad36b24addfe83a52cdd3a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/c7faac041695dcd0823d1b3e17203742c8264c00" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/ca86f1298ee7e0dc3027e011f2a4f6b60232e000" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/cba58411caad326537f2d19d56cdc346f61a9a11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/ceac0826f518f54d2fee325a6a874a7766248c32" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/d07f02d8f11a5215bdb765d45ac79c0042a92241" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/d0ffbc0040f4c04bcb591381fa44b64afcba42ec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/d371493a51029426e19413fa3e3ab7259e824dcd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/d4587f6c5faa24e6d917b905d0ee71e8982bbdf9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/d64821b40a5ff75b7444c6bd98472e71cb1f73ef" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/d792753e7623db864e0e6c3ad6f5704b2a2a638f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/d9e329ab0908ba8c8b34df5e6bf8e0b3022968b9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/dae8a86a1e518135299ee7df413cce64b155b712" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/db348a73ad6ea0c8eb2600bce4421febfa9e0ed0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/db481075f6b4d7dd5521828c1f77c60d6efb3723" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/dd653598d900a9afe510fd8aec808622c0f6b936" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/ddf0a72727ae4198a06d874fbfeff569fdcba70f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/dee29aeb1ba3107a4cd63e10fa7f1df1e5da6379" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/df4c4ffedef73761b091d4cdd568cbe1f44aae47" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/e39e79bd32127a319852ba82875e62a5aef083e3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/e4abba0634f5d3b40cb323df0a308f734598ede4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/e4c95347f40485041561be04f9fc23213d49933e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/e6f5aff940e05e525a6eb0fa9c94936e3ac98cc6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/e8684f084a4284a012cef1def038db53decd1720" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/e86b64c497ee88473eb3764309b433f0e438670c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/e884756b02ebe8f97ada7ff82102e13411f7169b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/eb5280c6907832d9a4dad2139c652e42dc51696e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/eb8035d9e9ea5cf640c28b6fbb98880e8432dd21" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/eb90f81f7830a9b2164a75cf42684c4d8eae1f16" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/edbd186c2c52d2c9e1b6944f23e174d880a50ea9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/ee45a5254c6aa1ccb409f8fe9e711bf941d204c9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/ee6be6f727b261e95ccdffc7343ef5cca820d9e8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/eeaef71be1c5bb7bcf2447d2c247b86513f73177" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/eeb4700c595b7a15e457bd2528e5d532ee167742" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/eee032e63743c953fe3a142bcf49c8f68050d7cf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/f287af9bb9e3adadb87957dbf0e301f663859317" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/f401cda649c159bcd3d90cbca2522595b50d9594" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/f91b1cccbdc9dee7876a168f69994565dedd45bb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/fa32a40e466f42a4730e9160d164107f2d1bb725" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/facf68c121bb9abdd58d1f2e979d2b5ae1683a83" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/fc24a5f9521408dc11b9c0b3a362a35619d46f4b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/ff1b5e27d44c67088babc6a144a6e25a658fdb30" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardCtrl.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardCtrl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TestimonialsCtrl.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestimonialsCtrl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TicktesCtrl.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TicktesCtrl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Ticket.php" afterPath="$PROJECT_DIR$/app/Ticket.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/back/assets/global/css/custom.css" afterPath="$PROJECT_DIR$/public/back/assets/global/css/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/session.php" afterPath="$PROJECT_DIR$/config/session.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/front/css/main.css" afterPath="$PROJECT_DIR$/public/front/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/ar/dashboard.php" afterPath="$PROJECT_DIR$/resources/lang/ar/dashboard.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/dashboard.php" afterPath="$PROJECT_DIR$/resources/lang/en/dashboard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/loginReg.php" afterPath="$PROJECT_DIR$/resources/lang/en/loginReg.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/dashboard/layout.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/dashboard/layout.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/dashboard/tickets/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/dashboard/tickets/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/ticktes/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/ticktes/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/ticktes/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/ticktes/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/dashboard/tickets/all.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/dashboard/tickets/all.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/front/dashboard/tickets/ticket_replay.blade.php" afterPath="$PROJECT_DIR$/resources/views/front/dashboard/tickets/ticket_replay.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/1fc516300e6b010ed04e358d0c713fa7" afterPath="$PROJECT_DIR$/storage/framework/views/1fc516300e6b010ed04e358d0c713fa7" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/6317b20b42f3512e8582092449b4abe2" afterPath="$PROJECT_DIR$/storage/framework/views/6317b20b42f3512e8582092449b4abe2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/78bd80d3e9f0e108f070672e70f885ec" afterPath="$PROJECT_DIR$/storage/framework/views/78bd80d3e9f0e108f070672e70f885ec" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/7bf19d91ff6b6d94b5ac2c654136f49f" afterPath="$PROJECT_DIR$/storage/framework/views/7bf19d91ff6b6d94b5ac2c654136f49f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/b16b55bc6755afe292b61b054086fe10" afterPath="$PROJECT_DIR$/storage/framework/views/b16b55bc6755afe292b61b054086fe10" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/f858a06c578b03915f8d6cb8b3d84d3c" afterPath="$PROJECT_DIR$/storage/framework/views/f858a06c578b03915f8d6cb8b3d84d3c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/88e7beb128d10cdd1b4a8aea24a45021" afterPath="$PROJECT_DIR$/storage/framework/views/88e7beb128d10cdd1b4a8aea24a45021" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/d94d47028f5bc15e296d4f973dd26a88" afterPath="$PROJECT_DIR$/storage/framework/views/d94d47028f5bc15e296d4f973dd26a88" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/dce8a8b11e95a6241dabf0de15851fde" afterPath="$PROJECT_DIR$/storage/framework/views/dce8a8b11e95a6241dabf0de15851fde" />
     </list>
     <ignored path="taxes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,69 +235,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DashboardCtrl.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DashboardCtrl.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardCtrl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="183" column="38" selection-start-line="183" selection-start-column="38" selection-end-line="183" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TicktesCtrl.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicktesCtrl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
+            <state relative-caret-position="1227">
+              <caret line="307" column="42" selection-start-line="307" selection-start-column="42" selection-end-line="307" selection-end-column="42" />
               <folding>
                 <element signature="e#39#61#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/ticktes/show.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
-              <folding>
-                <marker date="1476892955491" expanded="true" signature="3386:3460" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/back/assets/global/css/custom.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="372" column="15" selection-start-line="372" selection-start-column="15" selection-end-line="372" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/ticktes/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="119" selection-start-line="26" selection-start-column="119" selection-end-line="26" selection-end-column="119" />
-              <folding>
-                <element signature="e#709#800#0#HTML" expanded="true" />
-                <marker date="1476891421415" expanded="true" signature="1378:1452" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="113" column="39" selection-start-line="113" selection-start-column="39" selection-end-line="113" selection-end-column="39" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -128,15 +255,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/front/service/service_one.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/aboutCompany/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/consulting/consulting_one.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/settings.blade.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/front/consulting/send_consulting.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/ar/menu.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/menu.php" />
-        <option value="$PROJECT_DIR$/public/front/css/main.css" />
         <option value="$PROJECT_DIR$/app/Consulting.php" />
         <option value="$PROJECT_DIR$/public/front/css/msg.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MsgCtrl.php" />
@@ -149,12 +270,10 @@
         <option value="$PROJECT_DIR$/resources/views/front/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FrontCtrl.php" />
         <option value="$PROJECT_DIR$/resources/views/front/layout.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TestimonialsCtrl.php" />
         <option value="$PROJECT_DIR$/resources/views/front/dashboard/testimonials/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/ar/validation.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/ar/loginReg.php" />
-        <option value="$PROJECT_DIR$/resources/lang/en/loginReg.php" />
         <option value="$PROJECT_DIR$/resources/views/front/dashboard/profile/index.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_10_18_094444_create_ticket_replays_table.php" />
         <option value="$PROJECT_DIR$/app/Ticket_replay.php" />
@@ -162,23 +281,31 @@
         <option value="$PROJECT_DIR$/resources/views/admin/ads/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LanguageCtrl.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/dashboard/index.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_10_18_092219_create_tickets_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/dashboard/tickets/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/dashboard/layout.blade.php" />
-        <option value="$PROJECT_DIR$/resources/lang/ar/dashboard.php" />
-        <option value="$PROJECT_DIR$/resources/lang/en/dashboard.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/dashboard/tickets/all.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/dashboard/tickets/ticket_replay.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/layout.blade.php" />
         <option value="$PROJECT_DIR$/app/Ticket.php" />
         <option value="$PROJECT_DIR$/public/back/assets/global/css/custom.css" />
-        <option value="$PROJECT_DIR$/resources/views/admin/ticktes/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/ticktes/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/dashboard/tickets/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/front/css/main.css" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/DashboardCtrl.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/dashboard/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/ticktes/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/dashboard/tickets/ticket_replay.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/ar/dashboard.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/dashboard.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/config/session.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/loginReg.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TestimonialsCtrl.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/dashboard/tickets/all.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/emails/contact.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/ticktes/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/emails/ticket.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TicktesCtrl.php" />
+        <option value="$PROJECT_DIR$/resources/views/emails/ticket_user.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DashboardCtrl.php" />
+        <option value="$PROJECT_DIR$/resources/views/emails/ticket_admin.blade.php" />
       </list>
     </option>
   </component>
@@ -202,9 +329,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="width" value="1438" />
-    <option name="height" value="860" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -248,6 +376,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="taxes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taxes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taxes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -312,7 +454,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="set&#9;FILE&#9;file://D:/MY WORK/xampp/htdocs/taxes/app/Settings.php&#10;setting&#9;FILE&#9;file://D:/MY WORK/xampp/htdocs/taxes/app/Http/Controllers/SettingsCtrl.php&#10;Settings&#9;null&#9;null&#10;settin&#9;FILE&#9;file://D:/MY WORK/xampp/htdocs/taxes/app/Http/Controllers/SettingsCtrl.php&#10;settingsC&#9;null&#9;null" />
     <property name="ToolWindowHierarchy.ShowToolbar" value="false" />
@@ -405,6 +547,7 @@
       <workItem from="1476691243793" duration="26926000" />
       <workItem from="1476777773498" duration="26812000" />
       <workItem from="1476862643485" duration="24738000" />
+      <workItem from="1476950893123" duration="19089000" />
     </task>
     <task id="LOCAL-00001" summary="TEST COMMIT">
       <created>1476174675793</created>
@@ -417,15 +560,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152092000" />
+    <option name="totallyTimeSpent" value="171181000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="0" width="1438" height="860" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23417722" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -467,66 +610,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_10_10_152036_create_testimonials_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/testimonials/one.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Testimonials.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LoginCtrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="81" column="45" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="45" />
-          <folding>
-            <element signature="e#40#62#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/users/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontCtrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
-          <folding>
-            <element signature="e#40#62#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -581,26 +668,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestimonialsCtrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="68" column="80" selection-start-line="68" selection-start-column="80" selection-end-line="68" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/loginReg.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -634,13 +705,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/dashboard/wishlist/index.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LanguageCtrl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -658,14 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdsCtrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/dashboard/profile/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-337">
@@ -677,7 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -693,7 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="55" column="94" selection-start-line="55" selection-start-column="94" selection-end-line="55" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -701,15 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/dashboard/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="118" selection-start-line="17" selection-start-column="118" selection-end-line="17" selection-end-column="136" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -717,7 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="63" column="44" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,34 +773,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/dashboard.php">
+    <entry file="file://$PROJECT_DIR$/app/Ticket.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="48" column="19" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="19" />
+        <state relative-caret-position="153">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/ar/dashboard.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/messages/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="49" column="32" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="32" />
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/blog/blog_one.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdsCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="124" column="132" selection-start-line="124" selection-start-column="63" selection-end-line="124" selection-end-column="132" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/dashboard/tickets/all.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/back/assets/global/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+        <state relative-caret-position="615">
+          <caret line="373" column="1" selection-start-line="353" selection-start-column="0" selection-end-line="373" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/front/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="776" column="15" selection-start-line="776" selection-start-column="15" selection-end-line="776" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="163" column="21" selection-start-line="163" selection-start-column="16" selection-end-line="163" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/ticktes/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#1280#1359#0#HTML" expanded="true" />
+            <marker date="1476959348914" expanded="true" signature="1686:1760" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/dashboard/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/loginReg.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/dashboard/tickets/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="82" column="54" selection-start-line="82" selection-start-column="54" selection-end-line="82" selection-end-column="54" />
+        <state relative-caret-position="119">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
           <folding>
             <marker date="1476866767780" expanded="true" signature="2947:3996" ph="..." />
             <marker date="1476866767780" expanded="true" signature="2959:3995" ph="..." />
@@ -771,105 +888,131 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestimonialsCtrl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="334" column="74" selection-start-line="334" selection-start-column="67" selection-end-line="334" selection-end-column="74" />
-          <folding>
-            <element signature="e#7#19#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="513">
+          <caret line="93" column="32" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Ticket.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/front/dashboard/tickets/all.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="289">
+          <caret line="29" column="188" selection-start-line="29" selection-start-column="188" selection-end-line="29" selection-end-column="188" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="36" column="155" selection-start-line="36" selection-start-column="155" selection-end-line="36" selection-end-column="155" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/dashboard/tickets/ticket_replay.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="1275">
+          <caret line="75" column="78" selection-start-line="75" selection-start-column="78" selection-end-line="75" selection-end-column="78" />
+          <folding>
+            <marker date="1476964459268" expanded="true" signature="5702:5742" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/ar/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="54" column="54" selection-start-line="53" selection-start-column="8" selection-end-line="54" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/messages/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="556">
+          <caret line="53" column="27" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="153" column="10" selection-start-line="141" selection-start-column="10" selection-end-line="153" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MsgCtrl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="-51">
           <caret line="27" column="83" selection-start-line="27" selection-start-column="83" selection-end-line="27" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/back/assets/global/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="372" column="15" selection-start-line="372" selection-start-column="15" selection-end-line="372" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/ticktes/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="119" selection-start-line="26" selection-start-column="119" selection-end-line="26" selection-end-column="119" />
-          <folding>
-            <element signature="e#709#800#0#HTML" expanded="true" />
-            <marker date="1476891421415" expanded="true" signature="1378:1452" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="113" column="39" selection-start-line="113" selection-start-column="39" selection-end-line="113" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/blog/blog_one.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/ticktes/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+        <state relative-caret-position="57">
+          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
           <folding>
-            <marker date="1476892955491" expanded="true" signature="3386:3460" ph="..." />
+            <marker date="1476967489056" expanded="true" signature="5353:5393" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardCtrl.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/contact.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="183" column="38" selection-start-line="183" selection-start-column="38" selection-end-line="183" selection-end-column="38" />
+        <state relative-caret-position="119">
+          <caret line="34" column="41" selection-start-line="0" selection-start-column="0" selection-end-line="74" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicktesCtrl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
+        <state relative-caret-position="391">
+          <caret line="104" column="19" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="19" />
+          <folding>
+            <element signature="e#39#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/ticket_user.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/ticket_admin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="33" column="113" selection-start-line="33" selection-start-column="113" selection-end-line="33" selection-end-column="113" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1227">
+          <caret line="307" column="42" selection-start-line="307" selection-start-column="42" selection-end-line="307" selection-end-column="42" />
           <folding>
             <element signature="e#39#61#0#PHP" expanded="true" />
           </folding>

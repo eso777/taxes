@@ -18,9 +18,13 @@
                 <li class="list-group-item">
                         <a href="{!! Url('/') !!}/admin/ticktes/{{$one->id}}">
                             {!! $one->name !!}
+                            <?php $unread = $ticket_replays->where('ticket_id',$one->id)->where('sender', 1)->where('status',0)->count() ; ?>
+
+                            @if($unread > 0 )
+                                <span class="badge badge-danger"> {{$unread}}</span>
+                            @endif
                         </a>
                     @if($one->status == 1)
-
                         <a class="pull-right btn btn-danger btn-sm" style=" font-size: 12px; padding: 5px 18px 6px 18px;
                         margin: -4px;" href="{!! Url('/') !!}/admin/ticktes/{{$one->id}}/switch">اغلاق التذكرة</a>
                     @else

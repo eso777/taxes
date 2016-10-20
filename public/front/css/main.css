@@ -769,3 +769,27 @@ a.load-more{
     font-size: 14px;
     text-shadow: none;
 }
+
+/*  Start Custom tickets replays style */
+.replay_details
+{
+    border-left: 2px solid #ccc;
+    padding : 20px;
+    min-height: 135px;
+}
+
+.replay_text
+{
+    padding : 10px;
+}
+.client_replay {
+    background-color: #ffe7f5;
+}
+.attachments{
+    bottom: -88px;
+    position: absolute;
+    right: 5px;
+    list-style-type: none;
+    width: 40%;
+}
+/*  Start Custom tickets replays style */

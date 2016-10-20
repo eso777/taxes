@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Settings;
 use Illuminate\Http\Request;
 use App\Msg ;
 use App\Admin ;
@@ -13,6 +14,7 @@ use Lang ;
 use Validator ;
 use App\Ticket ;
 use App\Ticket_replay ;
+use Mail ;
 class DashboardCtrl extends Controller {
 
 	/**
@@ -184,7 +186,22 @@ class DashboardCtrl extends Controller {
         $request->merge(['sender' => 1]);
         $request->merge(['status'    => 0 ]);
         //dd($request->all()) ;
-        Ticket_replay::create($request->all()) ;
+        $replay = Ticket_replay::create($request->all()) ;
+
+        /* SEnd E-mail */
+            $settings = Settings::first();
+            $data = [
+                'name' => Auth::client()->get()->name ,
+                'ticket_name' => $ticket->name,
+                'ticket_id' => $ticket->id,
+                'replay' => $replay->content,
+
+            ];
+            Mail::send('emails.ticket_admin', $data, function($message) use($settings,$ticket) {
+                $message->to($settings->email, 'Admin')->from('no-replay@itage-eg.com','no-replay@itage-eg.com')->subject($ticket->name);
+            });
+        /* SEnd E-mail */
+
 
         return redirect()->to(Url('/').'/dashboard/')->with(['msg_succ'=>Lang::get('dashboard.msg_succ')]) ;
     }
@@ -193,7 +210,7 @@ class DashboardCtrl extends Controller {
 
     function getTickets()
     {
-        $tickets = Ticket::where('user_id',Auth::client()->get()->id)->get();
+        $tickets = Ticket::where('user_id',Auth::client()->get()->id)->paginate(20);
 
         return view('front.dashboard.tickets.all' , compact('tickets')) ;
     }
@@ -206,9 +223,97 @@ class DashboardCtrl extends Controller {
         {
             return redirect()->to(Url('/').'/dashboard/tickets') ;
         }
-        $ticketDetails = Ticket_replay::where('ticket_id',$tickets->id)->get();
+        $ticketDetails = Ticket_replay::where('ticket_id',$tickets->id)->latest('created_at')->get();
+        Ticket_replay::where('ticket_id',$tickets->id)->where('sender',0)->update(['status'=>1]);
         return view('front.dashboard.tickets.ticket_replay' , compact('ticketDetails','tickets')) ;
 
+    }
+
+    function ticket_replay($id , Request $request)
+    {
+
+        $rules = [
+            'content'  => 'required',
+        ] ;
+
+        $validation = Validator::make($request->all(),$rules) ;
+        if($validation->fails())
+        {
+            return redirect()->back()->withErrors($validation)->withInput() ;
+        }
+        $msg = "";
+        $files = [];
+
+
+        if($request->hasFile('attached')) {
+            /* $rules['attached'] = 'required|mimes:jpeg,bmp,png,gif,jpg,txt,pdf,doc,docx,zip' ;*/
+            $max_size = ini_get('upload_max_filesize');
+            $time = time();
+            $dest = 'uploads/attachments/';
+            $data = "";
+            $accepted_files = ['png', 'gif', 'jpeg', 'jpg', 'txt', 'pdf', 'doc', 'docx', 'zip'];
+
+            $i = 0;
+
+            foreach ($request->File('attached') as $one) {
+
+                if(!in_array($one->getClientOriginalExtension(),$accepted_files)){
+
+                    // File Not Allawed .
+                    $msg = Lang::get('dashboard.fileNotAllowed') ;
+                    $files[$i] = $one->getClientOriginalName();
+
+                }else{
+                    if($one->getSize() >= $max_size )
+                    {
+                        $file_name = $time.'_'.$i.'.'.$one->getClientOriginalExtension();
+                        $one->move($dest,$file_name);
+                        $data = ($data === "") ? $data .= $file_name : $data .= '|'. $file_name  ;
+                    }else {
+                        // Size
+                        $msg = Lang::get('dashboard.errorMsgUploads');
+                        $files[$i] = $one->getClientOriginalName();
+                    }
+                }
+                $i++ ;
+            } // End Foreach
+            $request->merge(['attach' => $data ]);
+        } // End if Has File
+        if($msg !== ""){
+            return redirect()->back()->with(['msg'=>$msg,'files'=>$files]);
+        }
+
+        $request->merge(['ticket_id' => $id]);
+        $request->merge(['sender' => 1]);
+        $request->merge(['status'    => 0 ]);
+        $replay = Ticket_replay::create($request->all()) ;
+        $ticket = Ticket::findOrFail($id);
+
+
+        /* SEnd E-mail */
+        $settings = Settings::first();
+        $data = [
+            'name' => Auth::client()->get()->name ,
+            'ticket_name' => $ticket->name,
+            'ticket_id' => $ticket->id,
+            'replay' => $replay->content,
+
+        ];
+        Mail::send('emails.ticket_admin', $data, function($message) use($settings,$ticket) {
+            $message->to($settings->email, 'Admin')->from('no-replay@itage-eg.com','no-replay@itage-eg.com')->subject($ticket->name);
+        });
+        /* SEnd E-mail */
+
+
+        return redirect()->back()->with(['']);
+
+    }
+
+
+    public function downloadFiles($file)
+    {
+
+        return response()->download(public_path('uploads/attachments/'.$file));
     }
     /*  Tickets */
 

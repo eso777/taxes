@@ -3,12 +3,7 @@
 <?php $__env->startSection('title' , 'التذاكر'); ?>
 <?php $__env->startSection('content'); ?>
 
-    <?php if(Session::has('msg')): ?>
-        <div class="alert alert-success">
-            <?php echo Session::get('msg'); ?>
 
-        </div>
-    <?php endif; ?>
     <?php if(Session::has('alert')): ?>
         <?php echo Session::get('alert'); ?>
 
@@ -18,19 +13,51 @@
         <div col-md-12>
             <h1 class="form-ttl"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <?php echo e($ticket->name); ?></h1>
         </div>
-       <?php echo Form::open(); ?>
+        <?php echo Form::open(['files'=>true]); ?>
 
-            <div class="form-group">
-                <label>إرسال رد جديد </label>
-                <textarea class="form-control"></textarea>
+
+        <?php if(Session::has('msg')): ?>
+            <div class="alert alert-danger">
+                <?php echo e(Session::get('msg')); ?>
+
+                <ul>
+                    <?php foreach(Session::get('files') as $file): ?>
+                        <li><?php echo e($file); ?></li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
+        <?php endif; ?>
 
-            <div class="form-group">
-                <label>أرفق ملف</label>
-                <input type="file" class="form-control">
+        <div class="form-group<?php echo e($errors->has('content') ? ' has-error' : ''); ?>">
+            <?php echo Form::label('content','إرســــال رد جديد'); ?>
+
+            <?php echo Form::textarea('content', null, ['class' => 'form-control']); ?>
+
+            <small class="text-danger"><?php echo e($errors->first('content')); ?></small>
+        </div>
+
+        <div class="input_fields_wrap">
+
+            <div class="form-group<?php echo e($errors->has('attached') ? ' has-error' : ''); ?>">
+                <?php echo Form::label('attached','إرفـاق مـلف'); ?>
+
+                <div class="input-group">
+                    <?php echo Form::file('attached[]',['class' => 'form-control']); ?>
+
+                    <span class="input-group-btn">
+                                <button id="addmore" class="pull-left btn btn-primary" style="margin-top: 0px;padding: 9px;"title="Add More">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </span>
+                </div>
+                <small class="text-warning"> <i class="fa fa-sticky-note" aria-hidden="true"></i> </small>
+                <p class="help-block"></p>
+                <small class="text-danger"><?php echo e($errors->first('attached')); ?></small>
             </div>
+        </div>
 
-            <button type="submit" class="btn btn-success" >إرسال</button>
+        <br>
+        <button type="submit"> <i class="fa fa-check"></i> إرســــال</button>
         <?php echo Form::close(); ?>
 
     </div>
@@ -41,14 +68,14 @@
 
         <?php foreach($ticket_replay as $one): ?>
             <?php $files = explode('|', $one->attach) ?>
-            <?php if($one->sender == 0): ?> <?php /* Sender 0 => User */ ?>
+            <?php if($one->sender == 1): ?> <?php /* Sender 1 => User */ ?>
 
             <div class="thumbnail client_replay">
                 <div class="row">
 
                     <div class="col-md-3 replay_details">
                         <p class="text-center">رد العميل</p>
-                        <p class="text-center"> <?php echo e(Carbon::parse($one->created_at)->diffForHumans()); ?></p>
+                        <p class="text-center"> <?php echo e(Carbon::parse($one->created_at)->format('Y-m-d  h:i A')); ?></p>
                     </div>
 
                     <div class="col-md-9 replay_text">
@@ -60,9 +87,8 @@
                         <?php if($one->attach !== ""): ?>
                             <ul class="attachments thumbnail">
                                <?php foreach($files as $file): ?>
-                                    <li><a href="<?php echo e(Url('/')); ?>/uploads/attachments/<?php echo e($file); ?>"><i class="fa fa-file-o"></i> <?php echo e($file); ?></a></li>
+                                    <li><a href="<?php echo e(Url('/')); ?>/dashboard/files/<?php echo e($file); ?>"><i class="fa fa-file-o"></i> <?php echo e($file); ?></a></li>
                                <?php endforeach; ?>
-
                             </ul>
                         <?php endif; ?>
 
@@ -70,25 +96,29 @@
                 </div>
             </div>
 
-            <?php else: ?> <?php /* Sender 1 => Admin */ ?>
+            <?php else: ?> <?php /* Sender 0 => Admin */ ?>
 
                 <div class="thumbnail ">
                     <div class="row">
 
                         <div class="col-md-3 replay_details">
                             <p class="text-center">رد الإدارة</p>
-                            <p class="text-center">10-5-2016 02:30 PM</p>
+                            <p class="text-center"><?php echo e(Carbon::parse($one->created_at)->format('Y-m-d  h:i A')); ?></p>
                         </div>
 
                         <div class="col-md-9 replay_text">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto culpa cumque dolor nobis unde! Aliquid, autem commodi consequuntur distinctio dolore dolorem esse laborum odit possimus quae quis totam unde vel.
+                                <?php echo e($one->content); ?>
+
                             </p>
 
-                            <ul class="attachments thumbnail">
-                                <li><a href="#"><i class="fa fa-file-o"></i> image</a></li>
-                                <li><a href="#"><i class="fa fa-file-o"></i> pdf</a></li>
-                            </ul>
+                            <?php if($one->attach !== ""): ?>
+                                <ul class="attachments thumbnail">
+                                    <?php foreach($files as $file): ?>
+                                        <li><a href="<?php echo e(Url('/')); ?>/dashboard/files/<?php echo e($file); ?>"><i class="fa fa-file-o"></i> <?php echo e($file); ?></a></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -104,14 +134,31 @@
 
 
 <?php $__env->stopSection(); ?>
+<?php $__env->startSection('inlineJS'); ?>
+    <script type="text/javascript">
+            $(document).ready(function() {
+                var max_fields      = 10; //maximum input boxes allowed
+                var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+                var add_button      = $("#addmore"); //Add button ID
 
-<script type="text/javascript">
-    /*$('.conf').click(function(event) {
+                var x = 1; //initlal text box count
+                $(add_button).click(function(e){ //on add input button click
+                    e.preventDefault();
+                    if(x < max_fields){ //max input box allowed
+                        x++; //text box increment
+                        $(wrapper).append('<div class="input-group"><input class="form-control" name="attached[]" type="file"><span class="input-group-btn"><a class="pull-left btn btn-danger remove_field" style="margin-top: 0px;padding: 9px;color:#fff;"><i class="fa fa-times"></i></a></span></div>'); //add input box
+                    }
+                });
 
-     event.preventDefault() ;
-     });*/
+                $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 
-</script>
+                    var remo = $(this).parent().parent().hide('slow').remove();
+                    x--;
+                })
+            });
+    /**************************************** **/
+    </script>
+<?php $__env->stopSection(); ?>
 <?php $__env->stopSection(); ?>
 
 
